@@ -34,6 +34,7 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_izq = new System.Windows.Forms.Panel();
+            this.btn_cerrarSesion = new System.Windows.Forms.Button();
             this.pnl_der = new System.Windows.Forms.Panel();
             this.btn_ventas = new System.Windows.Forms.Button();
             this.btn_usuarios = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@
             this.btn_stock.TabIndex = 1;
             this.btn_stock.Text = "Stock";
             this.btn_stock.UseVisualStyleBackColor = true;
+            this.btn_stock.Click += new System.EventHandler(this.btn_stock_Click);
             // 
             // pnl_cabecera
             // 
@@ -94,12 +96,23 @@
             // pnl_izq
             // 
             this.pnl_izq.BackColor = System.Drawing.Color.SlateGray;
+            this.pnl_izq.Controls.Add(this.btn_cerrarSesion);
             this.pnl_izq.Controls.Add(this.btn_mesas);
             this.pnl_izq.Controls.Add(this.btn_stock);
             this.pnl_izq.Location = new System.Drawing.Point(0, 65);
             this.pnl_izq.Name = "pnl_izq";
             this.pnl_izq.Size = new System.Drawing.Size(86, 543);
             this.pnl_izq.TabIndex = 3;
+            // 
+            // btn_cerrarSesion
+            // 
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(12, 398);
+            this.btn_cerrarSesion.Name = "btn_cerrarSesion";
+            this.btn_cerrarSesion.Size = new System.Drawing.Size(67, 59);
+            this.btn_cerrarSesion.TabIndex = 2;
+            this.btn_cerrarSesion.Text = "Cerrar Sesion";
+            this.btn_cerrarSesion.UseVisualStyleBackColor = true;
+            this.btn_cerrarSesion.Click += new System.EventHandler(this.btn_cerrarSesion_Click);
             // 
             // pnl_der
             // 
@@ -128,6 +141,7 @@
             this.btn_usuarios.TabIndex = 2;
             this.btn_usuarios.Text = "Usuarios";
             this.btn_usuarios.UseVisualStyleBackColor = true;
+            this.btn_usuarios.Click += new System.EventHandler(this.btn_usuarios_Click);
             // 
             // pnl_contenedor
             // 
@@ -172,5 +186,6 @@
         private System.Windows.Forms.Button btn_usuarios;
         private System.Windows.Forms.Panel pnl_contenedor;
         private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.Button btn_cerrarSesion;
     }
 }

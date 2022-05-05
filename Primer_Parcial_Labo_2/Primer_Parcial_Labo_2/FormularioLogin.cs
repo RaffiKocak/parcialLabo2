@@ -23,7 +23,6 @@ namespace Primer_Parcial_Labo_2
             HardcodeoDatos.CargarUsuarios();
             HardcodeoDatos.CargarEspaciosDeConsumo();
             HardcodeoDatos.CargarConsumisiones();
-            chk_esAdmin.Checked = true;
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -32,32 +31,31 @@ namespace Primer_Parcial_Labo_2
             string passwdIngresada = txt_passwd.Text;
             bool banderaLogin = false;
             
-
-            if (chk_esAdmin.Checked == true)
+            foreach(KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
             {
-                foreach (KeyValuePair<string, string> item in Bar.listaAdministradores)
+                if(item.Key == usuarioIngresado && item.Value.VerificarPasswd(passwdIngresada))
                 {
-                    if (usuarioIngresado == item.Key && passwdIngresada == item.Value)
-                    {
-                        FormAdministrador frmAdmin = new FormAdministrador();
-                        frmAdmin.ShowDialog();
-
-                        banderaLogin = true;
-                    }
-                }
-            } else
-            {
-                foreach (KeyValuePair<string, string> item in Bar.listaEmpleados)
-                {
-                    if (usuarioIngresado == item.Key && passwdIngresada == item.Value)
-                    {
-                        MessageBox.Show("Logueaste re piola pa");
-                        banderaLogin = true;
-                    }
+                    banderaLogin = true;
+                    break;
                 }
             }
 
-            if (!banderaLogin)
+            if (banderaLogin)
+            {
+                FormAdministrador formAdministrador = new FormAdministrador();
+                this.Hide();
+                if (formAdministrador.ShowDialog() == DialogResult.OK)
+                {
+                    txt_usuario.Text = String.Empty;
+                    txt_passwd.Text = String.Empty;
+                    this.Show();
+
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos");
             }

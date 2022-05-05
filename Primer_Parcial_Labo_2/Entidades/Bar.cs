@@ -6,35 +6,81 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Bar
+    public static class Bar
     {
-        public static Dictionary<string, string> listaEmpleados;
-        public static Dictionary<string, string> listaAdministradores;
+        public static Dictionary<string, Usuario> listaUsuarios;
 
         public static List<EspacioConsumo> listaEspaciosConsumo;
-        public static List<Consumision> stockConsumisiones;
+        public static List<Comida> stockComidas;
+        public static List<Bebida> stockBebidas;
         public static List<Venta> registroVentas;
 
         static Bar ()
         {
-            listaEmpleados = new Dictionary<string, string>();
-            listaAdministradores = new Dictionary<string, string>();
-            stockConsumisiones = new List<Consumision>();
+            listaUsuarios = new Dictionary<string, Usuario>();
+            stockComidas = new List<Comida>();
+            stockBebidas = new List<Bebida>();
             listaEspaciosConsumo = new List<EspacioConsumo>();
             registroVentas = new List<Venta>();
         }
 
-        public static List<Consumision> CopiarListaConsumisiones(List<Consumision> listaACopiar)
+        public static List<Comida> ClonarListaStock(List<Comida> listaACopiar)
         {
-            Consumision consumision;
+            Comida comida;
             if (listaACopiar is not null)
+            {
+                List<Comida> listaNueva = new List<Comida>();
+
+                foreach (Comida item in listaACopiar)
+                {
+                    comida = item.ClonarConsumision();
+                    listaNueva.Add(comida);
+                }
+
+                return listaNueva;
+            }
+
+            return null;
+        }
+
+        public static List<Bebida> ClonarListaStock(List<Bebida> listaACopiar)
+        {
+            Bebida bebida;
+            if (listaACopiar is not null)
+            {
+                List<Bebida> listaNueva = new List<Bebida>();
+
+                foreach (Bebida item in listaACopiar)
+                {
+                    bebida = item.ClonarConsumision();
+                    listaNueva.Add(bebida);
+                }
+
+                return listaNueva;
+            }
+
+            return null;
+        }
+
+        public static List<Consumision> ClonarListaStock(List<Consumision> listaConsumisiones)
+        {
+            Consumision comida;
+            Consumision bebida;
+            if (listaConsumisiones is not null)
             {
                 List<Consumision> listaNueva = new List<Consumision>();
 
-                foreach (Consumision item in listaACopiar)
+                foreach (Consumision item in listaConsumisiones)
                 {
-                    consumision = new Consumision(item);
-                    listaNueva.Add(consumision);
+                    if (item is Comida)
+                    {
+                        comida = item.ClonarConsumision();
+                        listaNueva.Add(comida);
+                    } else
+                    {
+                        bebida = item.ClonarConsumision();
+                        listaNueva.Add(bebida);
+                    }
                 }
 
                 return listaNueva;

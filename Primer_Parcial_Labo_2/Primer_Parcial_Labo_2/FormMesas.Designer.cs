@@ -58,9 +58,12 @@
             // 
             // dgv_espaciosConsumo
             // 
+            this.dgv_espaciosConsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_espaciosConsumo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_espaciosConsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_espaciosConsumo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgv_espaciosConsumo.Location = new System.Drawing.Point(451, 46);
+            this.dgv_espaciosConsumo.MultiSelect = false;
             this.dgv_espaciosConsumo.Name = "dgv_espaciosConsumo";
             this.dgv_espaciosConsumo.ReadOnly = true;
             this.dgv_espaciosConsumo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -74,7 +77,7 @@
             // 
             this.pnl_contenedor.Location = new System.Drawing.Point(12, 46);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(427, 443);
+            this.pnl_contenedor.Size = new System.Drawing.Size(433, 443);
             this.pnl_contenedor.TabIndex = 6;
             // 
             // FormMesas

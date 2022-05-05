@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Primer_Parcial_Labo_2
 {
@@ -34,7 +35,7 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         

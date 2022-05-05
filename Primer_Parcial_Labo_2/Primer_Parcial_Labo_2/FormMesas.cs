@@ -22,7 +22,6 @@ namespace Primer_Parcial_Labo_2
         private void FormMesas_Load(object sender, EventArgs e)
         {
             dgv_espaciosConsumo.DataSource = Bar.listaEspaciosConsumo;
-            
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
@@ -38,17 +37,9 @@ namespace Primer_Parcial_Labo_2
             }
             
             int index = dgv_espaciosConsumo.CurrentCell.RowIndex;
-            EspacioConsumo nuevoEspacio;
-            if (Bar.listaEspaciosConsumo[index] is Mesa)
-            {
-                nuevoEspacio = new Mesa(Bar.listaEspaciosConsumo[index]);
-            } else
-            {
-                nuevoEspacio = new Barra(Bar.listaEspaciosConsumo[index]);
-            }
+            EspacioConsumo nuevoEspacio = Bar.listaEspaciosConsumo[index].ClonarEspacioConsumo();
 
-            subFormMesa = new FormDetalleEspacioConsumo(nuevoEspacio,
-                this.dgv_espaciosConsumo);
+            subFormMesa = new FormDetalleEspacioConsumo(nuevoEspacio, this.dgv_espaciosConsumo);
             subFormMesa.TopLevel = false;
             pnl_contenedor.Controls.Add(subFormMesa);
             subFormMesa.Show();
@@ -66,18 +57,13 @@ namespace Primer_Parcial_Labo_2
             {
                 if ((bool)(e.Value) == true)
                 {
-                    e.CellStyle.BackColor = Color.Green;
-                } else
+                    e.CellStyle.BackColor = Color.DarkRed;
+                }
+                else
                 {
-                    e.CellStyle.BackColor = System.Drawing.Color.DarkRed;
+                    e.CellStyle.BackColor = Color.Green;
                 }
             }
         }
-
-        //public void ActualizarTablaConsumisiones()
-        //{
-        //    dgv_consumisiones.DataSource = null;
-        //    dgv_consumisiones.DataSource = Bar.stockConsumisiones;
-        //}
     }
 }

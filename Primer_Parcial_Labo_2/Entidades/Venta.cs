@@ -9,14 +9,14 @@ namespace Entidades
     public class Venta
     {
         private static int ultimoId;
-        private static float precioEstacionamiento;
+        private static decimal precioEstacionamiento;
         private int id;
         private DateTime fechaVenta;
         private string metodoPago;
-        private float precioParcial;
+        private decimal precioParcial;
         private int porcentajeModificador;
         private bool usoEstacionamiento;
-        private float precioFinal;
+        private decimal precioFinal;
 
         public DateTime Fecha
         {
@@ -28,7 +28,7 @@ namespace Entidades
             get { return this.metodoPago; }
         }
 
-        public float PrecioParcial
+        public decimal PrecioParcial
         {
             get { return this.precioParcial; }
         }
@@ -43,7 +43,7 @@ namespace Entidades
             get { return this.usoEstacionamiento; }
         }
 
-        public float PrecioFinal
+        public decimal PrecioFinal
         {
             get { return this.precioFinal; }
         }
@@ -54,7 +54,7 @@ namespace Entidades
             precioEstacionamiento = 100;
         }
 
-        public Venta(float precioParcial, string metodoPago, bool usoEstacionamiento)
+        public Venta(decimal precioParcial, string metodoPago, bool usoEstacionamiento)
         {
             this.id = ultimoId;
             this.fechaVenta = DateTime.Now;
@@ -88,7 +88,7 @@ namespace Entidades
             return porcentajeAModificar;
         }
 
-        private float CalcularPrecioFinal()
+        private decimal CalcularPrecioFinal()
         {
             if (this.usoEstacionamiento)
             {

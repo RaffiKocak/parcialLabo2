@@ -6,20 +6,56 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Usuario
+    public class Usuario
     {
-        protected string nombreUsuario;
-        protected string password;
+        private string nombre;
+        private string apellido;
+        private int dni;
+        private string password;
+        private bool esAdmin;
 
-        public string NombreUsuario
+        public string Nombre
         {
-            get { return nombreUsuario; }
+            get { return nombre; }
         }
 
-        public Usuario(string nombreUsuario, string password)
+        public string Apellido
         {
-            this.nombreUsuario = nombreUsuario;
+            get { return apellido; }
+        }
+
+        public int Dni
+        {
+            get { return dni; }
+        }
+
+        public bool EsAdmin
+        {
+            get { return esAdmin; }
+        }
+
+        public Usuario(string nombre, string apellido, int dni, string password, bool esAdmin)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
             this.password = password;
+            this.esAdmin = esAdmin;
+        }
+
+        public static void AltaUsuario(string nombreUsuario, Usuario usuario)
+        {
+            Bar.listaUsuarios.Add(nombreUsuario, usuario);
+        }
+
+        public static void BajaUsuario(string nombreUsuario)
+        {
+            Bar.listaUsuarios.Remove(nombreUsuario);
+        }
+
+        public bool VerificarPasswd(string passwdIngresada)
+        {
+            return this.password == passwdIngresada;
         }
     }
 }

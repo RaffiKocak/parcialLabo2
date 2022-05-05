@@ -25,3 +25,6 @@ C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debu
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormDetalleEspacioConsumo.resources
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormIngresarCantidad.resources
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormCierreMesa.resources
+C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormNuevaConsumision.resources
+C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormUsuarios.resources
+C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormAgregarNuevoUsuario.resources

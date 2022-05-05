@@ -33,7 +33,6 @@
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_passwd = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
-            this.chk_esAdmin = new System.Windows.Forms.CheckBox();
             this.btn_salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +60,7 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(181, 23);
             this.txt_usuario.TabIndex = 2;
-            this.txt_usuario.Text = "Raffi";
+            this.txt_usuario.Text = "RKocak";
             // 
             // txt_passwd
             // 
@@ -73,23 +72,13 @@
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(144, 281);
+            this.btn_login.Location = new System.Drawing.Point(144, 183);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(181, 40);
             this.btn_login.TabIndex = 4;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
-            // 
-            // chk_esAdmin
-            // 
-            this.chk_esAdmin.AutoSize = true;
-            this.chk_esAdmin.Location = new System.Drawing.Point(144, 176);
-            this.chk_esAdmin.Name = "chk_esAdmin";
-            this.chk_esAdmin.Size = new System.Drawing.Size(82, 19);
-            this.chk_esAdmin.TabIndex = 5;
-            this.chk_esAdmin.Text = "Soy admin";
-            this.chk_esAdmin.UseVisualStyleBackColor = true;
             // 
             // btn_salir
             // 
@@ -110,7 +99,6 @@
             this.ClientSize = new System.Drawing.Size(469, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btn_salir);
-            this.Controls.Add(this.chk_esAdmin);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_passwd);
             this.Controls.Add(this.txt_usuario);
@@ -135,7 +123,6 @@
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_passwd;
         private System.Windows.Forms.Button btn_login;
-        private System.Windows.Forms.CheckBox chk_esAdmin;
         private System.Windows.Forms.Button btn_salir;
     }
 }

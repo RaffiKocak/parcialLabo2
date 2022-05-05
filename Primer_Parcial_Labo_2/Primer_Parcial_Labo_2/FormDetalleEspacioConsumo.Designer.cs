@@ -38,17 +38,19 @@
             this.chk_ocupado = new System.Windows.Forms.CheckBox();
             this.lbl_consumisiones = new System.Windows.Forms.Label();
             this.lst_consumEspacio = new System.Windows.Forms.ListBox();
-            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_cerrarGrande = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_consumisiones = new System.Windows.Forms.DataGridView();
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.cmb_opciones = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consumisiones)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_idEspacio
             // 
             this.lbl_idEspacio.AutoSize = true;
-            this.lbl_idEspacio.Location = new System.Drawing.Point(67, 39);
+            this.lbl_idEspacio.Location = new System.Drawing.Point(70, 68);
             this.lbl_idEspacio.Name = "lbl_idEspacio";
             this.lbl_idEspacio.Size = new System.Drawing.Size(21, 15);
             this.lbl_idEspacio.TabIndex = 7;
@@ -57,7 +59,7 @@
             // lbl_infoId
             // 
             this.lbl_infoId.AutoSize = true;
-            this.lbl_infoId.Location = new System.Drawing.Point(99, 39);
+            this.lbl_infoId.Location = new System.Drawing.Point(102, 68);
             this.lbl_infoId.Name = "lbl_infoId";
             this.lbl_infoId.Size = new System.Drawing.Size(66, 15);
             this.lbl_infoId.TabIndex = 17;
@@ -66,7 +68,7 @@
             // lbl_tipoEspacio
             // 
             this.lbl_tipoEspacio.AutoSize = true;
-            this.lbl_tipoEspacio.Location = new System.Drawing.Point(55, 72);
+            this.lbl_tipoEspacio.Location = new System.Drawing.Point(58, 101);
             this.lbl_tipoEspacio.Name = "lbl_tipoEspacio";
             this.lbl_tipoEspacio.Size = new System.Drawing.Size(33, 15);
             this.lbl_tipoEspacio.TabIndex = 18;
@@ -75,7 +77,7 @@
             // lbl_infoTipo
             // 
             this.lbl_infoTipo.AutoSize = true;
-            this.lbl_infoTipo.Location = new System.Drawing.Point(99, 72);
+            this.lbl_infoTipo.Location = new System.Drawing.Point(102, 101);
             this.lbl_infoTipo.Name = "lbl_infoTipo";
             this.lbl_infoTipo.Size = new System.Drawing.Size(77, 15);
             this.lbl_infoTipo.TabIndex = 19;
@@ -84,7 +86,7 @@
             // lbl_saldoEspacio
             // 
             this.lbl_saldoEspacio.AutoSize = true;
-            this.lbl_saldoEspacio.Location = new System.Drawing.Point(49, 105);
+            this.lbl_saldoEspacio.Location = new System.Drawing.Point(52, 134);
             this.lbl_saldoEspacio.Name = "lbl_saldoEspacio";
             this.lbl_saldoEspacio.Size = new System.Drawing.Size(39, 15);
             this.lbl_saldoEspacio.TabIndex = 20;
@@ -93,7 +95,7 @@
             // lbl_estadoEspacio
             // 
             this.lbl_estadoEspacio.AutoSize = true;
-            this.lbl_estadoEspacio.Location = new System.Drawing.Point(29, 157);
+            this.lbl_estadoEspacio.Location = new System.Drawing.Point(32, 186);
             this.lbl_estadoEspacio.Name = "lbl_estadoEspacio";
             this.lbl_estadoEspacio.Size = new System.Drawing.Size(59, 15);
             this.lbl_estadoEspacio.TabIndex = 22;
@@ -102,7 +104,7 @@
             // lbl_infoSaldo
             // 
             this.lbl_infoSaldo.AutoSize = true;
-            this.lbl_infoSaldo.Location = new System.Drawing.Point(99, 105);
+            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 134);
             this.lbl_infoSaldo.Name = "lbl_infoSaldo";
             this.lbl_infoSaldo.Size = new System.Drawing.Size(84, 15);
             this.lbl_infoSaldo.TabIndex = 23;
@@ -111,7 +113,7 @@
             // chk_ocupado
             // 
             this.chk_ocupado.AutoSize = true;
-            this.chk_ocupado.Location = new System.Drawing.Point(99, 158);
+            this.chk_ocupado.Location = new System.Drawing.Point(102, 187);
             this.chk_ocupado.Name = "chk_ocupado";
             this.chk_ocupado.Size = new System.Drawing.Size(15, 14);
             this.chk_ocupado.TabIndex = 27;
@@ -121,7 +123,7 @@
             // lbl_consumisiones
             // 
             this.lbl_consumisiones.AutoSize = true;
-            this.lbl_consumisiones.Location = new System.Drawing.Point(12, 203);
+            this.lbl_consumisiones.Location = new System.Drawing.Point(15, 232);
             this.lbl_consumisiones.Name = "lbl_consumisiones";
             this.lbl_consumisiones.Size = new System.Drawing.Size(91, 15);
             this.lbl_consumisiones.TabIndex = 28;
@@ -131,24 +133,24 @@
             // 
             this.lst_consumEspacio.FormattingEnabled = true;
             this.lst_consumEspacio.ItemHeight = 15;
-            this.lst_consumEspacio.Location = new System.Drawing.Point(214, 12);
+            this.lst_consumEspacio.Location = new System.Drawing.Point(217, 41);
             this.lst_consumEspacio.Name = "lst_consumEspacio";
-            this.lst_consumEspacio.Size = new System.Drawing.Size(200, 199);
+            this.lst_consumEspacio.Size = new System.Drawing.Size(200, 169);
             this.lst_consumEspacio.TabIndex = 29;
             // 
-            // btn_cerrar
+            // btn_cerrarGrande
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(231, 358);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(183, 53);
-            this.btn_cerrar.TabIndex = 30;
-            this.btn_cerrar.Text = "Cerrar";
-            this.btn_cerrar.UseVisualStyleBackColor = true;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.btn_cerrarGrande.Location = new System.Drawing.Point(234, 387);
+            this.btn_cerrarGrande.Name = "btn_cerrarGrande";
+            this.btn_cerrarGrande.Size = new System.Drawing.Size(183, 53);
+            this.btn_cerrarGrande.TabIndex = 30;
+            this.btn_cerrarGrande.Text = "Cerrar";
+            this.btn_cerrarGrande.UseVisualStyleBackColor = true;
+            this.btn_cerrarGrande.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(12, 358);
+            this.btn_guardar.Location = new System.Drawing.Point(15, 387);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(183, 53);
             this.btn_guardar.TabIndex = 31;
@@ -158,8 +160,11 @@
             // 
             // dgv_consumisiones
             // 
+            this.dgv_consumisiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_consumisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_consumisiones.Location = new System.Drawing.Point(12, 221);
+            this.dgv_consumisiones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgv_consumisiones.Location = new System.Drawing.Point(15, 250);
+            this.dgv_consumisiones.MultiSelect = false;
             this.dgv_consumisiones.Name = "dgv_consumisiones";
             this.dgv_consumisiones.ReadOnly = true;
             this.dgv_consumisiones.RowTemplate.Height = 25;
@@ -169,7 +174,7 @@
             // 
             // btn_cerrarMesa
             // 
-            this.btn_cerrarMesa.Location = new System.Drawing.Point(129, 141);
+            this.btn_cerrarMesa.Location = new System.Drawing.Point(132, 170);
             this.btn_cerrarMesa.Name = "btn_cerrarMesa";
             this.btn_cerrarMesa.Size = new System.Drawing.Size(72, 47);
             this.btn_cerrarMesa.TabIndex = 33;
@@ -177,15 +182,38 @@
             this.btn_cerrarMesa.UseVisualStyleBackColor = true;
             this.btn_cerrarMesa.Click += new System.EventHandler(this.btn_cerrarMesa_Click);
             // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Location = new System.Drawing.Point(394, 7);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(28, 28);
+            this.btn_cerrar.TabIndex = 34;
+            this.btn_cerrar.Text = "X";
+            this.btn_cerrar.UseVisualStyleBackColor = true;
+            // 
+            // cmb_opciones
+            // 
+            this.cmb_opciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_opciones.FormattingEnabled = true;
+            this.cmb_opciones.Location = new System.Drawing.Point(293, 221);
+            this.cmb_opciones.Name = "cmb_opciones";
+            this.cmb_opciones.Size = new System.Drawing.Size(124, 23);
+            this.cmb_opciones.TabIndex = 35;
+            this.cmb_opciones.SelectedIndexChanged += new System.EventHandler(this.cmb_opciones_SelectedIndexChanged);
+            // 
             // FormDetalleEspacioConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 423);
+            this.ClientSize = new System.Drawing.Size(429, 453);
+            this.Controls.Add(this.cmb_opciones);
+            this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.btn_cerrarMesa);
             this.Controls.Add(this.dgv_consumisiones);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.btn_cerrar);
+            this.Controls.Add(this.btn_cerrarGrande);
             this.Controls.Add(this.lst_consumEspacio);
             this.Controls.Add(this.lbl_consumisiones);
             this.Controls.Add(this.chk_ocupado);
@@ -196,6 +224,7 @@
             this.Controls.Add(this.lbl_tipoEspacio);
             this.Controls.Add(this.lbl_infoId);
             this.Controls.Add(this.lbl_idEspacio);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDetalleEspacioConsumo";
             this.Text = "FormDetalleEspacioConsumo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDetalleEspacioConsumo_FormClosing);
@@ -218,9 +247,11 @@
         private System.Windows.Forms.CheckBox chk_ocupado;
         private System.Windows.Forms.Label lbl_consumisiones;
         private System.Windows.Forms.ListBox lst_consumEspacio;
-        private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.Button btn_cerrarGrande;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_consumisiones;
         private System.Windows.Forms.Button btn_cerrarMesa;
+        private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.ComboBox cmb_opciones;
     }
 }

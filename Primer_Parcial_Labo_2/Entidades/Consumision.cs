@@ -6,33 +6,25 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Consumision
+    public abstract class Consumision
     {
-        public enum ECategoria
-        {
-            Bebida, Comida
-        }
-
         private static int ultimoId;
-        private int id;
-        private int precioUnitario;
-        private string descripcion;
-        private int cantidad;
-        private ECategoria tipo;
+        protected int id;
+        protected decimal precioUnitario;
+        protected string descripcion;
+        protected int cantidad;
 
-        public int Id
-        {
-            get { return this.id; }
-        }
-
-        public int PrecioUnitario
-        {
-            get { return this.precioUnitario; }
-        }
+        #region Propiedades
 
         public string Descripcion
         {
             get { return this.descripcion; }
+        }
+
+        public decimal PrecioUnitario
+        {
+            get { return this.precioUnitario; }
+            set { this.precioUnitario = value; }
         }
 
         public int Cantidad
@@ -41,148 +33,164 @@ namespace Entidades
             set { this.cantidad = value; }
         }
 
-        public ECategoria Tipo
-        {
-            get { return this.tipo; }
-        }
+        #endregion
+
+        #region Constructores
 
         static Consumision()
         {
-            ultimoId = 1;
+            Consumision.ultimoId = 1;
         }
 
-        public Consumision(string descripcion, int precioUnitario, int cantidad, ECategoria tipo) 
+        public Consumision(string descripcion, decimal precioUnitario, int cantidad)
         {
             this.id = Consumision.ultimoId;
-            this.precioUnitario = precioUnitario;
             this.descripcion = descripcion;
+            this.precioUnitario = precioUnitario;
             this.cantidad = cantidad;
-            this.tipo = tipo;
             Consumision.ultimoId++;
         }
 
-        public Consumision(Consumision consumision, int cantidad)
+        protected Consumision(Consumision consumision)
         {
             this.id = consumision.id;
             this.precioUnitario = consumision.precioUnitario;
             this.descripcion = consumision.descripcion;
-            this.cantidad = cantidad;
-            this.tipo = consumision.tipo;
+            this.cantidad = consumision.cantidad;
         }
 
-        public Consumision(Consumision consumision) : this(consumision, consumision.cantidad)
-        {
-        }
+        #endregion
 
-        public static void AgregarConsumisionAStock(Consumision consumision)
-        {
-            if (consumision is not null)
-            {
-                Bar.stockConsumisiones.Add(consumision);
-            }
-        }
-
-        public static void BajaConsumisionAStock(int idABorrar)
-        {
-            foreach(Consumision c in Bar.stockConsumisiones)
-            {
-                if (c.Id == idABorrar)
-                {
-                    Bar.stockConsumisiones.Remove(c);
-                }
-            }
-        }
-
-        public static void SumarStock(Consumision consumision, List<Consumision> lista, int cantidad)
-        {
-            AfectarStock(consumision, lista, cantidad, '+');
-        }
-
-        public static void RestarStock(Consumision consumision, List<Consumision> lista, int cantidad)
-        {
-            AfectarStock(consumision, lista, cantidad, '-');
-        }
-
-        private static void AfectarStock(Consumision consumision, List<Consumision> lista, int cantidadAAfectar, char operador)
-        {
-            foreach (Consumision item in lista)
-            {
-                if (item == consumision)
-                {
-                    if (operador == '+')
-                    {
-                        item.cantidad = item.cantidad + cantidadAAfectar;
-                        break;
-                    }
-                    else
-                    {
-                        item.cantidad = item.cantidad - cantidadAAfectar;
-                        break;
-                    }
-                }
-            }
-        }
-
-        //public static void RestarStockParcial(Consumision consumision, List<Consumision> listaParcial, int cantidad)
-        //{
-            
-        //    foreach (Consumision item in listaParcial)
-        //    {
-        //        if (item == consumision)
-        //        {
-        //            item.cantidad -= cantidad;
-        //            break;
-        //        }
-        //    }
-        //}
-
-        public static void ActualizarStock(List<Consumision> listaConsumision) 
-        {
-            int longitud = Bar.stockConsumisiones.Count;
-            for(int i = 0; i < longitud; i++)
-            {
-                if ((listaConsumision[i].Id == Bar.stockConsumisiones[i].Id) && 
-                    (listaConsumision[i].cantidad != Bar.stockConsumisiones[i].cantidad))
-                {
-                    Bar.stockConsumisiones[i].cantidad = listaConsumision[i].cantidad;
-                }
-            }
-        }
+        public abstract Consumision ClonarConsumision();
 
         public override string ToString()
         {
-            return $"{this.id} - {this.descripcion} - {this.precioUnitario}x{this.cantidad} -- ${this.precioUnitario * this.cantidad}";
+            return $"{this.descripcion}: {this.cantidad} x ${this.precioUnitario} = {this.cantidad * this.precioUnitario}";
         }
 
-
-        // AGREGA ITEM NUEVO
-        public static bool operator ==(List<Consumision> listaStock, Consumision consumision)
+        public virtual string MostrarInfo()
         {
-            foreach (Consumision item in listaStock)
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"ID: {this.id}");
+            sb.AppendLine($"Descripcion: {this.descripcion}");
+            sb.AppendLine($"Precio Unitario: {this.precioUnitario}");
+
+            return sb.ToString();
+        }
+
+        #region Agregar, eliminar y actualizar stock
+
+        public static bool AgregarNuevoStock(Consumision consumision)
+        {
+            if (consumision is not null)
             {
-                if (item == consumision)
+                string descripcionAComparar = consumision.descripcion.ToLower();
+                if (consumision is Bebida)
                 {
-                    return true;
+                    foreach (Bebida item in Bar.stockBebidas)
+                    {
+                        if (item.descripcion.ToLower() == descripcionAComparar)
+                        {
+                            return false;
+                        }
+                    }
+                    Bar.stockBebidas.Add((Bebida)consumision);
+                } else
+                {
+                    foreach (Comida item in Bar.stockComidas)
+                    {
+                        if (item.descripcion.ToLower() == descripcionAComparar)
+                        {
+                            return false;
+                        }
+                    }
+                    Bar.stockComidas.Add((Comida)consumision);
                 }
+                return true;
             }
+
             return false;
         }
 
-        // ELIMINA ITEM EXISTENTE
-        public static bool operator !=(List<Consumision> listaStock, Consumision consumision)
+        public static bool EliminarStock(Consumision consumision)
         {
-            return !(listaStock == consumision);
+            if (consumision is not null)
+            {
+                if (consumision is Bebida)
+                {
+                    foreach (Bebida item in Bar.stockBebidas)
+                    {
+                        if (item == consumision)
+                        {
+                            Bar.stockBebidas.Remove(item);
+                            return true;
+                        }
+                    }
+                } else
+                {
+                    foreach (Comida item in Bar.stockComidas)
+                    {
+                        if (item == consumision)
+                        {
+                            Bar.stockComidas.Remove(item);
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
+
+        public static void ActualizarTodoStockPermanente(List<Comida> listaComida, List<Bebida> listaBebida)
+        {
+            Bar.stockComidas = listaComida;
+            Bar.stockBebidas = listaBebida;
+        }
+
+        #endregion
+
+        public static bool VerificarExistenciaEnStock(Consumision consumision)
+        {
+            if (consumision is not null)
+            {
+                if (consumision is Bebida bebida)
+                {
+                    foreach (Bebida item in Bar.stockBebidas)
+                    {
+                        if (item == bebida)
+                        {
+                            return true;
+                        }
+                    }
+                } else
+                {
+                    Comida comida = consumision as Comida;
+                    foreach(Comida item in Bar.stockComidas)
+                    {
+                        if (item == comida)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        #region Sobrecarga operadores
 
         public static bool operator ==(Consumision c1, Consumision c2)
         {
-            return (c1 is not null) && (c2 is not null) && c1.id == c2.id;
+            return (c1 is not null) && (c2 is not null) && (c1.descripcion == c2.descripcion || c1.id == c2.id);
         }
 
         public static bool operator !=(Consumision c1, Consumision c2)
         {
-            return (c1 is not null) && (c2 is not null) && c1.id == c2.id;
+            return !(c1 == c2);
         }
 
+        #endregion
     }
 }
