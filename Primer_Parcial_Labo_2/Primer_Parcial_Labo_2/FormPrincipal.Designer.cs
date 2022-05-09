@@ -1,6 +1,6 @@
 ﻿namespace Primer_Parcial_Labo_2
 {
-    partial class FormAdministrador
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -132,6 +132,7 @@
             this.btn_ventas.TabIndex = 3;
             this.btn_ventas.Text = "TotalVentas";
             this.btn_ventas.UseVisualStyleBackColor = true;
+            this.btn_ventas.Click += new System.EventHandler(this.btn_ventas_Click);
             // 
             // btn_usuarios
             // 
@@ -150,7 +151,7 @@
             this.pnl_contenedor.Size = new System.Drawing.Size(939, 536);
             this.pnl_contenedor.TabIndex = 5;
             // 
-            // FormAdministrador
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,7 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormAdministrador";
+            this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdministrador";
             this.Load += new System.EventHandler(this.FormAdministrador_Load);

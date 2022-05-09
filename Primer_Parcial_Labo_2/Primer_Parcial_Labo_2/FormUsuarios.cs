@@ -14,14 +14,21 @@ namespace Primer_Parcial_Labo_2
     public partial class FormUsuarios : Form
     {
         List<Usuario> listaAMostrar;
+        Usuario usuarioLogueado;
         public FormUsuarios()
         {
             InitializeComponent();
         }
 
+        public FormUsuarios(Usuario usuario) :this()
+        {
+            this.usuarioLogueado = usuario;
+        }
+
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
-            ActualizarUsuarios();
+            listaAMostrar = Bar.listaUsuarios.Values.ToList();
+            Logica.ActualizarDGV(this.dgv_usuarios, listaAMostrar);
         }
 
         private void btn_agregarUsuario_Click(object sender, EventArgs e)
@@ -32,10 +39,40 @@ namespace Primer_Parcial_Labo_2
             frmNuevoUser.Show();
         }
 
-        private void ActualizarUsuarios()
+        private void btn_eliminarUsuario_Click(object sender, EventArgs e)
         {
+            int index = this.dgv_usuarios.CurrentCell.RowIndex;
+            Usuario usuarioAEliminar = this.listaAMostrar[index];
+            string nombreUsuario = Usuario.BuscarNombreDeUsuario(usuarioAEliminar);
+            
+            if (!(this.usuarioLogueado.Dni == usuarioAEliminar.Dni))
+            {
+                if (usuarioAEliminar.EsAdmin)
+                {
+                    if (Usuario.ContarCantidadAdmins() > 1)
+                    {
+                        if (Logica.PedirConfirmacion("Borrar usuario"))
+                        {
+                            Usuario.BajaUsuario(nombreUsuario);
+                        }
+                    } else
+                    {
+                        MessageBox.Show("Se necesita tener al menos un usuario administrador en la base de datos");
+                    }
+                } else
+                {
+                    if (Logica.PedirConfirmacion("Borrar usuario"))
+                    {
+                        Usuario.BajaUsuario(nombreUsuario);
+                    }
+                }
+            } else
+            {
+                MessageBox.Show("No puede borrarse a sí mismo!!");
+            }
+
             listaAMostrar = Bar.listaUsuarios.Values.ToList();
-            this.dgv_usuarios.DataSource = listaAMostrar;
+            Logica.ActualizarDGV(this.dgv_usuarios, listaAMostrar);
         }
     }
 }

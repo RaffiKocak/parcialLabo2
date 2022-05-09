@@ -70,6 +70,17 @@ namespace Entidades
             return new Bebida(this);
         }
 
+        public override string MostrarInfo()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.MostrarInfo());
+            sb.AppendLine($"Tipo: {this.tipoBebida.ToString()}");
+            sb.AppendLine($"¿Contiene alcohol?: {(this.contieneAlcohol ? "Si" : "No")}");
+            sb.AppendLine($"¿Apto para celíacos?: {(this.contieneTacc ? "No" : "Si")}");
+
+            return sb.ToString();
+        }
+
         //public static Bebida operator +(Bebida bebida, int cantidadASumar)
         //{
         //    if (bebida is not null)

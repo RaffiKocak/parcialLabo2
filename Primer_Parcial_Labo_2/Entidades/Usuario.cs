@@ -57,5 +57,62 @@ namespace Entidades
         {
             return this.password == passwdIngresada;
         }
+
+        public static int ContarCantidadAdmins()
+        {
+            int contadorAdmins = 0;
+            if (Bar.listaUsuarios.Count > 0)
+            {
+                foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+                {
+                    if (item.Value.EsAdmin == true)
+                    {
+                        contadorAdmins++;
+                    }
+                }
+            }
+
+            return contadorAdmins;
+        }
+
+        public static string BuscarNombreDeUsuario(Usuario usuario)
+        {
+            foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (item.Value == usuario)
+                {
+                    return item.Key;
+                }
+            }
+
+            return null;
+        }
+
+        public static bool VerificarDniExistente(int dniAVerificar)
+        {
+            foreach(KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (item.Value.Dni == dniAVerificar)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool VerificarUsuarioExistente(string usuarioAVerificar)
+        {
+            string usuarioAComparar = usuarioAVerificar.ToLower();
+            foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (item.Key.ToLower() == usuarioAComparar)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

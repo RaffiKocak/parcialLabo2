@@ -47,7 +47,7 @@
             this.btn_aceptar.Location = new System.Drawing.Point(26, 250);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(140, 37);
-            this.btn_aceptar.TabIndex = 0;
+            this.btn_aceptar.TabIndex = 6;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
@@ -57,7 +57,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(196, 250);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 37);
-            this.btn_cancelar.TabIndex = 1;
+            this.btn_cancelar.TabIndex = 7;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -81,7 +81,7 @@
             this.rdo_mercadopago.Location = new System.Drawing.Point(33, 58);
             this.rdo_mercadopago.Name = "rdo_mercadopago";
             this.rdo_mercadopago.Size = new System.Drawing.Size(102, 19);
-            this.rdo_mercadopago.TabIndex = 3;
+            this.rdo_mercadopago.TabIndex = 2;
             this.rdo_mercadopago.TabStop = true;
             this.rdo_mercadopago.Text = "Mercado Pago";
             this.rdo_mercadopago.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             this.radioButton1.Location = new System.Drawing.Point(189, 24);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(97, 19);
-            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tarjeta Débito";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.rdo_credito.Location = new System.Drawing.Point(189, 58);
             this.rdo_credito.Name = "rdo_credito";
             this.rdo_credito.Size = new System.Drawing.Size(101, 19);
-            this.rdo_credito.TabIndex = 1;
+            this.rdo_credito.TabIndex = 3;
             this.rdo_credito.TabStop = true;
             this.rdo_credito.Text = "Tarjeta Crédito";
             this.rdo_credito.UseVisualStyleBackColor = true;
@@ -162,6 +162,7 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Name = "FormCierreMesa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormCierreMesa";
             this.Load += new System.EventHandler(this.FormCierreMesa_Load);
             this.grp_formaPago.ResumeLayout(false);

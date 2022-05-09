@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lbl_cantidad = new System.Windows.Forms.Label();
-            this.nud_cantidadIngresada = new System.Windows.Forms.NumericUpDown();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadIngresada)).BeginInit();
+            this.lbl_error = new System.Windows.Forms.Label();
+            this.txt_numeroIngresado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_cantidad
@@ -43,28 +43,6 @@
             this.lbl_cantidad.Size = new System.Drawing.Size(100, 15);
             this.lbl_cantidad.TabIndex = 0;
             this.lbl_cantidad.Text = "Ingrese cantidad: ";
-            // 
-            // nud_cantidadIngresada
-            // 
-            this.nud_cantidadIngresada.Location = new System.Drawing.Point(28, 59);
-            this.nud_cantidadIngresada.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.nud_cantidadIngresada.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nud_cantidadIngresada.Name = "nud_cantidadIngresada";
-            this.nud_cantidadIngresada.Size = new System.Drawing.Size(100, 23);
-            this.nud_cantidadIngresada.TabIndex = 1;
-            this.nud_cantidadIngresada.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // btn_aceptar
             // 
@@ -86,20 +64,38 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // lbl_error
+            // 
+            this.lbl_error.AutoSize = true;
+            this.lbl_error.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error.Location = new System.Drawing.Point(44, 85);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(126, 15);
+            this.lbl_error.TabIndex = 4;
+            this.lbl_error.Text = "Ingrese un valor válido";
+            this.lbl_error.Visible = false;
+            // 
+            // txt_numeroIngresado
+            // 
+            this.txt_numeroIngresado.Location = new System.Drawing.Point(30, 59);
+            this.txt_numeroIngresado.Name = "txt_numeroIngresado";
+            this.txt_numeroIngresado.Size = new System.Drawing.Size(158, 23);
+            this.txt_numeroIngresado.TabIndex = 5;
+            // 
             // FormIngresarCantidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(222, 159);
+            this.Controls.Add(this.txt_numeroIngresado);
+            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
-            this.Controls.Add(this.nud_cantidadIngresada);
             this.Controls.Add(this.lbl_cantidad);
             this.Name = "FormIngresarCantidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormIngresarCantidad";
             this.Load += new System.EventHandler(this.FormIngresarCantidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadIngresada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,8 +104,9 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_cantidad;
-        private System.Windows.Forms.NumericUpDown nud_cantidadIngresada;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.TextBox txt_numeroIngresado;
     }
 }

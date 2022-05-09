@@ -53,6 +53,7 @@
             this.dgv_stock.RowTemplate.Height = 25;
             this.dgv_stock.Size = new System.Drawing.Size(524, 342);
             this.dgv_stock.TabIndex = 0;
+            this.dgv_stock.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_CellDoubleClick);
             // 
             // btn_agregarStock
             // 
@@ -112,13 +113,13 @@
             this.btn_agregarComida.TabIndex = 6;
             this.btn_agregarComida.Text = "Nueva comida";
             this.btn_agregarComida.UseVisualStyleBackColor = true;
-            this.btn_agregarComida.Click += new System.EventHandler(this.btn_agregarConsumision_Click);
+            this.btn_agregarComida.Click += new System.EventHandler(this.btn_agregarComida_Click);
             // 
             // pnl_contenedor
             // 
-            this.pnl_contenedor.Location = new System.Drawing.Point(10, 90);
+            this.pnl_contenedor.Location = new System.Drawing.Point(10, 131);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(366, 396);
+            this.pnl_contenedor.Size = new System.Drawing.Size(366, 355);
             this.pnl_contenedor.TabIndex = 7;
             // 
             // cmb_opciones
@@ -149,6 +150,7 @@
             this.btn_agregarBebida.TabIndex = 10;
             this.btn_agregarBebida.Text = "Nueva bebida";
             this.btn_agregarBebida.UseVisualStyleBackColor = true;
+            this.btn_agregarBebida.Click += new System.EventHandler(this.btn_agregarBebida_Click);
             // 
             // FormStock
             // 

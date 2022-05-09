@@ -1,6 +1,6 @@
 ﻿namespace Primer_Parcial_Labo_2
 {
-    partial class FormMesas
+    partial class FormEspacios
     {
         /// <summary>
         /// Required designer variable.

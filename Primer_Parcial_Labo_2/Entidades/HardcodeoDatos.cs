@@ -11,7 +11,7 @@ namespace Entidades
         public static void CargarUsuarios()
         {
             Usuario.AltaUsuario("RKocak", new Usuario("Raffi", "Kocak", 123, "asd123", true));
-            Usuario.AltaUsuario("Chayannepapu", new Usuario("Chayanne", "Papaso", 456, "aa2", false));
+            Usuario.AltaUsuario("LivinLaVidaLoca", new Usuario("Ricky", "Martin", 456, "aa2", false));
         }
 
         public static void CargarEspaciosDeConsumo()

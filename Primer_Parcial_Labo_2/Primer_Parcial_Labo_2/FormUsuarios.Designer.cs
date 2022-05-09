@@ -73,6 +73,7 @@
             this.btn_eliminarUsuario.TabIndex = 5;
             this.btn_eliminarUsuario.Text = "Eliminar usuario";
             this.btn_eliminarUsuario.UseVisualStyleBackColor = true;
+            this.btn_eliminarUsuario.Click += new System.EventHandler(this.btn_eliminarUsuario_Click);
             // 
             // pnl_contenedor
             // 

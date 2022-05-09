@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -30,7 +27,13 @@ namespace Entidades
         public int Cantidad
         {
             get { return this.cantidad; }
-            set { this.cantidad = value; }
+            set
+            {
+                if (value >= 0)
+                {
+                    this.cantidad = value;
+                }
+            }
         }
 
         #endregion
@@ -65,7 +68,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{this.descripcion}: {this.cantidad} x ${this.precioUnitario} = {this.cantidad * this.precioUnitario}";
+            return $"{this.descripcion}: {this.cantidad} x ${this.precioUnitario} = ${this.cantidad * this.precioUnitario}";
         }
 
         public virtual string MostrarInfo()
@@ -95,7 +98,8 @@ namespace Entidades
                         }
                     }
                     Bar.stockBebidas.Add((Bebida)consumision);
-                } else
+                }
+                else
                 {
                     foreach (Comida item in Bar.stockComidas)
                     {
@@ -126,7 +130,8 @@ namespace Entidades
                             return true;
                         }
                     }
-                } else
+                }
+                else
                 {
                     foreach (Comida item in Bar.stockComidas)
                     {
@@ -142,6 +147,22 @@ namespace Entidades
             return false;
         }
 
+        public static void RestarStock(Consumision consumision, int cantidadIngresada)
+        {
+            if (consumision is not null && cantidadIngresada > 0)
+            {
+                consumision.cantidad -= cantidadIngresada;
+            }
+        }
+
+        public static void SumarStock(Consumision consumision, int cantidadIngresada)
+        {
+            if (consumision is not null && cantidadIngresada > 0)
+            {
+                consumision.cantidad += cantidadIngresada;
+            }
+        }
+
         public static void ActualizarTodoStockPermanente(List<Comida> listaComida, List<Bebida> listaBebida)
         {
             Bar.stockComidas = listaComida;
@@ -150,28 +171,23 @@ namespace Entidades
 
         #endregion
 
-        public static bool VerificarExistenciaEnStock(Consumision consumision)
+        public static bool VerificarDescripcionEnStock(string descripcion)
         {
-            if (consumision is not null)
+            if (!string.IsNullOrEmpty(descripcion))
             {
-                if (consumision is Bebida bebida)
+                foreach (Bebida item in Bar.stockBebidas)
                 {
-                    foreach (Bebida item in Bar.stockBebidas)
+                    if (item.descripcion == descripcion)
                     {
-                        if (item == bebida)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
-                } else
+                }
+
+                foreach (Comida item in Bar.stockComidas)
                 {
-                    Comida comida = consumision as Comida;
-                    foreach(Comida item in Bar.stockComidas)
+                    if (item.descripcion == descripcion)
                     {
-                        if (item == comida)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }
@@ -179,11 +195,16 @@ namespace Entidades
             return false;
         }
 
+        public bool VerificarAlcanzaStock(int cantidadPedida)
+        {
+            return this.cantidad >= cantidadPedida;
+        }
+
         #region Sobrecarga operadores
 
         public static bool operator ==(Consumision c1, Consumision c2)
         {
-            return (c1 is not null) && (c2 is not null) && (c1.descripcion == c2.descripcion || c1.id == c2.id);
+            return (c1 is not null) && (c2 is not null) && (c1.id == c2.id);
         }
 
         public static bool operator !=(Consumision c1, Consumision c2)

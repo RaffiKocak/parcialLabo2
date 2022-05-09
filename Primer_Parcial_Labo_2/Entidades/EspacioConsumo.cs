@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Entidades
 {
@@ -121,10 +117,10 @@ namespace Entidades
             return -1;
         }
 
-        public virtual bool AgregarConsumo(Consumision consumision, int cantidadPedida)
+        public bool AgregarConsumo(Consumision consumision, int cantidadPedida)
         {
             // validar que si es comida y barra no entre
-            if (consumision.Cantidad >= cantidadPedida) // VALIDAR POR MEDIO DE BIBLIOTECA. ALCANZASTOCK
+            if (consumision.VerificarAlcanzaStock(cantidadPedida))
             {
                 int index = this.VerificarProductoYaPedido(consumision);
                 if (index != -1)
@@ -137,7 +133,7 @@ namespace Entidades
                     consumisionNueva.Cantidad = cantidadPedida;
                     this.consumisiones.Add(consumisionNueva);
                 }
-                this.saldo += (consumision.PrecioUnitario * cantidadPedida);
+                this.saldo += consumision.PrecioUnitario * cantidadPedida;
 
                 return true;
             }

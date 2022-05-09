@@ -1,6 +1,6 @@
 ﻿namespace Primer_Parcial_Labo_2
 {
-    partial class FormNuevaConsumision
+    partial class FormNuevaComida
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,7 @@
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.chk_esVegano = new System.Windows.Forms.CheckBox();
+            this.lbl_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_descripcion
@@ -95,9 +96,9 @@
             this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_titulo.Location = new System.Drawing.Point(23, 9);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(247, 25);
+            this.lbl_titulo.Size = new System.Drawing.Size(203, 25);
             this.lbl_titulo.TabIndex = 6;
-            this.lbl_titulo.Text = "Agregar nueva consumisión";
+            this.lbl_titulo.Text = "Agregar nueva comida";
             // 
             // btn_agregar
             // 
@@ -129,11 +130,22 @@
             this.chk_esVegano.Text = "Esta comida es vegana";
             this.chk_esVegano.UseVisualStyleBackColor = true;
             // 
-            // FormNuevaConsumision
+            // lbl_error
+            // 
+            this.lbl_error.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error.Location = new System.Drawing.Point(232, 9);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(104, 31);
+            this.lbl_error.TabIndex = 24;
+            this.lbl_error.Text = "No todos los datos son válidos!";
+            this.lbl_error.Visible = false;
+            // 
+            // FormNuevaComida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 267);
+            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.chk_esVegano);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_agregar);
@@ -145,7 +157,7 @@
             this.Controls.Add(this.lbl_precioUnitario);
             this.Controls.Add(this.lbl_descripcion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormNuevaConsumision";
+            this.Name = "FormNuevaComida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormNuevaConsumision";
             this.Load += new System.EventHandler(this.FormNuevaConsumision_Load);
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox chk_esVegano;
+        private System.Windows.Forms.Label lbl_error;
     }
 }

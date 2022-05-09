@@ -30,19 +30,21 @@ namespace Primer_Parcial_Labo_2
             string usuarioIngresado = txt_usuario.Text;
             string passwdIngresada = txt_passwd.Text;
             bool banderaLogin = false;
+            string KeyALoguear = String.Empty;
             
             foreach(KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
             {
                 if(item.Key == usuarioIngresado && item.Value.VerificarPasswd(passwdIngresada))
                 {
                     banderaLogin = true;
+                    KeyALoguear = item.Key;
                     break;
                 }
             }
 
             if (banderaLogin)
             {
-                FormAdministrador formAdministrador = new FormAdministrador();
+                FormPrincipal formAdministrador = new FormPrincipal(Bar.listaUsuarios[KeyALoguear]);
                 this.Hide();
                 if (formAdministrador.ShowDialog() == DialogResult.OK)
                 {

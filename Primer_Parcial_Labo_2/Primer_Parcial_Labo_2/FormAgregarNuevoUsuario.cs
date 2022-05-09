@@ -31,30 +31,37 @@ namespace Primer_Parcial_Labo_2
             // verificar que todos los datos están correctos y no están vacíos
             // si no se verifican los datos, poner lbl_error visible
 
-            string nombreAIngresar = this.txt_nombre.Text;
-            string apellidoAingresar = this.txt_apellido.Text;
-            int dniAIngresar = int.Parse(this.txt_dni.Text);
-            string usuarioAIngresar = this.txt_userLogin.Text;
-            string passwdAIngresar = this.txt_passwd.Text;
-            bool esAdminAIngresar = this.chk_esAdmin.Checked;
+            if (Validacion.ValidarTextosNoVacios(this) && Validacion.ValidarDni(this.txt_dni.Text, out int dniAIngresar) && 
+                Validacion.ValidarNombreOApellido(this.txt_nombre.Text, out string nombreAIngresar) &&
+                Validacion.ValidarNombreOApellido(this.txt_apellido.Text, out string apellidoAIngresar))
+            {
+                string usuarioAIngresar = this.txt_userLogin.Text;
+                string passwdAIngresar = this.txt_passwd.Text;
+                bool esAdminAIngresar = this.chk_esAdmin.Checked;
 
+                if (!Usuario.VerificarDniExistente(dniAIngresar) && !Usuario.VerificarUsuarioExistente(usuarioAIngresar))
+                {
+                    Usuario nuevoUsuario = new Usuario(nombreAIngresar, apellidoAIngresar, dniAIngresar,
+                    passwdAIngresar, esAdminAIngresar);
+                    Usuario.AltaUsuario(usuarioAIngresar, nuevoUsuario);
 
-            // comprobar que el user no exista. también comprobar que no exista el mismo dni
-            Usuario.AltaUsuario(usuarioAIngresar, new Usuario(nombreAIngresar, apellidoAingresar, dniAIngresar, 
-                passwdAIngresar, esAdminAIngresar));
+                    this.listaParaActualizar.Add(nuevoUsuario);
+                    Logica.ActualizarDGV(this.refTablaPadre, this.listaParaActualizar);
 
-            ActualizarUsuarios();
+                    this.Dispose();
+                } else
+                {
+                    MessageBox.Show("Ya existe este usuario o DNI.");
+                }
+            } else
+            {
+                this.lbl_error.Visible = true;
+            }
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void ActualizarUsuarios()
-        {
-            this.listaParaActualizar = Bar.listaUsuarios.Values.ToList();
-            this.refTablaPadre.DataSource = listaParaActualizar;
         }
     }
 }

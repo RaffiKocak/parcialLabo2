@@ -198,7 +198,9 @@
             this.Controls.Add(this.lbl_apellido);
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.lbl_titulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAgregarNuevoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormAgregarNuevoUsuario";
             this.ResumeLayout(false);
             this.PerformLayout();

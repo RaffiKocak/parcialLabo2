@@ -18,19 +18,36 @@ namespace Entidades
         private bool usoEstacionamiento;
         private decimal precioFinal;
 
+        public static decimal PrecioEstacionamiento
+        {
+            get { return Venta.precioEstacionamiento; }
+            set 
+            { 
+                if (value > 0) 
+                { 
+                    Venta.precioEstacionamiento = value; 
+                }
+            }
+        }
+
         public DateTime Fecha
         {
             get { return this.fechaVenta; }
         }
 
-        public string MetodoPago
-        {
-            get { return this.metodoPago; }
-        }
-
         public decimal PrecioParcial
         {
             get { return this.precioParcial; }
+        }
+
+        public decimal PrecioFinal
+        {
+            get { return this.precioFinal; }
+        }
+
+        public string MetodoPago
+        {
+            get { return this.metodoPago; }
         }
 
         public int PorcentajeModificador
@@ -41,11 +58,6 @@ namespace Entidades
         public bool Estacionamiento
         {
             get { return this.usoEstacionamiento; }
-        }
-
-        public decimal PrecioFinal
-        {
-            get { return this.precioFinal; }
         }
 
         static Venta()
@@ -101,6 +113,30 @@ namespace Entidades
         public void RegistrarVenta()
         {
             Bar.registroVentas.Add(this);
+        }
+
+        public static int ContarTotalVentas()
+        {
+            int contadorVentas = 0;
+
+            foreach (Venta item in Bar.registroVentas)
+            {
+                contadorVentas++;
+            }
+
+            return contadorVentas;
+        }
+
+        public static decimal CalcularRecaudoTotalVentas()
+        {
+            decimal acumuladorPrecioFinal = 0;
+
+            foreach (Venta item in Bar.registroVentas)
+            {
+                acumuladorPrecioFinal += item.precioFinal;
+            }
+
+            return acumuladorPrecioFinal;
         }
 
         public override string ToString()
