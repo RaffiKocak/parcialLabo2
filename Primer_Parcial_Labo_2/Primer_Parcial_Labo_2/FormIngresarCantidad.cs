@@ -41,14 +41,9 @@ namespace Primer_Parcial_Labo_2
         {
             if (ingresaPrecio)
             {
-                string textoAParsear = txt_numeroIngresado.Text.Replace('.', ',');
-                if (Validacion.ValidarPrecio(textoAParsear)) 
+                if (Validacion.ValidarPrecio(txt_numeroIngresado.Text, out numeroDecimal) && numeroDecimal >= 1) 
                 {
-                    _ = decimal.TryParse(textoAParsear, out numeroDecimal);
-                    if (numeroDecimal >= 1)
-                    {
-                        this.DialogResult = DialogResult.OK;
-                    }
+                    this.DialogResult = DialogResult.OK;
                 }
             } else
             {

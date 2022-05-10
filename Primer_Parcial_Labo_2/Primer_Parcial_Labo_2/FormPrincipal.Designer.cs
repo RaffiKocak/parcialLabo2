@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_mesas = new System.Windows.Forms.Button();
             this.btn_stock = new System.Windows.Forms.Button();
             this.pnl_cabecera = new System.Windows.Forms.Panel();
+            this.lbl_reloj = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_izq = new System.Windows.Forms.Panel();
@@ -39,6 +41,8 @@
             this.btn_ventas = new System.Windows.Forms.Button();
             this.btn_usuarios = new System.Windows.Forms.Button();
             this.pnl_contenedor = new System.Windows.Forms.Panel();
+            this.tmr_tiempo = new System.Windows.Forms.Timer(this.components);
+            this.il_botonesMenus = new System.Windows.Forms.ImageList(this.components);
             this.pnl_cabecera.SuspendLayout();
             this.pnl_izq.SuspendLayout();
             this.pnl_der.SuspendLayout();
@@ -67,18 +71,29 @@
             // pnl_cabecera
             // 
             this.pnl_cabecera.BackColor = System.Drawing.Color.SlateGray;
+            this.pnl_cabecera.Controls.Add(this.lbl_reloj);
             this.pnl_cabecera.Controls.Add(this.btn_cerrar);
             this.pnl_cabecera.Location = new System.Drawing.Point(0, 0);
             this.pnl_cabecera.Name = "pnl_cabecera";
             this.pnl_cabecera.Size = new System.Drawing.Size(1126, 66);
             this.pnl_cabecera.TabIndex = 2;
             // 
+            // lbl_reloj
+            // 
+            this.lbl_reloj.AutoSize = true;
+            this.lbl_reloj.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_reloj.Location = new System.Drawing.Point(1043, 33);
+            this.lbl_reloj.Name = "lbl_reloj";
+            this.lbl_reloj.Size = new System.Drawing.Size(22, 25);
+            this.lbl_reloj.TabIndex = 1;
+            this.lbl_reloj.Text = "a";
+            // 
             // btn_cerrar
             // 
             this.btn_cerrar.BackColor = System.Drawing.Color.SlateGray;
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(1096, 3);
+            this.btn_cerrar.Location = new System.Drawing.Point(1096, 2);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(27, 25);
             this.btn_cerrar.TabIndex = 0;
@@ -106,9 +121,9 @@
             // 
             // btn_cerrarSesion
             // 
-            this.btn_cerrarSesion.Location = new System.Drawing.Point(12, 398);
+            this.btn_cerrarSesion.Location = new System.Drawing.Point(16, 403);
             this.btn_cerrarSesion.Name = "btn_cerrarSesion";
-            this.btn_cerrarSesion.Size = new System.Drawing.Size(67, 59);
+            this.btn_cerrarSesion.Size = new System.Drawing.Size(57, 50);
             this.btn_cerrarSesion.TabIndex = 2;
             this.btn_cerrarSesion.Text = "Cerrar Sesion";
             this.btn_cerrarSesion.UseVisualStyleBackColor = true;
@@ -146,10 +161,22 @@
             // 
             // pnl_contenedor
             // 
-            this.pnl_contenedor.Location = new System.Drawing.Point(92, 72);
+            this.pnl_contenedor.Location = new System.Drawing.Point(92, 66);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(939, 536);
+            this.pnl_contenedor.Size = new System.Drawing.Size(939, 540);
             this.pnl_contenedor.TabIndex = 5;
+            // 
+            // tmr_tiempo
+            // 
+            this.tmr_tiempo.Enabled = true;
+            this.tmr_tiempo.Interval = 500;
+            this.tmr_tiempo.Tick += new System.EventHandler(this.tmr_tiempo_Tick);
+            // 
+            // il_botonesMenus
+            // 
+            this.il_botonesMenus.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.il_botonesMenus.ImageSize = new System.Drawing.Size(16, 16);
+            this.il_botonesMenus.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FormPrincipal
             // 
@@ -161,7 +188,7 @@
             this.Controls.Add(this.pnl_der);
             this.Controls.Add(this.pnl_izq);
             this.Controls.Add(this.pnl_cabecera);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPrincipal";
@@ -169,6 +196,7 @@
             this.Text = "FormAdministrador";
             this.Load += new System.EventHandler(this.FormAdministrador_Load);
             this.pnl_cabecera.ResumeLayout(false);
+            this.pnl_cabecera.PerformLayout();
             this.pnl_izq.ResumeLayout(false);
             this.pnl_der.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -188,5 +216,8 @@
         private System.Windows.Forms.Panel pnl_contenedor;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_cerrarSesion;
+        private System.Windows.Forms.Label lbl_reloj;
+        private System.Windows.Forms.Timer tmr_tiempo;
+        private System.Windows.Forms.ImageList il_botonesMenus;
     }
 }

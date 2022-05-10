@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Primer_Parcial_Labo_2
 {
@@ -88,6 +89,25 @@ namespace Primer_Parcial_Labo_2
             else
             {
                 listaComidas[index].Cantidad += cantidadIngresada;
+            }
+        }
+
+        public static void FormatearCeldasPocoStock(DataGridView dgv, DataGridViewCellFormattingEventArgs evento)
+        {
+            if (dgv.Columns[evento.ColumnIndex].Name == "Cantidad")
+            {
+                if ((int)(evento.Value) <= 5)
+                {
+                    evento.CellStyle.BackColor = Color.Red;
+                }
+                else if ((int)(evento.Value) <= 15)
+                {
+                    evento.CellStyle.BackColor = Color.Orange;
+                }
+                else if ((int)(evento.Value) <= 30)
+                {
+                    evento.CellStyle.BackColor = Color.Yellow;
+                }
             }
         }
 

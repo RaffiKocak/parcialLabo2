@@ -42,7 +42,6 @@
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_consumisiones = new System.Windows.Forms.DataGridView();
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
-            this.btn_cerrar = new System.Windows.Forms.Button();
             this.cmb_opciones = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consumisiones)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +170,7 @@
             this.dgv_consumisiones.Size = new System.Drawing.Size(402, 131);
             this.dgv_consumisiones.TabIndex = 32;
             this.dgv_consumisiones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consumisiones_CellDoubleClick);
+            this.dgv_consumisiones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_consumisiones_CellFormatting);
             // 
             // btn_cerrarMesa
             // 
@@ -181,17 +181,6 @@
             this.btn_cerrarMesa.Text = "Cerrar mesa";
             this.btn_cerrarMesa.UseVisualStyleBackColor = true;
             this.btn_cerrarMesa.Click += new System.EventHandler(this.btn_cerrarMesa_Click);
-            // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(394, 7);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(28, 28);
-            this.btn_cerrar.TabIndex = 34;
-            this.btn_cerrar.Text = "X";
-            this.btn_cerrar.UseVisualStyleBackColor = true;
             // 
             // cmb_opciones
             // 
@@ -209,7 +198,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 453);
             this.Controls.Add(this.cmb_opciones);
-            this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.btn_cerrarMesa);
             this.Controls.Add(this.dgv_consumisiones);
             this.Controls.Add(this.btn_guardar);
@@ -251,7 +239,6 @@
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_consumisiones;
         private System.Windows.Forms.Button btn_cerrarMesa;
-        private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.ComboBox cmb_opciones;
     }
 }

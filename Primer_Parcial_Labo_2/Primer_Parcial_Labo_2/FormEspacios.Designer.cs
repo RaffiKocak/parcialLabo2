@@ -48,7 +48,7 @@
             // 
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(899, 3);
+            this.btn_cerrar.Location = new System.Drawing.Point(906, 2);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(26, 28);
             this.btn_cerrar.TabIndex = 3;
@@ -68,7 +68,7 @@
             this.dgv_espaciosConsumo.ReadOnly = true;
             this.dgv_espaciosConsumo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_espaciosConsumo.RowTemplate.Height = 25;
-            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(471, 443);
+            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(471, 482);
             this.dgv_espaciosConsumo.TabIndex = 4;
             this.dgv_espaciosConsumo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_espaciosConsumo_CellDoubleClick);
             this.dgv_espaciosConsumo.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_espaciosConsumo_CellFormatting);
@@ -77,14 +77,14 @@
             // 
             this.pnl_contenedor.Location = new System.Drawing.Point(12, 46);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(433, 443);
+            this.pnl_contenedor.Size = new System.Drawing.Size(433, 482);
             this.pnl_contenedor.TabIndex = 6;
             // 
-            // FormMesas
+            // FormEspacios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 501);
+            this.ClientSize = new System.Drawing.Size(939, 540);
             this.Controls.Add(this.pnl_contenedor);
             this.Controls.Add(this.dgv_espaciosConsumo);
             this.Controls.Add(this.btn_cerrar);
@@ -92,7 +92,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormMesas";
+            this.Name = "FormEspacios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMesas";
             this.Load += new System.EventHandler(this.FormMesas_Load);

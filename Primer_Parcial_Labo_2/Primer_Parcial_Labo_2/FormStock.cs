@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
@@ -128,6 +129,11 @@ namespace Primer_Parcial_Labo_2
             {
                 MessageBox.Show(Bar.stockComidas[index].MostrarInfo());
             }
+        }
+
+        private void dgv_stock_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            Logica.FormatearCeldasPocoStock(this.dgv_stock, e);
         }
     }
 }

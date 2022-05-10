@@ -10,7 +10,7 @@
     <Compile Update="FormAgregarNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormCierreMesa.cs">
+    <Compile Update="FormCierreEspacio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormDetalleEspacioConsumo.cs">

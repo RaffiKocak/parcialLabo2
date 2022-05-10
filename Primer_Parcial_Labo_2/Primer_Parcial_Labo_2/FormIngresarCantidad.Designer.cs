@@ -38,7 +38,7 @@
             // lbl_cantidad
             // 
             this.lbl_cantidad.AutoSize = true;
-            this.lbl_cantidad.Location = new System.Drawing.Point(28, 24);
+            this.lbl_cantidad.Location = new System.Drawing.Point(28, 29);
             this.lbl_cantidad.Name = "lbl_cantidad";
             this.lbl_cantidad.Size = new System.Drawing.Size(100, 15);
             this.lbl_cantidad.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(28, 104);
+            this.btn_aceptar.Location = new System.Drawing.Point(28, 96);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(77, 26);
             this.btn_aceptar.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(111, 104);
+            this.btn_cancelar.Location = new System.Drawing.Point(111, 96);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(77, 26);
             this.btn_cancelar.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             this.lbl_error.AutoSize = true;
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(44, 85);
+            this.lbl_error.Location = new System.Drawing.Point(44, 77);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(126, 15);
             this.lbl_error.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             // txt_numeroIngresado
             // 
-            this.txt_numeroIngresado.Location = new System.Drawing.Point(30, 59);
+            this.txt_numeroIngresado.Location = new System.Drawing.Point(30, 51);
             this.txt_numeroIngresado.Name = "txt_numeroIngresado";
             this.txt_numeroIngresado.Size = new System.Drawing.Size(158, 23);
             this.txt_numeroIngresado.TabIndex = 5;
@@ -86,12 +86,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(222, 159);
+            this.ClientSize = new System.Drawing.Size(222, 142);
             this.Controls.Add(this.txt_numeroIngresado);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.lbl_cantidad);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormIngresarCantidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormIngresarCantidad";

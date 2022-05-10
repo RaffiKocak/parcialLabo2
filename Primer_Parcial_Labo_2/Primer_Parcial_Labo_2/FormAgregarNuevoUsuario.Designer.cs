@@ -106,11 +106,11 @@
             // chk_esAdmin
             // 
             this.chk_esAdmin.AutoSize = true;
-            this.chk_esAdmin.Location = new System.Drawing.Point(93, 242);
+            this.chk_esAdmin.Location = new System.Drawing.Point(105, 240);
             this.chk_esAdmin.Name = "chk_esAdmin";
-            this.chk_esAdmin.Size = new System.Drawing.Size(221, 19);
+            this.chk_esAdmin.Size = new System.Drawing.Size(224, 19);
             this.chk_esAdmin.TabIndex = 15;
-            this.chk_esAdmin.Text = "Tildar si el usuario será administrador";
+            this.chk_esAdmin.Text = "¿El nuevo usuario será administrador?";
             this.chk_esAdmin.UseVisualStyleBackColor = true;
             // 
             // btn_aceptar

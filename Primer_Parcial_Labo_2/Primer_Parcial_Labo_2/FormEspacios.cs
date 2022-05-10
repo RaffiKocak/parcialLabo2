@@ -25,6 +25,7 @@ namespace Primer_Parcial_Labo_2
 
         private void dgv_espaciosConsumo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Logica.CerrarFormsContenidos(this.pnl_contenedor);
             int index = dgv_espaciosConsumo.CurrentCell.RowIndex;
             EspacioConsumo nuevoEspacio = Bar.listaEspaciosConsumo[index].ClonarEspacioConsumo();
 

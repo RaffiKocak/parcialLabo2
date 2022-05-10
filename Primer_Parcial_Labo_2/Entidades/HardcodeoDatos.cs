@@ -46,5 +46,13 @@ namespace Entidades
                 EspacioConsumo.AltaEspacioConsumo(new EspacioConsumo(ETipoEspacio.Barra));
             }
         }
+
+        public static void CargarVentas()
+        {
+            Bar.registroVentas.Add(new Venta(500, "Efectivo", true));
+            Bar.registroVentas.Add(new Venta(600, "Tarjeta Débito", false));
+            Bar.registroVentas.Add(new Venta(804.5M, "Tarjeta Crédito", true));
+            Bar.registroVentas.Add(new Venta(100, "Mercado Pago", true));
+        }
     }
 }

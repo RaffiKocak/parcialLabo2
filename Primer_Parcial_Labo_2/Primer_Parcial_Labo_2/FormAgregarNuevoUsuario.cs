@@ -28,9 +28,6 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            // verificar que todos los datos están correctos y no están vacíos
-            // si no se verifican los datos, poner lbl_error visible
-
             if (Validacion.ValidarTextosNoVacios(this) && Validacion.ValidarDni(this.txt_dni.Text, out int dniAIngresar) && 
                 Validacion.ValidarNombreOApellido(this.txt_nombre.Text, out string nombreAIngresar) &&
                 Validacion.ValidarNombreOApellido(this.txt_apellido.Text, out string apellidoAIngresar))

@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
@@ -117,7 +118,7 @@ namespace Primer_Parcial_Labo_2
         {
             if (!huboCambios)
             {
-                FormCierreMesa formVenta = new FormCierreMesa();
+                FormCierreEspacio formVenta = new FormCierreEspacio();
                 string metodoPagoVenta = string.Empty;
                 bool usoEstacionamiento = false;
                 if (formVenta.ShowDialog() == DialogResult.OK)
@@ -193,6 +194,11 @@ namespace Primer_Parcial_Labo_2
         {
             lst_consumEspacio.DataSource = null;
             lst_consumEspacio.DataSource = this.espacioConsumo.Consumisiones;
+        }
+
+        private void dgv_consumisiones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            Logica.FormatearCeldasPocoStock(this.dgv_consumisiones, e);
         }
     }
 }

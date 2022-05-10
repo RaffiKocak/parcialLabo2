@@ -24,8 +24,9 @@ namespace Primer_Parcial_Labo_2
 
         private void FormAdministrador_Load(object sender, EventArgs e)
         {
-            // RELLENAR LISTAS
-            // VARIAR COLOR SEGÚN TIPO DE USUARIO
+            HardcodeoDatos.CargarEspaciosDeConsumo();
+            HardcodeoDatos.CargarConsumisiones();
+            HardcodeoDatos.CargarVentas();
         }
 
         private void btn_mesas_Click(object sender, EventArgs e)
@@ -64,6 +65,11 @@ namespace Primer_Parcial_Labo_2
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void tmr_tiempo_Tick(object sender, EventArgs e)
+        {
+            lbl_reloj.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

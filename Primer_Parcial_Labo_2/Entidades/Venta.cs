@@ -89,11 +89,11 @@ namespace Entidades
                 case "Mercado Pago":
                     break;
 
-                case "Tarjeta Débito":
+                case "Tarjeta Crédito":
+                    porcentajeAModificar = 10;
                     break;
 
                 default:
-                    porcentajeAModificar = 10;
                     break;
             }
 

@@ -44,9 +44,12 @@ namespace Primer_Parcial_Labo_2
             return true;
         }
 
-        public static bool ValidarPrecio(string numeroIngresado)
+        public static bool ValidarPrecio(string numeroIngresado, out decimal precioValidado)
         {
             int contadorComas = 0;
+            precioValidado = 0;
+
+            numeroIngresado = numeroIngresado.Replace('.', ',');
 
             foreach(char c in numeroIngresado)
             {
@@ -66,7 +69,7 @@ namespace Primer_Parcial_Labo_2
                 }
             }
 
-            return true;
+            return decimal.TryParse(numeroIngresado, out precioValidado);
         }
     }
 }

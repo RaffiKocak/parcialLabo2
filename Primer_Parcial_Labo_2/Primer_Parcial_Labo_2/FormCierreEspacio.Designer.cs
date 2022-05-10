@@ -1,6 +1,6 @@
 ﻿namespace Primer_Parcial_Labo_2
 {
-    partial class FormCierreMesa
+    partial class FormCierreEspacio
     {
         /// <summary>
         /// Required designer variable.
@@ -161,6 +161,7 @@
             this.Controls.Add(this.grp_formaPago);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCierreMesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormCierreMesa";

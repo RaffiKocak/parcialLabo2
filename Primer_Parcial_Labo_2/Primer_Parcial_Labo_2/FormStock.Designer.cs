@@ -39,6 +39,7 @@
             this.cmb_opciones = new System.Windows.Forms.ComboBox();
             this.lbl_opciones = new System.Windows.Forms.Label();
             this.btn_agregarBebida = new System.Windows.Forms.Button();
+            this.btn_cerrarVentana = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,14 +47,15 @@
             // 
             this.dgv_stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_stock.Location = new System.Drawing.Point(391, 26);
+            this.dgv_stock.Location = new System.Drawing.Point(391, 43);
             this.dgv_stock.MultiSelect = false;
             this.dgv_stock.Name = "dgv_stock";
             this.dgv_stock.ReadOnly = true;
             this.dgv_stock.RowTemplate.Height = 25;
-            this.dgv_stock.Size = new System.Drawing.Size(524, 342);
+            this.dgv_stock.Size = new System.Drawing.Size(524, 325);
             this.dgv_stock.TabIndex = 0;
             this.dgv_stock.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_CellDoubleClick);
+            this.dgv_stock.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_stock_CellFormatting);
             // 
             // btn_agregarStock
             // 
@@ -89,7 +91,7 @@
             // 
             this.lbl_stock.AutoSize = true;
             this.lbl_stock.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_stock.Location = new System.Drawing.Point(12, 9);
+            this.lbl_stock.Location = new System.Drawing.Point(12, 43);
             this.lbl_stock.Name = "lbl_stock";
             this.lbl_stock.Size = new System.Drawing.Size(62, 30);
             this.lbl_stock.TabIndex = 4;
@@ -152,11 +154,23 @@
             this.btn_agregarBebida.UseVisualStyleBackColor = true;
             this.btn_agregarBebida.Click += new System.EventHandler(this.btn_agregarBebida_Click);
             // 
+            // btn_cerrarVentana
+            // 
+            this.btn_cerrarVentana.FlatAppearance.BorderSize = 0;
+            this.btn_cerrarVentana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrarVentana.Location = new System.Drawing.Point(895, 3);
+            this.btn_cerrarVentana.Name = "btn_cerrarVentana";
+            this.btn_cerrarVentana.Size = new System.Drawing.Size(29, 29);
+            this.btn_cerrarVentana.TabIndex = 15;
+            this.btn_cerrarVentana.Text = "X";
+            this.btn_cerrarVentana.UseVisualStyleBackColor = true;
+            // 
             // FormStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 495);
+            this.Controls.Add(this.btn_cerrarVentana);
             this.Controls.Add(this.btn_agregarBebida);
             this.Controls.Add(this.lbl_opciones);
             this.Controls.Add(this.cmb_opciones);
@@ -168,6 +182,7 @@
             this.Controls.Add(this.btn_eliminarConsumision);
             this.Controls.Add(this.btn_agregarStock);
             this.Controls.Add(this.dgv_stock);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStock";
             this.Text = "FormStock";
             this.Load += new System.EventHandler(this.FormStock_Load);
@@ -190,5 +205,6 @@
         private System.Windows.Forms.ComboBox cmb_opciones;
         private System.Windows.Forms.Label lbl_opciones;
         private System.Windows.Forms.Button btn_agregarBebida;
+        private System.Windows.Forms.Button btn_cerrarVentana;
     }
 }

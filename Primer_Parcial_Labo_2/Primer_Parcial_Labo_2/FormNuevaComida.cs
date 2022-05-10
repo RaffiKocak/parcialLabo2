@@ -47,11 +47,9 @@ namespace Primer_Parcial_Labo_2
             {
                 if (Validacion.ValidarTextosNoVacios(this))
                 {
-                    txt_precioUnitario.Text = txt_precioUnitario.Text.Replace('.', ',');
-                    if (Validacion.ValidarPrecio(txt_precioUnitario.Text))
+                    if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
                     {
                         string descripcion = txt_descripcion.Text;
-                        decimal precioUnitario = decimal.Parse(txt_precioUnitario.Text);
                         Comida.ETipoComida tipoComida = (Comida.ETipoComida)cmb_tipoComida.SelectedItem;
                         bool esVegano = chk_esVegano.Checked;
 
@@ -76,10 +74,9 @@ namespace Primer_Parcial_Labo_2
                 } 
             } else
             {
-                txt_precioUnitario.Text = txt_precioUnitario.Text.Replace('.', ',');
-                if (Validacion.ValidarPrecio(txt_precioUnitario.Text))
+                if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
                 {
-                    this.comidaAModificar.PrecioUnitario = decimal.Parse(txt_precioUnitario.Text);
+                    this.comidaAModificar.PrecioUnitario = precioUnitario;
                     operacionExitosa = false;
                 }
                 else

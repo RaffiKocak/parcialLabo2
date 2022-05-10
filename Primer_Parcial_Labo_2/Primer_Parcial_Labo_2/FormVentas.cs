@@ -29,5 +29,10 @@ namespace Primer_Parcial_Labo_2
                 this.lbl_precioEstacionamiento.Text = $"${Venta.PrecioEstacionamiento}";
             }
         }
+
+        private void btn_cerrarVentana_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

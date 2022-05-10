@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
 {
-    public partial class FormCierreMesa : Form
+    public partial class FormCierreEspacio : Form
     {
-        public FormCierreMesa()
+        public FormCierreEspacio()
         {
             InitializeComponent();
         }
