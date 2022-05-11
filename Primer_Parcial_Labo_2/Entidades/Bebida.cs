@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Bebida : Consumision
+    public class Bebida : Consumicion
     {
         public enum ETipoBebida
         {
@@ -65,7 +65,7 @@ namespace Entidades
             this.contieneTacc = bebida.contieneTacc;
         }
 
-        public override Bebida ClonarConsumision()
+        public override Bebida ClonarConsumicion()
         {
             return new Bebida(this);
         }

@@ -15,7 +15,7 @@ namespace Entidades
         protected decimal saldo;
         protected bool usaEstacionamiento;
         protected bool estaOcupado;
-        protected List<Consumision> consumisiones;
+        protected List<Consumicion> consumiciones;
 
         public int IdMesa
         {
@@ -38,9 +38,9 @@ namespace Entidades
             set { estaOcupado = value; }
         }
 
-        public List<Consumision> Consumisiones
+        public List<Consumicion> Consumiciones
         {
-            get { return consumisiones; }
+            get { return consumiciones; }
         }
 
         static EspacioConsumo()
@@ -54,7 +54,7 @@ namespace Entidades
             this.saldo = 0;
             this.tipo = tipo;
             this.estaOcupado = false;
-            this.consumisiones = new List<Consumision>();
+            this.consumiciones = new List<Consumicion>();
             EspacioConsumo.ultimoId++;
         }
 
@@ -64,7 +64,7 @@ namespace Entidades
             this.tipo = espacio.Tipo;
             this.saldo = espacio.Saldo;
             this.estaOcupado = espacio.Ocupado;
-            this.consumisiones = Bar.ClonarListaStock(espacio.Consumisiones);
+            this.consumiciones = Bar.ClonarListaStock(espacio.Consumiciones);
         }
 
 
@@ -97,19 +97,19 @@ namespace Entidades
         {
             this.saldo = 0;
             this.estaOcupado = false;
-            this.consumisiones = new List<Consumision>();
+            this.consumiciones = new List<Consumicion>();
         }
 
-        public int VerificarProductoYaPedido(Consumision consumision)
+        public int VerificarProductoYaPedido(Consumicion consumicion)
         {
-            if (consumision is not null)
+            if (consumicion is not null)
             {
-                int longitud = this.consumisiones.Count;
-                foreach (Consumision item in this.consumisiones)
+                int longitud = this.consumiciones.Count;
+                foreach (Consumicion item in this.consumiciones)
                 {
-                    if (item == consumision)
+                    if (item == consumicion)
                     {
-                        return this.consumisiones.IndexOf(item);
+                        return this.consumiciones.IndexOf(item);
                     }
                 }
             }
@@ -117,23 +117,22 @@ namespace Entidades
             return -1;
         }
 
-        public bool AgregarConsumo(Consumision consumision, int cantidadPedida)
+        public bool AgregarConsumo(Consumicion consumicion, int cantidadPedida)
         {
-            // validar que si es comida y barra no entre
-            if (consumision.VerificarAlcanzaStock(cantidadPedida))
+            if (consumicion.VerificarAlcanzaStock(cantidadPedida))
             {
-                int index = this.VerificarProductoYaPedido(consumision);
+                int index = this.VerificarProductoYaPedido(consumicion);
                 if (index != -1)
                 {
-                    this.consumisiones[index].Cantidad += cantidadPedida;
+                    this.consumiciones[index].Cantidad += cantidadPedida;
                 }
                 else
                 {
-                    Consumision consumisionNueva = consumision.ClonarConsumision();
-                    consumisionNueva.Cantidad = cantidadPedida;
-                    this.consumisiones.Add(consumisionNueva);
+                    Consumicion consumicionNueva = consumicion.ClonarConsumicion();
+                    consumicionNueva.Cantidad = cantidadPedida;
+                    this.consumiciones.Add(consumicionNueva);
                 }
-                this.saldo += consumision.PrecioUnitario * cantidadPedida;
+                this.saldo += consumicion.PrecioUnitario * cantidadPedida;
 
                 return true;
             }

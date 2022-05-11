@@ -53,10 +53,10 @@ namespace Primer_Parcial_Labo_2
                         Comida.ETipoComida tipoComida = (Comida.ETipoComida)cmb_tipoComida.SelectedItem;
                         bool esVegano = chk_esVegano.Checked;
 
-                        if (!Consumision.VerificarDescripcionEnStock(descripcion))
+                        if (!Consumicion.VerificarDescripcionEnStock(descripcion))
                         {
                             Comida nuevaComida = new Comida(descripcion, precioUnitario, 0, tipoComida, esVegano);
-                            Consumision.AgregarNuevoStock(nuevaComida);
+                            Consumicion.AgregarNuevoStock(nuevaComida);
                             MessageBox.Show($"Producto agregado:\n{nuevaComida.MostrarInfo()}");
                             operacionExitosa = true;
                         }

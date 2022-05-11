@@ -25,7 +25,7 @@ namespace Primer_Parcial_Labo_2
         private void FormAdministrador_Load(object sender, EventArgs e)
         {
             HardcodeoDatos.CargarEspaciosDeConsumo();
-            HardcodeoDatos.CargarConsumisiones();
+            HardcodeoDatos.CargarConsumiciones();
             HardcodeoDatos.CargarVentas();
         }
 

@@ -34,7 +34,7 @@ namespace Primer_Parcial_Labo_2
             this.cmb_opciones.Items.Add("Comidas");
             this.cmb_opciones.SelectedIndex = 0;
             ActualizarVistaConsumisionesAgregadasAMesa();
-            Logica.ActualizarDGVCompartido(this.dgv_consumisiones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
+            Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                 this.copiaLocalComidas);
             MostrarInfoEspacio();
             if (this.espacioConsumo.Tipo == ETipoEspacio.Barra)
@@ -59,15 +59,15 @@ namespace Primer_Parcial_Labo_2
         {
             this.espacioConsumo.Ocupado = true;
             MostrarInfoEspacio();
-            int index = dgv_consumisiones.CurrentCell.RowIndex;
-            Consumision nuevaConsumision;
+            int index = dgv_consumiciones.CurrentCell.RowIndex;
+            Consumicion nuevaConsumicion;
             if (cmb_opciones.SelectedIndex == 0)
             {
-                nuevaConsumision = this.copiaLocalBebidas[index].ClonarConsumision();
+                nuevaConsumicion = this.copiaLocalBebidas[index].ClonarConsumicion();
             }
             else
             {
-                nuevaConsumision = this.copiaLocalComidas[index].ClonarConsumision();
+                nuevaConsumicion = this.copiaLocalComidas[index].ClonarConsumicion();
             }
 
             FormIngresarCantidad formCantidad = new FormIngresarCantidad(false);
@@ -77,13 +77,13 @@ namespace Primer_Parcial_Labo_2
                 huboCambios = true;
                 int cantidadIngresada = formCantidad.DevolverCantidad();
                 formCantidad.Dispose();
-                if (this.espacioConsumo.AgregarConsumo(nuevaConsumision, cantidadIngresada))
+                if (this.espacioConsumo.AgregarConsumo(nuevaConsumicion, cantidadIngresada))
                 {
                     Logica.RestarStockEnFormulario(cmb_opciones.SelectedIndex, index, cantidadIngresada,
                         copiaLocalBebidas, copiaLocalComidas);
 
                     ActualizarVistaConsumisionesAgregadasAMesa();
-                    Logica.ActualizarDGVCompartido(this.dgv_consumisiones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
+                    Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                     this.copiaLocalComidas);
                 }
                 else
@@ -91,7 +91,7 @@ namespace Primer_Parcial_Labo_2
                     MessageBox.Show("No hay suficiente stock para esta venta!");
                 }
             }
-            else if (this.espacioConsumo.Consumisiones.Count == 0)
+            else if (this.espacioConsumo.Consumiciones.Count == 0)
             {
                 this.espacioConsumo.Ocupado = false;
             }
@@ -103,7 +103,7 @@ namespace Primer_Parcial_Labo_2
             if (huboCambios && this.espacioConsumo.Ocupado)
             {
                 EspacioConsumo.GuardarEspacioConCambios(this.espacioConsumo);
-                Consumision.ActualizarTodoStockPermanente(this.copiaLocalComidas, this.copiaLocalBebidas);
+                Consumicion.ActualizarTodoStockPermanente(this.copiaLocalComidas, this.copiaLocalBebidas);
                 Logica.ActualizarDGV(dgv_padre, Bar.listaEspaciosConsumo);
                 huboCambios = false;
             }
@@ -150,7 +150,7 @@ namespace Primer_Parcial_Labo_2
 
         private void cmb_opciones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Logica.ActualizarDGVCompartido(this.dgv_consumisiones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
+            Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                 this.copiaLocalComidas);
         }
 
@@ -174,7 +174,7 @@ namespace Primer_Parcial_Labo_2
             this.lbl_infoId.Text = this.espacioConsumo.IdMesa.ToString();
             this.lbl_infoTipo.Text = this.espacioConsumo.Tipo.ToString();
             this.lbl_infoSaldo.Text = this.espacioConsumo.Saldo.ToString();
-            this.lst_consumEspacio.DataSource = this.espacioConsumo.Consumisiones;
+            this.lst_consumEspacio.DataSource = this.espacioConsumo.Consumiciones;
 
             if (this.espacioConsumo.Ocupado)
             {
@@ -193,12 +193,12 @@ namespace Primer_Parcial_Labo_2
         public void ActualizarVistaConsumisionesAgregadasAMesa()
         {
             lst_consumEspacio.DataSource = null;
-            lst_consumEspacio.DataSource = this.espacioConsumo.Consumisiones;
+            lst_consumEspacio.DataSource = this.espacioConsumo.Consumiciones;
         }
 
         private void dgv_consumisiones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            Logica.FormatearCeldasPocoStock(this.dgv_consumisiones, e);
+            Logica.FormatearCeldasPocoStock(this.dgv_consumiciones, e);
         }
     }
 }

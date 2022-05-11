@@ -75,7 +75,7 @@
             this.btn_eliminarConsumision.TabIndex = 2;
             this.btn_eliminarConsumision.Text = "Eliminar consumisión";
             this.btn_eliminarConsumision.UseVisualStyleBackColor = true;
-            this.btn_eliminarConsumision.Click += new System.EventHandler(this.btn_eliminarConsumision_Click);
+            this.btn_eliminarConsumision.Click += new System.EventHandler(this.btn_eliminarConsumicion_Click);
             // 
             // btn_cambiarPrecio
             // 

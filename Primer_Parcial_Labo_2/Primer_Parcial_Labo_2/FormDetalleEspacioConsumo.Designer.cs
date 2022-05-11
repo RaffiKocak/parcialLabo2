@@ -36,14 +36,14 @@
             this.lbl_estadoEspacio = new System.Windows.Forms.Label();
             this.lbl_infoSaldo = new System.Windows.Forms.Label();
             this.chk_ocupado = new System.Windows.Forms.CheckBox();
-            this.lbl_consumisiones = new System.Windows.Forms.Label();
+            this.lbl_consumiciones = new System.Windows.Forms.Label();
             this.lst_consumEspacio = new System.Windows.Forms.ListBox();
             this.btn_cerrarGrande = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.dgv_consumisiones = new System.Windows.Forms.DataGridView();
+            this.dgv_consumiciones = new System.Windows.Forms.DataGridView();
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
             this.cmb_opciones = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_consumisiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consumiciones)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_idEspacio
@@ -119,14 +119,14 @@
             this.chk_ocupado.UseVisualStyleBackColor = true;
             this.chk_ocupado.CheckedChanged += new System.EventHandler(this.chk_ocupado_CheckedChanged);
             // 
-            // lbl_consumisiones
+            // lbl_consumiciones
             // 
-            this.lbl_consumisiones.AutoSize = true;
-            this.lbl_consumisiones.Location = new System.Drawing.Point(15, 232);
-            this.lbl_consumisiones.Name = "lbl_consumisiones";
-            this.lbl_consumisiones.Size = new System.Drawing.Size(91, 15);
-            this.lbl_consumisiones.TabIndex = 28;
-            this.lbl_consumisiones.Text = "Consumisiones:";
+            this.lbl_consumiciones.AutoSize = true;
+            this.lbl_consumiciones.Location = new System.Drawing.Point(15, 232);
+            this.lbl_consumiciones.Name = "lbl_consumiciones";
+            this.lbl_consumiciones.Size = new System.Drawing.Size(92, 15);
+            this.lbl_consumiciones.TabIndex = 28;
+            this.lbl_consumiciones.Text = "Consumiciones:";
             // 
             // lst_consumEspacio
             // 
@@ -157,20 +157,20 @@
             this.btn_guardar.UseVisualStyleBackColor = true;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // dgv_consumisiones
+            // dgv_consumiciones
             // 
-            this.dgv_consumisiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_consumisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_consumisiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_consumisiones.Location = new System.Drawing.Point(15, 250);
-            this.dgv_consumisiones.MultiSelect = false;
-            this.dgv_consumisiones.Name = "dgv_consumisiones";
-            this.dgv_consumisiones.ReadOnly = true;
-            this.dgv_consumisiones.RowTemplate.Height = 25;
-            this.dgv_consumisiones.Size = new System.Drawing.Size(402, 131);
-            this.dgv_consumisiones.TabIndex = 32;
-            this.dgv_consumisiones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consumisiones_CellDoubleClick);
-            this.dgv_consumisiones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_consumisiones_CellFormatting);
+            this.dgv_consumiciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_consumiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_consumiciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgv_consumiciones.Location = new System.Drawing.Point(15, 250);
+            this.dgv_consumiciones.MultiSelect = false;
+            this.dgv_consumiciones.Name = "dgv_consumiciones";
+            this.dgv_consumiciones.ReadOnly = true;
+            this.dgv_consumiciones.RowTemplate.Height = 25;
+            this.dgv_consumiciones.Size = new System.Drawing.Size(402, 131);
+            this.dgv_consumiciones.TabIndex = 32;
+            this.dgv_consumiciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consumisiones_CellDoubleClick);
+            this.dgv_consumiciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_consumisiones_CellFormatting);
             // 
             // btn_cerrarMesa
             // 
@@ -199,11 +199,11 @@
             this.ClientSize = new System.Drawing.Size(429, 453);
             this.Controls.Add(this.cmb_opciones);
             this.Controls.Add(this.btn_cerrarMesa);
-            this.Controls.Add(this.dgv_consumisiones);
+            this.Controls.Add(this.dgv_consumiciones);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_cerrarGrande);
             this.Controls.Add(this.lst_consumEspacio);
-            this.Controls.Add(this.lbl_consumisiones);
+            this.Controls.Add(this.lbl_consumiciones);
             this.Controls.Add(this.chk_ocupado);
             this.Controls.Add(this.lbl_infoSaldo);
             this.Controls.Add(this.lbl_estadoEspacio);
@@ -217,7 +217,7 @@
             this.Text = "FormDetalleEspacioConsumo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDetalleEspacioConsumo_FormClosing);
             this.Load += new System.EventHandler(this.FormDetalleEspacioConsumo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_consumisiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consumiciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,11 +233,11 @@
         private System.Windows.Forms.Label lbl_estadoEspacio;
         private System.Windows.Forms.Label lbl_infoSaldo;
         private System.Windows.Forms.CheckBox chk_ocupado;
-        private System.Windows.Forms.Label lbl_consumisiones;
+        private System.Windows.Forms.Label lbl_consumiciones;
         private System.Windows.Forms.ListBox lst_consumEspacio;
         private System.Windows.Forms.Button btn_cerrarGrande;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.DataGridView dgv_consumisiones;
+        private System.Windows.Forms.DataGridView dgv_consumiciones;
         private System.Windows.Forms.Button btn_cerrarMesa;
         private System.Windows.Forms.ComboBox cmb_opciones;
     }

@@ -20,7 +20,7 @@ namespace Entidades
             CargarSillas(Bar.listaEspaciosConsumo, 5);
         }
 
-        public static void CargarConsumisiones()
+        public static void CargarConsumiciones()
         {
             Bar.stockComidas.Add(new Comida("Hamburguesa", 100, 25, Comida.ETipoComida.Principal, false));
             Bar.stockComidas.Add(new Comida("Panchito", 50, 25, Comida.ETipoComida.Principal, false));

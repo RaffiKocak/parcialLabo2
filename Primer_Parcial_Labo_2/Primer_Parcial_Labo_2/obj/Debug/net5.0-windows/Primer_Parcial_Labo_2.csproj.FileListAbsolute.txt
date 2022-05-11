@@ -30,3 +30,4 @@ C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debu
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormPrincipal.resources
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormVentas.resources
 C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.FormCierreEspacio.resources
+C:\Users\raffi\source\repos\Primer_Parcial_Labo_2\Primer_Parcial_Labo_2\obj\Debug\net5.0-windows\Primer_Parcial_Labo_2.Properties.Resources.resources

@@ -43,24 +43,24 @@ namespace Primer_Parcial_Labo_2
             Logica.MostrarFormContenido(this.subFormNuevaBebida, this.pnl_contenedor);
         }
 
-        private void btn_eliminarConsumision_Click(object sender, EventArgs e)
+        private void btn_eliminarConsumicion_Click(object sender, EventArgs e)
         {
-            Consumision consumisionAEliminar;
+            Consumicion consumicionAEliminar;
             int index = dgv_stock.CurrentCell.RowIndex;
 
             if (this.cmb_opciones.SelectedIndex == 0)
             {
-                consumisionAEliminar = Bar.stockBebidas[index];
+                consumicionAEliminar = Bar.stockBebidas[index];
             }
             else
             {
-                consumisionAEliminar = Bar.stockComidas[index];
+                consumicionAEliminar = Bar.stockComidas[index];
             }
 
-            string mensaje = $"¿Está seguro que desea eliminar esta consumisión?\n{consumisionAEliminar.MostrarInfo()}";
+            string mensaje = $"¿Está seguro que desea eliminar esta consumición?\n{consumicionAEliminar.MostrarInfo()}";
             if (MessageBox.Show(mensaje, "Eliminar consumisión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                Consumision.EliminarStock(consumisionAEliminar);
+                Consumicion.EliminarStock(consumicionAEliminar);
 
                 Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Comida : Consumision
+    public class Comida : Consumicion
     {
         public enum ETipoComida
         {
@@ -39,7 +39,7 @@ namespace Entidades
             this.esVegano= comida.esVegano;
         }
 
-        public override Comida ClonarConsumision()
+        public override Comida ClonarConsumicion()
         {
             return new Comida(this);
         }

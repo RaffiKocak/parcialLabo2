@@ -58,11 +58,11 @@ namespace Primer_Parcial_Labo_2
                     bool tieneTacc = chk_tieneTacc.Checked;
                     bool tieneAlcohol = chk_tieneAlcohol.Checked;
 
-                    if (!Consumision.VerificarDescripcionEnStock(descripcion))
+                    if (!Consumicion.VerificarDescripcionEnStock(descripcion))
                     {
                         // retorno 0
                         Bebida nuevaBebida = new Bebida(descripcion, precioUnitario, 0, tipoBebida, envase, tieneAlcohol, tieneTacc);
-                        Consumision.AgregarNuevoStock(nuevaBebida);
+                        Consumicion.AgregarNuevoStock(nuevaBebida);
                         MessageBox.Show($"Producto agregado:\n{nuevaBebida.MostrarInfo()}");
                         operacionExitosa = true;
                     }

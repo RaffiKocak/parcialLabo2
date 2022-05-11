@@ -33,7 +33,7 @@ namespace Entidades
 
                 foreach (Comida item in listaACopiar)
                 {
-                    comida = item.ClonarConsumision();
+                    comida = item.ClonarConsumicion();
                     listaNueva.Add(comida);
                 }
 
@@ -52,7 +52,7 @@ namespace Entidades
 
                 foreach (Bebida item in listaACopiar)
                 {
-                    bebida = item.ClonarConsumision();
+                    bebida = item.ClonarConsumicion();
                     listaNueva.Add(bebida);
                 }
 
@@ -62,23 +62,23 @@ namespace Entidades
             return null;
         }
 
-        public static List<Consumision> ClonarListaStock(List<Consumision> listaConsumisiones)
+        public static List<Consumicion> ClonarListaStock(List<Consumicion> listaConsumisiones)
         {
-            Consumision comida;
-            Consumision bebida;
+            Consumicion comida;
+            Consumicion bebida;
             if (listaConsumisiones is not null)
             {
-                List<Consumision> listaNueva = new List<Consumision>();
+                List<Consumicion> listaNueva = new List<Consumicion>();
 
-                foreach (Consumision item in listaConsumisiones)
+                foreach (Consumicion item in listaConsumisiones)
                 {
                     if (item is Comida)
                     {
-                        comida = item.ClonarConsumision();
+                        comida = item.ClonarConsumicion();
                         listaNueva.Add(comida);
                     } else
                     {
-                        bebida = item.ClonarConsumision();
+                        bebida = item.ClonarConsumicion();
                         listaNueva.Add(bebida);
                     }
                 }
