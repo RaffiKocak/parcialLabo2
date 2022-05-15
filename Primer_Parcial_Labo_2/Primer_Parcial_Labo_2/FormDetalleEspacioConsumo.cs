@@ -43,18 +43,6 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
-        private void chk_ocupado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_ocupado.Checked)
-            {
-                this.espacioConsumo.Ocupado = true;
-            }
-            else
-            {
-                this.espacioConsumo.Ocupado = false;
-            }
-        }
-
         private void dgv_consumisiones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             MostrarInfoEspacio();
@@ -90,7 +78,7 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (huboCambios && this.espacioConsumo.Ocupado)
+            if (huboCambios)
             {
                 EspacioConsumo.GuardarEspacioConCambios(this.espacioConsumo);
                 Consumicion.ActualizarTodoStockPermanente(this.copiaLocalComidas, this.copiaLocalBebidas);
@@ -167,7 +155,6 @@ namespace Primer_Parcial_Labo_2
                 bool usoEstacionamiento = false;
                 if (formVenta.ShowDialog() == DialogResult.OK)
                 {
-
                     metodoPagoVenta = formVenta.DevolverMetodoPago();
                     usoEstacionamiento = formVenta.DevolverUsoEstacionamiento();
                     nuevaVenta = new Venta(this.espacioConsumo.Saldo, metodoPagoVenta, usoEstacionamiento);
@@ -209,17 +196,14 @@ namespace Primer_Parcial_Labo_2
             this.lbl_infoTipo.Text = $"{(this.espacioConsumo.EsMesa ? "Mesa" : "Barra")}";
             this.lbl_infoSaldo.Text = this.espacioConsumo.Saldo.ToString();
             this.lst_consumEspacio.DataSource = this.espacioConsumo.Consumiciones;
+            this.lbl_ocupado.Text = $"{(this.espacioConsumo.Ocupado ? "SI" : "NO")}";
 
             if (this.espacioConsumo.Ocupado)
             {
-                this.chk_ocupado.Checked = true;
-                this.chk_ocupado.Enabled = false;
                 this.btn_cerrarMesa.Enabled = true;
             }
             else 
             {
-                this.chk_ocupado.Checked = false;
-                this.chk_ocupado.Enabled = true;
                 this.btn_cerrarMesa.Enabled = false;
             }
         }

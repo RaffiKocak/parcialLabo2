@@ -35,7 +35,6 @@
             this.lbl_saldoEspacio = new System.Windows.Forms.Label();
             this.lbl_estadoEspacio = new System.Windows.Forms.Label();
             this.lbl_infoSaldo = new System.Windows.Forms.Label();
-            this.chk_ocupado = new System.Windows.Forms.CheckBox();
             this.lbl_consumiciones = new System.Windows.Forms.Label();
             this.lst_consumEspacio = new System.Windows.Forms.ListBox();
             this.btn_cerrar = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.dgv_consumiciones = new System.Windows.Forms.DataGridView();
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
             this.cmb_opciones = new System.Windows.Forms.ComboBox();
+            this.lbl_ocupado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consumiciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             // lbl_saldoEspacio
             // 
             this.lbl_saldoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_saldoEspacio.Location = new System.Drawing.Point(15, 93);
+            this.lbl_saldoEspacio.Location = new System.Drawing.Point(15, 95);
             this.lbl_saldoEspacio.Name = "lbl_saldoEspacio";
             this.lbl_saldoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_saldoEspacio.TabIndex = 20;
@@ -106,21 +106,11 @@
             // 
             this.lbl_infoSaldo.AutoSize = true;
             this.lbl_infoSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 93);
+            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 95);
             this.lbl_infoSaldo.Name = "lbl_infoSaldo";
             this.lbl_infoSaldo.Size = new System.Drawing.Size(84, 15);
             this.lbl_infoSaldo.TabIndex = 23;
             this.lbl_infoSaldo.Text = "saldoAMostrar";
-            // 
-            // chk_ocupado
-            // 
-            this.chk_ocupado.AutoSize = true;
-            this.chk_ocupado.Location = new System.Drawing.Point(102, 132);
-            this.chk_ocupado.Name = "chk_ocupado";
-            this.chk_ocupado.Size = new System.Drawing.Size(15, 14);
-            this.chk_ocupado.TabIndex = 27;
-            this.chk_ocupado.UseVisualStyleBackColor = true;
-            this.chk_ocupado.CheckedChanged += new System.EventHandler(this.chk_ocupado_CheckedChanged);
             // 
             // lbl_consumiciones
             // 
@@ -211,12 +201,23 @@
             this.cmb_opciones.TabIndex = 35;
             this.cmb_opciones.SelectedIndexChanged += new System.EventHandler(this.cmb_opciones_SelectedIndexChanged);
             // 
+            // lbl_ocupado
+            // 
+            this.lbl_ocupado.AutoSize = true;
+            this.lbl_ocupado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_ocupado.Location = new System.Drawing.Point(102, 131);
+            this.lbl_ocupado.Name = "lbl_ocupado";
+            this.lbl_ocupado.Size = new System.Drawing.Size(103, 15);
+            this.lbl_ocupado.TabIndex = 36;
+            this.lbl_ocupado.Text = "ocupadoAMostrar";
+            // 
             // FormDetalleEspacioConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(429, 453);
+            this.Controls.Add(this.lbl_ocupado);
             this.Controls.Add(this.cmb_opciones);
             this.Controls.Add(this.btn_cerrarMesa);
             this.Controls.Add(this.dgv_consumiciones);
@@ -224,7 +225,6 @@
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.lst_consumEspacio);
             this.Controls.Add(this.lbl_consumiciones);
-            this.Controls.Add(this.chk_ocupado);
             this.Controls.Add(this.lbl_infoSaldo);
             this.Controls.Add(this.lbl_estadoEspacio);
             this.Controls.Add(this.lbl_saldoEspacio);
@@ -252,7 +252,6 @@
         private System.Windows.Forms.Label lbl_saldoEspacio;
         private System.Windows.Forms.Label lbl_estadoEspacio;
         private System.Windows.Forms.Label lbl_infoSaldo;
-        private System.Windows.Forms.CheckBox chk_ocupado;
         private System.Windows.Forms.Label lbl_consumiciones;
         private System.Windows.Forms.ListBox lst_consumEspacio;
         private System.Windows.Forms.Button btn_cerrar;
@@ -260,5 +259,6 @@
         private System.Windows.Forms.DataGridView dgv_consumiciones;
         private System.Windows.Forms.Button btn_cerrarMesa;
         private System.Windows.Forms.ComboBox cmb_opciones;
+        private System.Windows.Forms.Label lbl_ocupado;
     }
 }
