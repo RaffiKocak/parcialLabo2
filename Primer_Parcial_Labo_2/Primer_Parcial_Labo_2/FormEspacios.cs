@@ -39,14 +39,13 @@ namespace Primer_Parcial_Labo_2
             {
                 if ((bool)(e.Value) == true)
                 {
-                    e.CellStyle.BackColor = Color.DarkRed;
+                    e.CellStyle.BackColor = Color.Gray;
                 }
                 else
                 {
-                    e.CellStyle.BackColor = Color.Green;
+                    e.CellStyle.BackColor = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
                 }
             }
         }
-
     }
 }

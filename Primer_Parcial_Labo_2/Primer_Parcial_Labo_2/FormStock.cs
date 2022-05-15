@@ -86,7 +86,7 @@ namespace Primer_Parcial_Labo_2
         private void btn_agregarStock_Click(object sender, EventArgs e)
         {
             int index = dgv_stock.CurrentCell.RowIndex;
-            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false);
+            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
             if (subFormCantidad.ShowDialog() == DialogResult.OK)
             {
                 int cantidadIngresada = subFormCantidad.DevolverCantidad();
@@ -101,7 +101,7 @@ namespace Primer_Parcial_Labo_2
         private void btn_restarStock_Click(object sender, EventArgs e)
         {
             int index = dgv_stock.CurrentCell.RowIndex;
-            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false);
+            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
             if (subFormCantidad.ShowDialog() == DialogResult.OK)
             {
                 int cantidadIngresada = subFormCantidad.DevolverCantidad();
@@ -134,6 +134,11 @@ namespace Primer_Parcial_Labo_2
         private void dgv_stock_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             Logica.FormatearCeldasPocoStock(this.dgv_stock, e);
+        }
+
+        private void btn_cerrarVentana_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

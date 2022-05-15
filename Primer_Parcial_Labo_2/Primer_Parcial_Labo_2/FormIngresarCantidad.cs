@@ -14,6 +14,7 @@ namespace Primer_Parcial_Labo_2
     public partial class FormIngresarCantidad : Form
     {
         bool ingresaPrecio;
+        bool mostrarCheckbox;
         int numeroEntero;
         decimal numeroDecimal;
 
@@ -22,9 +23,10 @@ namespace Primer_Parcial_Labo_2
             InitializeComponent();
         }
 
-        public FormIngresarCantidad(bool ingresaPrecio) : this()
+        public FormIngresarCantidad(bool ingresaPrecio, bool mostrarCheckbox) : this()
         {
             this.ingresaPrecio = ingresaPrecio;
+            this.mostrarCheckbox = mostrarCheckbox;
         }
 
         private void FormIngresarCantidad_Load(object sender, EventArgs e)
@@ -34,6 +36,10 @@ namespace Primer_Parcial_Labo_2
             if (ingresaPrecio)
             {
                 this.lbl_cantidad.Text = "Ingrese precio:";
+            }
+            if (mostrarCheckbox)
+            {
+                this.chk_conservarConsumicion.Visible = true;
             }
         }
 
@@ -64,6 +70,11 @@ namespace Primer_Parcial_Labo_2
         public decimal DevolverPrecio()
         {
             return numeroDecimal;
+        }
+
+        public bool VerificarConservaConsumicion()
+        {
+            return chk_conservarConsumicion.Checked;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

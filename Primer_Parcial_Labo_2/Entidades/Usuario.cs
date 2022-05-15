@@ -58,24 +58,7 @@ namespace Entidades
             return this.password == passwdIngresada;
         }
 
-        public static int ContarCantidadAdmins()
-        {
-            int contadorAdmins = 0;
-            if (Bar.listaUsuarios.Count > 0)
-            {
-                foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
-                {
-                    if (item.Value.EsAdmin == true)
-                    {
-                        contadorAdmins++;
-                    }
-                }
-            }
-
-            return contadorAdmins;
-        }
-
-        public static string BuscarNombreDeUsuario(Usuario usuario)
+        public static string BuscarCuentaLoginUsuario(Usuario usuario)
         {
             foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
             {

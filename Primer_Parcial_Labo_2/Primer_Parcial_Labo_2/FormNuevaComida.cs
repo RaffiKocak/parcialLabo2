@@ -42,53 +42,31 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            bool operacionExitosa = false;
-            if(comidaAModificar is null)
-            {
-                if (Validacion.ValidarTextosNoVacios(this))
-                {
-                    if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
-                    {
-                        string descripcion = txt_descripcion.Text;
-                        Comida.ETipoComida tipoComida = (Comida.ETipoComida)cmb_tipoComida.SelectedItem;
-                        bool esVegano = chk_esVegano.Checked;
+            bool banderaModificado = false;
+            int retornoOperacion = this.AgregarNuevaComida();
 
-                        if (!Consumicion.VerificarDescripcionEnStock(descripcion))
-                        {
-                            Comida nuevaComida = new Comida(descripcion, precioUnitario, 0, tipoComida, esVegano);
-                            Consumicion.AgregarNuevoStock(nuevaComida);
-                            MessageBox.Show($"Producto agregado:\n{nuevaComida.MostrarInfo()}");
-                            operacionExitosa = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("ya existe esta comida.");
-                        }
-                    } else
-                    {
-                        this.lbl_error.Visible = true;
-                    } 
-                } else
-                {
-                    this.lbl_error.Visible = true;
-                } 
-            } else
+            if (retornoOperacion == -3)
             {
-                if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
-                {
-                    this.comidaAModificar.PrecioUnitario = precioUnitario;
-                    operacionExitosa = false;
-                }
-                else
-                {
-                    this.lbl_error.Visible = true;
-                }
+                retornoOperacion = this.ModificarPrecioComida();
+                banderaModificado = true;
             }
-   
-            if (operacionExitosa)
+
+            switch (retornoOperacion)
             {
-                Logica.ActualizarDGVCompartido(dgvPadre, this.cmbPadre.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
-                this.Dispose();
+                case -2:
+                    this.lbl_error.Visible = true;
+                    break;
+
+                case -1:
+                    MessageBox.Show("Ya existe una comida con esta descripción","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case 0:
+                    Logica.ActualizarDGVCompartido(dgvPadre, this.cmbPadre.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    MessageBox.Show($"{(banderaModificado ? "Precio modificado" : "Comida agregada")}", "Éxito", MessageBoxButtons.OK,
+                        MessageBoxIcon.None);
+                    this.Dispose();
+                    break;
             }
         }
 
@@ -112,6 +90,46 @@ namespace Primer_Parcial_Labo_2
                 this.chk_esVegano.Enabled = false;
                 this.btn_agregar.Text = "Modificar";
             }
+        }
+
+        private int AgregarNuevaComida()
+        {
+            int retorno = -3;
+
+            if (comidaAModificar is null)
+            {
+                retorno = -2;
+                if (Validacion.ValidarTextosNoVacios(this) &&
+                    Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
+                {
+                    retorno = -1;
+                    string descripcion = txt_descripcion.Text;
+                    Comida.ETipoComida tipoComida = (Comida.ETipoComida)cmb_tipoComida.SelectedItem;
+                    bool esVegano = chk_esVegano.Checked;
+
+                    if (!Consumicion.VerificarDescripcionEnStock(descripcion))
+                    {
+                        Comida nuevaComida = new Comida(descripcion, precioUnitario, 0, tipoComida, esVegano);
+                        Consumicion.AgregarNuevoStock(nuevaComida);
+                        retorno = 0;                        
+                    }
+                }
+            }
+
+            return retorno;
+        }
+
+        private int ModificarPrecioComida()
+        {
+            int retorno = -2;
+
+            if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
+            {
+                this.comidaAModificar.PrecioUnitario = precioUnitario;
+                retorno = 0;
+            }
+
+            return retorno;
         }
     }
 }

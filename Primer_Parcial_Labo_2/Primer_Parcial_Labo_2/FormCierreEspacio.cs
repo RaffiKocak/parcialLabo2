@@ -48,12 +48,9 @@ namespace Primer_Parcial_Labo_2
 
         public bool DevolverUsoEstacionamiento()
         {
-            foreach (RadioButton item in this.grp_estacionamiento.Controls)
+            if (rdo_estacionamientoSi.Checked)
             {
-                if (item.Checked && item.Text == "Si")
-                {
-                    return true;
-                }
+                return true;
             }
 
             return false;

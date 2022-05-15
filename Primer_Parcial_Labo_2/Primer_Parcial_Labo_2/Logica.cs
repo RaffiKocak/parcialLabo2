@@ -18,7 +18,7 @@ namespace Primer_Parcial_Labo_2
         {
             foreach (Form item in panelContenedor.Controls)
             {
-                item.Dispose();
+               item.Dispose();
             }
         }
 
@@ -110,6 +110,5 @@ namespace Primer_Parcial_Labo_2
                 }
             }
         }
-
     }
 }

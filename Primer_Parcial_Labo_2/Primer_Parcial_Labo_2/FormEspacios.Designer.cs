@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEspacios));
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.dgv_espaciosConsumo = new System.Windows.Forms.DataGridView();
@@ -38,6 +39,7 @@
             // lbl_titulo
             // 
             this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_titulo.Location = new System.Drawing.Point(12, 9);
             this.lbl_titulo.Name = "lbl_titulo";
             this.lbl_titulo.Size = new System.Drawing.Size(188, 30);
@@ -48,7 +50,8 @@
             // 
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(906, 2);
+            this.btn_cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cerrar.Location = new System.Drawing.Point(922, 1);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(26, 28);
             this.btn_cerrar.TabIndex = 3;
@@ -62,29 +65,33 @@
             this.dgv_espaciosConsumo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_espaciosConsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_espaciosConsumo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_espaciosConsumo.Location = new System.Drawing.Point(451, 46);
+            this.dgv_espaciosConsumo.Location = new System.Drawing.Point(457, 46);
             this.dgv_espaciosConsumo.MultiSelect = false;
             this.dgv_espaciosConsumo.Name = "dgv_espaciosConsumo";
             this.dgv_espaciosConsumo.ReadOnly = true;
             this.dgv_espaciosConsumo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_espaciosConsumo.RowTemplate.Height = 25;
-            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(471, 482);
+            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(481, 492);
             this.dgv_espaciosConsumo.TabIndex = 4;
             this.dgv_espaciosConsumo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_espaciosConsumo_CellDoubleClick);
             this.dgv_espaciosConsumo.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_espaciosConsumo_CellFormatting);
             // 
             // pnl_contenedor
             // 
+            this.pnl_contenedor.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_contenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_contenedor.BackgroundImage")));
+            this.pnl_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnl_contenedor.Location = new System.Drawing.Point(12, 46);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(433, 482);
+            this.pnl_contenedor.Size = new System.Drawing.Size(433, 492);
             this.pnl_contenedor.TabIndex = 6;
             // 
             // FormEspacios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 540);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(950, 550);
             this.Controls.Add(this.pnl_contenedor);
             this.Controls.Add(this.dgv_espaciosConsumo);
             this.Controls.Add(this.btn_cerrar);

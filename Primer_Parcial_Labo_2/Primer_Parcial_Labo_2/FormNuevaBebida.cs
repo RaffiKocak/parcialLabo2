@@ -43,59 +43,32 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            bool operacionExitosa = false;
-            // retorno -3
-            if (bebidaAModificar is null)
-            {
-                // retorno -2
-                if (Validacion.ValidarTextosNoVacios(this) && 
-                    Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
-                {
-                    // retorno -1
-                    string descripcion = txt_descripcion.Text;
-                    Bebida.ETipoBebida tipoBebida = (Bebida.ETipoBebida)cmb_tipoBebida.SelectedItem;
-                    Bebida.EEnvase envase = (Bebida.EEnvase)cmb_envase.SelectedItem;
-                    bool tieneTacc = chk_tieneTacc.Checked;
-                    bool tieneAlcohol = chk_tieneAlcohol.Checked;
+            bool banderaModificado = false;
+            int retornoOperacion = this.AgregarNuevaBebida();
 
-                    if (!Consumicion.VerificarDescripcionEnStock(descripcion))
-                    {
-                        // retorno 0
-                        Bebida nuevaBebida = new Bebida(descripcion, precioUnitario, 0, tipoBebida, envase, tieneAlcohol, tieneTacc);
-                        Consumicion.AgregarNuevoStock(nuevaBebida);
-                        MessageBox.Show($"Producto agregado:\n{nuevaBebida.MostrarInfo()}");
-                        operacionExitosa = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ya existe una bebida con esta descripción");
-                    }
-                } else
-                {
+            if (retornoOperacion == -3)
+            {
+                retornoOperacion = this.ModificarPrecioBebida();
+                banderaModificado = true;
+            }
+
+            switch(retornoOperacion)
+            {
+                case -2:
                     this.lbl_error.Visible = true;
-                }
-            }
-            else
-            {
-                //Preguntar si está seguro de modificar el precio de consumisión. Verificar que no sea negativo
-                // retorno -2
-                if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
-                {
-                    // retorno 0
-                    this.bebidaAModificar.PrecioUnitario = precioUnitario;
-                    operacionExitosa = true;
-                } else
-                {
-                    this.lbl_error.Visible = true;
-                }
-            }
+                    break;
 
-            if (operacionExitosa)
-            {
-                Logica.ActualizarDGVCompartido(dgvPadre, this.cmbPadre.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
-                this.Dispose();
-            }
+                case -1:
+                    MessageBox.Show("Ya existe una bebida con esta descripción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
 
+                case 0:
+                    Logica.ActualizarDGVCompartido(dgvPadre, this.cmbPadre.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    MessageBox.Show($"{(banderaModificado ? "Precio modificado" : "Bebida agregada")}", "Éxito", MessageBoxButtons.OK,
+                        MessageBoxIcon.None);
+                    this.Dispose();
+                    break;
+            }
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -122,6 +95,48 @@ namespace Primer_Parcial_Labo_2
                 this.chk_tieneTacc.Enabled = false;
                 this.btn_agregar.Text = "Modificar";
             }
+        }
+
+        private int AgregarNuevaBebida()
+        {
+            int retorno = -3;
+
+            if (bebidaAModificar is null)
+            {
+                retorno = -2;
+                if (Validacion.ValidarTextosNoVacios(this) &&
+                    Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
+                {
+                    retorno = -1;
+                    string descripcion = txt_descripcion.Text;
+                    Bebida.ETipoBebida tipoBebida = (Bebida.ETipoBebida)cmb_tipoBebida.SelectedItem;
+                    Bebida.EEnvase envase = (Bebida.EEnvase)cmb_envase.SelectedItem;
+                    bool tieneTacc = chk_tieneTacc.Checked;
+                    bool tieneAlcohol = chk_tieneAlcohol.Checked;
+
+                    if (!Consumicion.VerificarDescripcionEnStock(descripcion))
+                    {
+                        Bebida nuevaBebida = new Bebida(descripcion, precioUnitario, 0, tipoBebida, envase, tieneAlcohol, tieneTacc);
+                        Consumicion.AgregarNuevoStock(nuevaBebida);
+                        retorno = 0;
+                    }
+                }
+            }
+
+            return retorno;
+        }
+
+        private int ModificarPrecioBebida()
+        {
+            int retorno = -2;
+
+            if (Validacion.ValidarPrecio(txt_precioUnitario.Text, out decimal precioUnitario))
+            {
+                this.bebidaAModificar.PrecioUnitario = precioUnitario;
+                retorno = 0;
+            }
+
+            return retorno;
         }
     }
 }

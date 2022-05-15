@@ -47,6 +47,7 @@
             // chk_tieneTacc
             // 
             this.chk_tieneTacc.AutoSize = true;
+            this.chk_tieneTacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.chk_tieneTacc.Location = new System.Drawing.Point(196, 208);
             this.chk_tieneTacc.Name = "chk_tieneTacc";
             this.chk_tieneTacc.Size = new System.Drawing.Size(106, 19);
@@ -56,31 +57,38 @@
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.Location = new System.Drawing.Point(194, 240);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(122, 32);
             this.btn_cancelar.TabIndex = 18;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_agregar
             // 
+            this.btn_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_agregar.Location = new System.Drawing.Point(49, 240);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(122, 32);
             this.btn_agregar.TabIndex = 17;
             this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.UseVisualStyleBackColor = false;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_titulo.Location = new System.Drawing.Point(25, 13);
+            this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_titulo.Location = new System.Drawing.Point(12, 13);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(199, 25);
+            this.lbl_titulo.Size = new System.Drawing.Size(201, 25);
             this.lbl_titulo.TabIndex = 16;
             this.lbl_titulo.Text = "Agregar nueva bebida";
             // 
@@ -109,6 +117,7 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_tipo.Location = new System.Drawing.Point(51, 134);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(33, 15);
@@ -118,6 +127,7 @@
             // lbl_precioUnitario
             // 
             this.lbl_precioUnitario.AutoSize = true;
+            this.lbl_precioUnitario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_precioUnitario.Location = new System.Drawing.Point(51, 97);
             this.lbl_precioUnitario.Name = "lbl_precioUnitario";
             this.lbl_precioUnitario.Size = new System.Drawing.Size(88, 15);
@@ -127,6 +137,7 @@
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
+            this.lbl_descripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_descripcion.Location = new System.Drawing.Point(51, 60);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(72, 15);
@@ -136,6 +147,7 @@
             // chk_tieneAlcohol
             // 
             this.chk_tieneAlcohol.AutoSize = true;
+            this.chk_tieneAlcohol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.chk_tieneAlcohol.Location = new System.Drawing.Point(51, 208);
             this.chk_tieneAlcohol.Name = "chk_tieneAlcohol";
             this.chk_tieneAlcohol.Size = new System.Drawing.Size(116, 19);
@@ -154,6 +166,7 @@
             // lbl_envase
             // 
             this.lbl_envase.AutoSize = true;
+            this.lbl_envase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_envase.Location = new System.Drawing.Point(51, 173);
             this.lbl_envase.Name = "lbl_envase";
             this.lbl_envase.Size = new System.Drawing.Size(46, 15);
@@ -163,7 +176,7 @@
             // lbl_error
             // 
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(231, 18);
+            this.lbl_error.Location = new System.Drawing.Point(254, 13);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(104, 31);
             this.lbl_error.TabIndex = 23;
@@ -174,6 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(370, 300);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.cmb_envase);

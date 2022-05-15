@@ -44,6 +44,8 @@
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
+            this.lbl_descripcion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_descripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_descripcion.Location = new System.Drawing.Point(49, 56);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(72, 15);
@@ -53,6 +55,8 @@
             // lbl_precioUnitario
             // 
             this.lbl_precioUnitario.AutoSize = true;
+            this.lbl_precioUnitario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_precioUnitario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_precioUnitario.Location = new System.Drawing.Point(49, 93);
             this.lbl_precioUnitario.Name = "lbl_precioUnitario";
             this.lbl_precioUnitario.Size = new System.Drawing.Size(88, 15);
@@ -62,6 +66,8 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_tipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_tipo.Location = new System.Drawing.Point(49, 130);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(33, 15);
@@ -93,36 +99,49 @@
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_titulo.Location = new System.Drawing.Point(23, 9);
+            this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_titulo.Location = new System.Drawing.Point(12, 9);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(203, 25);
+            this.lbl_titulo.Size = new System.Drawing.Size(206, 25);
             this.lbl_titulo.TabIndex = 6;
             this.lbl_titulo.Text = "Agregar nueva comida";
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Location = new System.Drawing.Point(49, 209);
+            this.btn_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_agregar.FlatAppearance.BorderSize = 0;
+            this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_agregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_agregar.Location = new System.Drawing.Point(49, 212);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(122, 32);
             this.btn_agregar.TabIndex = 7;
             this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.UseVisualStyleBackColor = false;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(194, 209);
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_cancelar.Location = new System.Drawing.Point(194, 212);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(122, 32);
             this.btn_cancelar.TabIndex = 8;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // chk_esVegano
             // 
             this.chk_esVegano.AutoSize = true;
+            this.chk_esVegano.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chk_esVegano.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.chk_esVegano.Location = new System.Drawing.Point(110, 174);
             this.chk_esVegano.Name = "chk_esVegano";
             this.chk_esVegano.Size = new System.Drawing.Size(145, 19);
@@ -132,10 +151,11 @@
             // 
             // lbl_error
             // 
+            this.lbl_error.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(232, 9);
+            this.lbl_error.Location = new System.Drawing.Point(233, 9);
             this.lbl_error.Name = "lbl_error";
-            this.lbl_error.Size = new System.Drawing.Size(104, 31);
+            this.lbl_error.Size = new System.Drawing.Size(125, 34);
             this.lbl_error.TabIndex = 24;
             this.lbl_error.Text = "No todos los datos son válidos!";
             this.lbl_error.Visible = false;
@@ -144,7 +164,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 267);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(370, 270);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.chk_esVegano);
             this.Controls.Add(this.btn_cancelar);

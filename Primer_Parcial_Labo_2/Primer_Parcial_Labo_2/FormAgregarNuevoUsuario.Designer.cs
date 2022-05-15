@@ -49,6 +49,7 @@
             // 
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_titulo.Location = new System.Drawing.Point(12, 9);
             this.lbl_titulo.Name = "lbl_titulo";
             this.lbl_titulo.Size = new System.Drawing.Size(205, 25);
@@ -59,19 +60,20 @@
             // 
             this.txt_apellido.Location = new System.Drawing.Point(171, 91);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(157, 23);
+            this.txt_apellido.Size = new System.Drawing.Size(239, 23);
             this.txt_apellido.TabIndex = 12;
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(171, 53);
+            this.txt_nombre.Location = new System.Drawing.Point(171, 54);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(157, 23);
+            this.txt_nombre.Size = new System.Drawing.Size(239, 23);
             this.txt_nombre.TabIndex = 11;
             // 
             // lbl_dni
             // 
             this.lbl_dni.AutoSize = true;
+            this.lbl_dni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_dni.Location = new System.Drawing.Point(52, 130);
             this.lbl_dni.Name = "lbl_dni";
             this.lbl_dni.Size = new System.Drawing.Size(30, 15);
@@ -81,6 +83,7 @@
             // lbl_apellido
             // 
             this.lbl_apellido.AutoSize = true;
+            this.lbl_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_apellido.Location = new System.Drawing.Point(52, 93);
             this.lbl_apellido.Name = "lbl_apellido";
             this.lbl_apellido.Size = new System.Drawing.Size(54, 15);
@@ -90,7 +93,8 @@
             // lbl_nombre
             // 
             this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(52, 56);
+            this.lbl_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_nombre.Location = new System.Drawing.Point(52, 57);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(54, 15);
             this.lbl_nombre.TabIndex = 8;
@@ -100,12 +104,13 @@
             // 
             this.txt_dni.Location = new System.Drawing.Point(171, 128);
             this.txt_dni.Name = "txt_dni";
-            this.txt_dni.Size = new System.Drawing.Size(157, 23);
+            this.txt_dni.Size = new System.Drawing.Size(239, 23);
             this.txt_dni.TabIndex = 13;
             // 
             // chk_esAdmin
             // 
             this.chk_esAdmin.AutoSize = true;
+            this.chk_esAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.chk_esAdmin.Location = new System.Drawing.Point(105, 240);
             this.chk_esAdmin.Name = "chk_esAdmin";
             this.chk_esAdmin.Size = new System.Drawing.Size(224, 19);
@@ -115,22 +120,30 @@
             // 
             // btn_aceptar
             // 
+            this.btn_aceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aceptar.Location = new System.Drawing.Point(27, 298);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(179, 41);
             this.btn_aceptar.TabIndex = 16;
             this.btn_aceptar.Text = "Aceptar";
-            this.btn_aceptar.UseVisualStyleBackColor = true;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.Location = new System.Drawing.Point(231, 298);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(179, 41);
             this.btn_cancelar.TabIndex = 17;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // lbl_error
@@ -148,6 +161,7 @@
             // lbl_nombreUser
             // 
             this.lbl_nombreUser.AutoSize = true;
+            this.lbl_nombreUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_nombreUser.Location = new System.Drawing.Point(52, 167);
             this.lbl_nombreUser.Name = "lbl_nombreUser";
             this.lbl_nombreUser.Size = new System.Drawing.Size(96, 15);
@@ -158,7 +172,7 @@
             // 
             this.txt_userLogin.Location = new System.Drawing.Point(171, 164);
             this.txt_userLogin.Name = "txt_userLogin";
-            this.txt_userLogin.Size = new System.Drawing.Size(157, 23);
+            this.txt_userLogin.Size = new System.Drawing.Size(239, 23);
             this.txt_userLogin.TabIndex = 20;
             // 
             // txt_passwd
@@ -166,12 +180,13 @@
             this.txt_passwd.Location = new System.Drawing.Point(171, 202);
             this.txt_passwd.Name = "txt_passwd";
             this.txt_passwd.PasswordChar = '*';
-            this.txt_passwd.Size = new System.Drawing.Size(157, 23);
+            this.txt_passwd.Size = new System.Drawing.Size(239, 23);
             this.txt_passwd.TabIndex = 22;
             // 
             // lbl_passwd
             // 
             this.lbl_passwd.AutoSize = true;
+            this.lbl_passwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_passwd.Location = new System.Drawing.Point(52, 205);
             this.lbl_passwd.Name = "lbl_passwd";
             this.lbl_passwd.Size = new System.Drawing.Size(70, 15);
@@ -182,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(437, 364);
             this.Controls.Add(this.txt_passwd);
             this.Controls.Add(this.lbl_passwd);

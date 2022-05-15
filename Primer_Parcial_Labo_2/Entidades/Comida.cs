@@ -33,7 +33,7 @@ namespace Entidades
             this.esVegano = esVegano;
         }
 
-        public Comida(Comida comida) : base(comida)
+        private Comida(Comida comida) : base(comida)
         {
             this.tipoComida = comida.tipoComida;
             this.esVegano= comida.esVegano;
@@ -53,29 +53,5 @@ namespace Entidades
 
             return sb.ToString();
         }
-
-        //public static Comida operator +(Comida comida, int cantidadASumar)
-        //{
-        //    if (comida is not null)
-        //    {
-        //        Comida comidaNueva = comida.ClonarConsumision();
-        //        comidaNueva.cantidad = comidaNueva.cantidad + cantidadASumar;
-        //        return comidaNueva;
-        //    }
-
-        //    return null;
-        //}
-
-        //public static Comida operator -(Comida comida, int cantidadARestar)
-        //{
-        //    if (comida is not null)
-        //    {
-        //        Comida comidaNueva = comida.ClonarConsumision();
-        //        comidaNueva.cantidad = comidaNueva.cantidad - cantidadARestar;
-        //        return comidaNueva;
-        //    }
-
-        //    return null;
-        //}
     }
 }

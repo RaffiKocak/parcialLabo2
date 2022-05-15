@@ -35,7 +35,7 @@ namespace Entidades
         {
             for (int i = 0; i < cantidadMesas; i++)
             {
-                EspacioConsumo.AltaEspacioConsumo(new EspacioConsumo(ETipoEspacio.Mesa));
+                EspacioConsumo.AltaEspacioConsumo(new EspacioConsumo(true));
             }
         }
 
@@ -43,7 +43,7 @@ namespace Entidades
         {
             for (int i = 0; i < cantidadSillas; i++)
             {
-                EspacioConsumo.AltaEspacioConsumo(new EspacioConsumo(ETipoEspacio.Barra));
+                EspacioConsumo.AltaEspacioConsumo(new EspacioConsumo(false));
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
@@ -24,9 +25,7 @@ namespace Primer_Parcial_Labo_2
 
         private void FormAdministrador_Load(object sender, EventArgs e)
         {
-            HardcodeoDatos.CargarEspaciosDeConsumo();
-            HardcodeoDatos.CargarConsumiciones();
-            HardcodeoDatos.CargarVentas();
+            CambiarColoresParaUsuario();
         }
 
         private void btn_mesas_Click(object sender, EventArgs e)
@@ -70,6 +69,28 @@ namespace Primer_Parcial_Labo_2
         private void tmr_tiempo_Tick(object sender, EventArgs e)
         {
             lbl_reloj.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void CambiarColoresParaUsuario()
+        {
+            if (!usuario.EsAdmin)
+            {
+                this.pnl_cabecera.BackColor = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+                this.pnl_der.BackColor = Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+                this.pnl_linea.BackColor = Color.Black;
+                this.lbl_lesUtn.ForeColor = Color.Black;
+                this.lbl_bar.ForeColor = Color.Black;
+                this.lbl_reloj.ForeColor = Color.Black;
+                this.btn_cerrar.ForeColor = Color.Black;
+                this.btn_cerrar.ForeColor = Color.Black;
+
+                this.btn_mesas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_11;
+                this.btn_cerrarSesion.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_05;
+                this.btn_stock.Visible = false;
+                this.btn_usuarios.Visible = false;
+                this.btn_ventas.Visible = false;
+            }
+
         }
     }
 }

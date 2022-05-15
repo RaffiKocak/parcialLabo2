@@ -38,7 +38,7 @@
             this.chk_ocupado = new System.Windows.Forms.CheckBox();
             this.lbl_consumiciones = new System.Windows.Forms.Label();
             this.lst_consumEspacio = new System.Windows.Forms.ListBox();
-            this.btn_cerrarGrande = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.dgv_consumiciones = new System.Windows.Forms.DataGridView();
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
@@ -48,17 +48,18 @@
             // 
             // lbl_idEspacio
             // 
-            this.lbl_idEspacio.AutoSize = true;
-            this.lbl_idEspacio.Location = new System.Drawing.Point(70, 68);
+            this.lbl_idEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_idEspacio.Location = new System.Drawing.Point(15, 27);
             this.lbl_idEspacio.Name = "lbl_idEspacio";
-            this.lbl_idEspacio.Size = new System.Drawing.Size(21, 15);
+            this.lbl_idEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_idEspacio.TabIndex = 7;
             this.lbl_idEspacio.Text = "ID:";
             // 
             // lbl_infoId
             // 
             this.lbl_infoId.AutoSize = true;
-            this.lbl_infoId.Location = new System.Drawing.Point(102, 68);
+            this.lbl_infoId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_infoId.Location = new System.Drawing.Point(102, 27);
             this.lbl_infoId.Name = "lbl_infoId";
             this.lbl_infoId.Size = new System.Drawing.Size(66, 15);
             this.lbl_infoId.TabIndex = 17;
@@ -66,17 +67,18 @@
             // 
             // lbl_tipoEspacio
             // 
-            this.lbl_tipoEspacio.AutoSize = true;
-            this.lbl_tipoEspacio.Location = new System.Drawing.Point(58, 101);
+            this.lbl_tipoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_tipoEspacio.Location = new System.Drawing.Point(15, 59);
             this.lbl_tipoEspacio.Name = "lbl_tipoEspacio";
-            this.lbl_tipoEspacio.Size = new System.Drawing.Size(33, 15);
+            this.lbl_tipoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_tipoEspacio.TabIndex = 18;
             this.lbl_tipoEspacio.Text = "Tipo:";
             // 
             // lbl_infoTipo
             // 
             this.lbl_infoTipo.AutoSize = true;
-            this.lbl_infoTipo.Location = new System.Drawing.Point(102, 101);
+            this.lbl_infoTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_infoTipo.Location = new System.Drawing.Point(102, 59);
             this.lbl_infoTipo.Name = "lbl_infoTipo";
             this.lbl_infoTipo.Size = new System.Drawing.Size(77, 15);
             this.lbl_infoTipo.TabIndex = 19;
@@ -84,26 +86,27 @@
             // 
             // lbl_saldoEspacio
             // 
-            this.lbl_saldoEspacio.AutoSize = true;
-            this.lbl_saldoEspacio.Location = new System.Drawing.Point(52, 134);
+            this.lbl_saldoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_saldoEspacio.Location = new System.Drawing.Point(15, 93);
             this.lbl_saldoEspacio.Name = "lbl_saldoEspacio";
-            this.lbl_saldoEspacio.Size = new System.Drawing.Size(39, 15);
+            this.lbl_saldoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_saldoEspacio.TabIndex = 20;
             this.lbl_saldoEspacio.Text = "Saldo:";
             // 
             // lbl_estadoEspacio
             // 
-            this.lbl_estadoEspacio.AutoSize = true;
-            this.lbl_estadoEspacio.Location = new System.Drawing.Point(32, 186);
+            this.lbl_estadoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_estadoEspacio.Location = new System.Drawing.Point(15, 131);
             this.lbl_estadoEspacio.Name = "lbl_estadoEspacio";
-            this.lbl_estadoEspacio.Size = new System.Drawing.Size(59, 15);
+            this.lbl_estadoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_estadoEspacio.TabIndex = 22;
             this.lbl_estadoEspacio.Text = "Ocupado:";
             // 
             // lbl_infoSaldo
             // 
             this.lbl_infoSaldo.AutoSize = true;
-            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 134);
+            this.lbl_infoSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 93);
             this.lbl_infoSaldo.Name = "lbl_infoSaldo";
             this.lbl_infoSaldo.Size = new System.Drawing.Size(84, 15);
             this.lbl_infoSaldo.TabIndex = 23;
@@ -112,7 +115,7 @@
             // chk_ocupado
             // 
             this.chk_ocupado.AutoSize = true;
-            this.chk_ocupado.Location = new System.Drawing.Point(102, 187);
+            this.chk_ocupado.Location = new System.Drawing.Point(102, 132);
             this.chk_ocupado.Name = "chk_ocupado";
             this.chk_ocupado.Size = new System.Drawing.Size(15, 14);
             this.chk_ocupado.TabIndex = 27;
@@ -122,7 +125,8 @@
             // lbl_consumiciones
             // 
             this.lbl_consumiciones.AutoSize = true;
-            this.lbl_consumiciones.Location = new System.Drawing.Point(15, 232);
+            this.lbl_consumiciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_consumiciones.Location = new System.Drawing.Point(15, 214);
             this.lbl_consumiciones.Name = "lbl_consumiciones";
             this.lbl_consumiciones.Size = new System.Drawing.Size(92, 15);
             this.lbl_consumiciones.TabIndex = 28;
@@ -130,39 +134,50 @@
             // 
             // lst_consumEspacio
             // 
+            this.lst_consumEspacio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lst_consumEspacio.FormattingEnabled = true;
             this.lst_consumEspacio.ItemHeight = 15;
-            this.lst_consumEspacio.Location = new System.Drawing.Point(217, 41);
+            this.lst_consumEspacio.Location = new System.Drawing.Point(223, 27);
             this.lst_consumEspacio.Name = "lst_consumEspacio";
-            this.lst_consumEspacio.Size = new System.Drawing.Size(200, 169);
+            this.lst_consumEspacio.Size = new System.Drawing.Size(194, 154);
             this.lst_consumEspacio.TabIndex = 29;
+            this.lst_consumEspacio.DoubleClick += new System.EventHandler(this.lst_consumEspacio_DoubleClick);
             // 
-            // btn_cerrarGrande
+            // btn_cerrar
             // 
-            this.btn_cerrarGrande.Location = new System.Drawing.Point(234, 387);
-            this.btn_cerrarGrande.Name = "btn_cerrarGrande";
-            this.btn_cerrarGrande.Size = new System.Drawing.Size(183, 53);
-            this.btn_cerrarGrande.TabIndex = 30;
-            this.btn_cerrarGrande.Text = "Cerrar";
-            this.btn_cerrarGrande.UseVisualStyleBackColor = true;
-            this.btn_cerrarGrande.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Location = new System.Drawing.Point(223, 373);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(194, 53);
+            this.btn_cerrar.TabIndex = 30;
+            this.btn_cerrar.Text = "Cerrar";
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(15, 387);
+            this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Location = new System.Drawing.Point(15, 373);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(183, 53);
+            this.btn_guardar.Size = new System.Drawing.Size(194, 53);
             this.btn_guardar.TabIndex = 31;
             this.btn_guardar.Text = "Guardar cambios";
-            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // dgv_consumiciones
             // 
             this.dgv_consumiciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_consumiciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_consumiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_consumiciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_consumiciones.Location = new System.Drawing.Point(15, 250);
+            this.dgv_consumiciones.Location = new System.Drawing.Point(15, 236);
             this.dgv_consumiciones.MultiSelect = false;
             this.dgv_consumiciones.Name = "dgv_consumiciones";
             this.dgv_consumiciones.ReadOnly = true;
@@ -174,21 +189,25 @@
             // 
             // btn_cerrarMesa
             // 
-            this.btn_cerrarMesa.Location = new System.Drawing.Point(132, 170);
+            this.btn_cerrarMesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_cerrarMesa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrarMesa.FlatAppearance.BorderSize = 0;
+            this.btn_cerrarMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrarMesa.Location = new System.Drawing.Point(15, 170);
             this.btn_cerrarMesa.Name = "btn_cerrarMesa";
-            this.btn_cerrarMesa.Size = new System.Drawing.Size(72, 47);
+            this.btn_cerrarMesa.Size = new System.Drawing.Size(194, 26);
             this.btn_cerrarMesa.TabIndex = 33;
             this.btn_cerrarMesa.Text = "Cerrar mesa";
-            this.btn_cerrarMesa.UseVisualStyleBackColor = true;
+            this.btn_cerrarMesa.UseVisualStyleBackColor = false;
             this.btn_cerrarMesa.Click += new System.EventHandler(this.btn_cerrarMesa_Click);
             // 
             // cmb_opciones
             // 
             this.cmb_opciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_opciones.FormattingEnabled = true;
-            this.cmb_opciones.Location = new System.Drawing.Point(293, 221);
+            this.cmb_opciones.Location = new System.Drawing.Point(223, 206);
             this.cmb_opciones.Name = "cmb_opciones";
-            this.cmb_opciones.Size = new System.Drawing.Size(124, 23);
+            this.cmb_opciones.Size = new System.Drawing.Size(194, 23);
             this.cmb_opciones.TabIndex = 35;
             this.cmb_opciones.SelectedIndexChanged += new System.EventHandler(this.cmb_opciones_SelectedIndexChanged);
             // 
@@ -196,12 +215,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(429, 453);
             this.Controls.Add(this.cmb_opciones);
             this.Controls.Add(this.btn_cerrarMesa);
             this.Controls.Add(this.dgv_consumiciones);
             this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.btn_cerrarGrande);
+            this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.lst_consumEspacio);
             this.Controls.Add(this.lbl_consumiciones);
             this.Controls.Add(this.chk_ocupado);
@@ -235,7 +255,7 @@
         private System.Windows.Forms.CheckBox chk_ocupado;
         private System.Windows.Forms.Label lbl_consumiciones;
         private System.Windows.Forms.ListBox lst_consumEspacio;
-        private System.Windows.Forms.Button btn_cerrarGrande;
+        private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView dgv_consumiciones;
         private System.Windows.Forms.Button btn_cerrarMesa;

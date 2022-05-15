@@ -42,37 +42,49 @@ namespace Primer_Parcial_Labo_2
         private void btn_eliminarUsuario_Click(object sender, EventArgs e)
         {
             int index = this.dgv_usuarios.CurrentCell.RowIndex;
-            Usuario usuarioAEliminar = this.listaAMostrar[index];
-            string nombreUsuario = Usuario.BuscarNombreDeUsuario(usuarioAEliminar);
-            
-            if (!(this.usuarioLogueado.Dni == usuarioAEliminar.Dni))
+            int dniAEliminar = this.listaAMostrar[index].Dni;
+            string nombreUsuario = Usuario.BuscarCuentaLoginUsuario(this.listaAMostrar[index]);
+
+            int retornoOperacion = this.EliminarUsuario(dniAEliminar, nombreUsuario);
+
+            switch(retornoOperacion)
             {
-                if (usuarioAEliminar.EsAdmin)
+                case -2:
+                    MessageBox.Show("No puede borrarse a sí mismo!");                    
+                    break;
+
+                case -1:
+                    MessageBox.Show("Eliminación cancelada.");
+                    break;
+
+                case 0:
+                    MessageBox.Show("Usuario eliminado exitosamente");
+                    listaAMostrar = Bar.listaUsuarios.Values.ToList();
+                    Logica.ActualizarDGV(this.dgv_usuarios, listaAMostrar);
+                    break;
+            }
+        }
+
+        private void btn_cerrarVentana_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private int EliminarUsuario(int dniAEliminar, string usuarioAEliminar)
+        {
+            int retorno = -2;
+
+            if (this.usuarioLogueado.Dni != dniAEliminar)
+            {
+                retorno = -1;
+                if (Logica.PedirConfirmacion($"Borrar usuario"))
                 {
-                    if (Usuario.ContarCantidadAdmins() > 1)
-                    {
-                        if (Logica.PedirConfirmacion("Borrar usuario"))
-                        {
-                            Usuario.BajaUsuario(nombreUsuario);
-                        }
-                    } else
-                    {
-                        MessageBox.Show("Se necesita tener al menos un usuario administrador en la base de datos");
-                    }
-                } else
-                {
-                    if (Logica.PedirConfirmacion("Borrar usuario"))
-                    {
-                        Usuario.BajaUsuario(nombreUsuario);
-                    }
+                    Usuario.BajaUsuario(usuarioAEliminar);
+                    retorno = 0;
                 }
-            } else
-            {
-                MessageBox.Show("No puede borrarse a sí mismo!!");
             }
 
-            listaAMostrar = Bar.listaUsuarios.Values.ToList();
-            Logica.ActualizarDGV(this.dgv_usuarios, listaAMostrar);
+            return retorno;
         }
     }
 }

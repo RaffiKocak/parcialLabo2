@@ -37,7 +37,7 @@ namespace Primer_Parcial_Labo_2
             Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                 this.copiaLocalComidas);
             MostrarInfoEspacio();
-            if (this.espacioConsumo.Tipo == ETipoEspacio.Barra)
+            if (!this.espacioConsumo.EsMesa)
             {
                 this.cmb_opciones.Enabled = false;
             }
@@ -57,8 +57,8 @@ namespace Primer_Parcial_Labo_2
 
         private void dgv_consumisiones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.espacioConsumo.Ocupado = true;
             MostrarInfoEspacio();
+            int retornoOperacion;
             int index = dgv_consumiciones.CurrentCell.RowIndex;
             Consumicion nuevaConsumicion;
             if (cmb_opciones.SelectedIndex == 0)
@@ -70,30 +70,20 @@ namespace Primer_Parcial_Labo_2
                 nuevaConsumicion = this.copiaLocalComidas[index].ClonarConsumicion();
             }
 
-            FormIngresarCantidad formCantidad = new FormIngresarCantidad(false);
+            retornoOperacion = this.AgregarConsumo(nuevaConsumicion, index);
 
-            if (formCantidad.ShowDialog() == DialogResult.OK)
+            switch(retornoOperacion)
             {
-                huboCambios = true;
-                int cantidadIngresada = formCantidad.DevolverCantidad();
-                formCantidad.Dispose();
-                if (this.espacioConsumo.AgregarConsumo(nuevaConsumicion, cantidadIngresada))
-                {
-                    Logica.RestarStockEnFormulario(cmb_opciones.SelectedIndex, index, cantidadIngresada,
-                        copiaLocalBebidas, copiaLocalComidas);
+                case -1:
+                    MessageBox.Show("No hay suficiente stock para esta venta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
 
+                case 0:
+                    this.espacioConsumo.Ocupado = true;
                     ActualizarVistaConsumisionesAgregadasAMesa();
                     Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                     this.copiaLocalComidas);
-                }
-                else
-                {
-                    MessageBox.Show("No hay suficiente stock para esta venta!");
-                }
-            }
-            else if (this.espacioConsumo.Consumiciones.Count == 0)
-            {
-                this.espacioConsumo.Ocupado = false;
+                    break;
             }
             MostrarInfoEspacio();
         }
@@ -109,42 +99,33 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void btn_cerrarMesa_Click(object sender, EventArgs e)
         {
-            if (!huboCambios)
+            int retornoOperacion = this.CerrarMesa(out Venta nuevaVenta);
+
+            switch(retornoOperacion)
             {
-                FormCierreEspacio formVenta = new FormCierreEspacio();
-                string metodoPagoVenta = string.Empty;
-                bool usoEstacionamiento = false;
-                if (formVenta.ShowDialog() == DialogResult.OK)
-                {
-                    metodoPagoVenta = formVenta.DevolverMetodoPago();
-                    usoEstacionamiento = formVenta.DevolverUsoEstacionamiento();
-                    Venta nuevaVenta = new Venta(this.espacioConsumo.Saldo, metodoPagoVenta, usoEstacionamiento);
-                    nuevaVenta.RegistrarVenta();
-                    this.espacioConsumo.CerrarMesa();
-                    MessageBox.Show($"Venta exitosa\n{nuevaVenta.ToString()}");
+                case -2:
+                    MessageBox.Show("Por favor guarde cambios antes de cerrar la mesa.", "Operación inválida", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
 
+                case -1:
+                    MessageBox.Show("Venta cancelada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    break;
 
+                case 0:
+                    MessageBox.Show($"Venta exitosa\n{nuevaVenta}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EspacioConsumo.GuardarEspacioConCambios(this.espacioConsumo);
                     Logica.ActualizarDGV(dgv_padre, Bar.listaEspaciosConsumo);
-                    huboCambios = false;
+                    this.huboCambios = false;
                     this.Dispose();
-
-                }
-                else
-                {
-                    MessageBox.Show("Venta cancelada");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor guarde cambios antes de cerrar la mesa.");
+                    break;
             }
         }
 
@@ -164,15 +145,68 @@ namespace Primer_Parcial_Labo_2
                 }
                 else
                 {
-                    Dispose();
+                    this.Dispose();
                 }
             }
         }
 
+        private void dgv_consumisiones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            Logica.FormatearCeldasPocoStock(this.dgv_consumiciones, e);
+        }
+
+        private int CerrarMesa(out Venta nuevaVenta)
+        {
+            int retorno = -2;
+            nuevaVenta = null;
+            if (!huboCambios)
+            {
+                retorno = -1;
+                FormCierreEspacio formVenta = new FormCierreEspacio();
+                string metodoPagoVenta = string.Empty;
+                bool usoEstacionamiento = false;
+                if (formVenta.ShowDialog() == DialogResult.OK)
+                {
+
+                    metodoPagoVenta = formVenta.DevolverMetodoPago();
+                    usoEstacionamiento = formVenta.DevolverUsoEstacionamiento();
+                    nuevaVenta = new Venta(this.espacioConsumo.Saldo, metodoPagoVenta, usoEstacionamiento);
+                    nuevaVenta.RegistrarVenta();
+                    this.espacioConsumo.CerrarMesa();
+                    retorno = 0;
+                }
+            }
+
+            return retorno;
+        }
+
+        private int AgregarConsumo(Consumicion nuevaConsumicion, int index)
+        {
+            int retorno = -2;
+
+            FormIngresarCantidad formCantidad = new FormIngresarCantidad(false, false);
+            if (formCantidad.ShowDialog() == DialogResult.OK)
+            {
+                retorno = -1;
+                int cantidadIngresada = formCantidad.DevolverCantidad();
+                formCantidad.Dispose();
+                if (this.espacioConsumo.AgregarConsumo(nuevaConsumicion, cantidadIngresada))
+                {
+                    huboCambios = true;
+                    Logica.RestarStockEnFormulario(cmb_opciones.SelectedIndex, index, cantidadIngresada,
+                        copiaLocalBebidas, copiaLocalComidas);
+
+                    retorno = 0;
+                }
+            }
+
+            return retorno;
+        }
+
         private void MostrarInfoEspacio()
         {
-            this.lbl_infoId.Text = this.espacioConsumo.IdMesa.ToString();
-            this.lbl_infoTipo.Text = this.espacioConsumo.Tipo.ToString();
+            this.lbl_infoId.Text = this.espacioConsumo.IdEspacio.ToString();
+            this.lbl_infoTipo.Text = $"{(this.espacioConsumo.EsMesa ? "Mesa" : "Barra")}";
             this.lbl_infoSaldo.Text = this.espacioConsumo.Saldo.ToString();
             this.lst_consumEspacio.DataSource = this.espacioConsumo.Consumiciones;
 
@@ -182,7 +216,7 @@ namespace Primer_Parcial_Labo_2
                 this.chk_ocupado.Enabled = false;
                 this.btn_cerrarMesa.Enabled = true;
             }
-            else
+            else 
             {
                 this.chk_ocupado.Checked = false;
                 this.chk_ocupado.Enabled = true;
@@ -196,9 +230,60 @@ namespace Primer_Parcial_Labo_2
             lst_consumEspacio.DataSource = this.espacioConsumo.Consumiciones;
         }
 
-        private void dgv_consumisiones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void lst_consumEspacio_DoubleClick(object sender, EventArgs e)
         {
-            Logica.FormatearCeldasPocoStock(this.dgv_consumiciones, e);
+            Consumicion consumicionABorrar = (Consumicion)lst_consumEspacio.SelectedItem;
+            FormIngresarCantidad frmCantidad = new FormIngresarCantidad(false, true);
+
+            if (frmCantidad.ShowDialog() == DialogResult.OK)
+            {
+                this.huboCambios = true;
+                int cantidadABorrar = frmCantidad.DevolverCantidad();
+
+                this.espacioConsumo.RestarConsumo(consumicionABorrar, cantidadABorrar);
+
+                if (frmCantidad.VerificarConservaConsumicion())
+                {
+                    ReponerConsumicion(consumicionABorrar, cantidadABorrar);
+                    Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
+                        this.copiaLocalComidas);
+                }
+
+                frmCantidad.Dispose();
+                if (this.espacioConsumo.Consumiciones.Count == 0)
+                {
+                    this.espacioConsumo.Ocupado = false;
+                }
+                MostrarInfoEspacio();
+                ActualizarVistaConsumisionesAgregadasAMesa();
+            }
+        }
+
+        private void ReponerConsumicion(Consumicion consumicion, int cantidadAReponer)
+        {
+            if (consumicion is not null)
+            {
+                if (consumicion is Bebida)
+                {
+                    foreach (Bebida item in this.copiaLocalBebidas)
+                    {
+                        if (item == consumicion)
+                        {
+                            item.Cantidad += cantidadAReponer;
+                        }
+                    }
+                } else
+                {
+                    foreach (Comida item in this.copiaLocalComidas)
+                    {
+                        if (item == consumicion)
+                        {
+                            item.Cantidad += cantidadAReponer;
+                        }
+                    }
+                }
+                
+            }
         }
     }
 }

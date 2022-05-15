@@ -80,29 +80,5 @@ namespace Entidades
 
             return sb.ToString();
         }
-
-        //public static Bebida operator +(Bebida bebida, int cantidadASumar)
-        //{
-        //    if (bebida is not null)
-        //    {
-        //        Bebida bebidaNueva = bebida.ClonarConsumision();
-        //        bebidaNueva.cantidad = bebidaNueva.cantidad + cantidadASumar;
-        //        return bebidaNueva;
-        //    }
-
-        //    return null;
-        //}
-
-        //public static Bebida operator -(Bebida bebida, int cantidadARestar)
-        //{
-        //    if (bebida is not null)
-        //    {
-        //        Bebida bebidaNueva = bebida.ClonarConsumision();
-        //        bebidaNueva.cantidad = bebidaNueva.cantidad - cantidadARestar;
-        //        return bebidaNueva;
-        //    }
-
-        //    return null;
-        //}
     }
 }

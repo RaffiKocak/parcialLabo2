@@ -2,29 +2,23 @@
 
 namespace Entidades
 {
-    public enum ETipoEspacio
-    {
-        Mesa, Barra
-    }
-
     public class EspacioConsumo
     {
         private static int ultimoId;
-        protected int id;
-        protected ETipoEspacio tipo;
-        protected decimal saldo;
-        protected bool usaEstacionamiento;
-        protected bool estaOcupado;
-        protected List<Consumicion> consumiciones;
+        private int id;
+        private bool esMesa;
+        private decimal saldo;
+        private bool estaOcupado;
+        private List<Consumicion> consumiciones;
 
-        public int IdMesa
+        public int IdEspacio
         {
             get { return id; }
         }
 
-        public ETipoEspacio Tipo
+        public bool EsMesa
         {
-            get { return tipo; }
+            get { return esMesa; }
         }
 
         public decimal Saldo
@@ -48,25 +42,24 @@ namespace Entidades
             ultimoId = 1;
         }
 
-        public EspacioConsumo(ETipoEspacio tipo)
+        public EspacioConsumo(bool esMesa)
         {
             this.id = EspacioConsumo.ultimoId;
             this.saldo = 0;
-            this.tipo = tipo;
+            this.esMesa = esMesa;
             this.estaOcupado = false;
             this.consumiciones = new List<Consumicion>();
             EspacioConsumo.ultimoId++;
         }
 
-        protected EspacioConsumo(EspacioConsumo espacio)
+        private EspacioConsumo(EspacioConsumo espacio)
         {
-            this.id = espacio.IdMesa;
-            this.tipo = espacio.Tipo;
+            this.id = espacio.IdEspacio;
+            this.esMesa = espacio.esMesa;
             this.saldo = espacio.Saldo;
             this.estaOcupado = espacio.Ocupado;
             this.consumiciones = Bar.ClonarListaStock(espacio.Consumiciones);
         }
-
 
         public EspacioConsumo ClonarEspacioConsumo()
         {
@@ -119,6 +112,11 @@ namespace Entidades
 
         public bool AgregarConsumo(Consumicion consumicion, int cantidadPedida)
         {
+            if (!this.esMesa && consumicion is Comida)
+            {
+                return false;
+            }
+
             if (consumicion.VerificarAlcanzaStock(cantidadPedida))
             {
                 int index = this.VerificarProductoYaPedido(consumicion);
@@ -138,6 +136,21 @@ namespace Entidades
             }
 
             return false;
+        }
+
+        public void RestarConsumo(Consumicion consumicion, int cantidadARestar)
+        {
+            if (consumicion is not null && cantidadARestar > 0)
+            {
+                consumicion.Cantidad -= cantidadARestar;
+                this.saldo -= consumicion.PrecioUnitario * cantidadARestar;
+
+
+                if (consumicion.Cantidad == 0)
+                {
+                    this.consumiciones.Remove(consumicion);
+                }
+            }
         }
 
         public static void GuardarEspacioConCambios(EspacioConsumo espacio)

@@ -88,29 +88,18 @@ namespace Entidades
             if (consumicion is not null)
             {
                 string descripcionAComparar = consumicion.descripcion.ToLower();
-                if (consumicion is Bebida)
+                if (!VerificarDescripcionEnStock(descripcionAComparar))
                 {
-                    foreach (Bebida item in Bar.stockBebidas)
+                    if (consumicion is Bebida)
                     {
-                        if (item.descripcion.ToLower() == descripcionAComparar)
-                        {
-                            return false;
-                        }
+                        Bar.stockBebidas.Add((Bebida)consumicion);
                     }
-                    Bar.stockBebidas.Add((Bebida)consumicion);
-                }
-                else
-                {
-                    foreach (Comida item in Bar.stockComidas)
+                    else
                     {
-                        if (item.descripcion.ToLower() == descripcionAComparar)
-                        {
-                            return false;
-                        }
+                        Bar.stockComidas.Add((Comida)consumicion);
                     }
-                    Bar.stockComidas.Add((Comida)consumicion);
+                    return true;
                 }
-                return true;
             }
 
             return false;
@@ -120,47 +109,23 @@ namespace Entidades
         {
             if (consumicion is not null)
             {
-                if (consumicion is Bebida)
+                string descripcionAComparar = consumicion.descripcion.ToLower();
+                if (VerificarDescripcionEnStock(descripcionAComparar))
                 {
-                    foreach (Bebida item in Bar.stockBebidas)
+                    if (consumicion is Bebida)
                     {
-                        if (item == consumicion)
-                        {
-                            Bar.stockBebidas.Remove(item);
-                            return true;
-                        }
+                        Bar.stockBebidas.Remove((Bebida)consumicion);
+                        return true;
                     }
-                }
-                else
-                {
-                    foreach (Comida item in Bar.stockComidas)
+                    else
                     {
-                        if (item == consumicion)
-                        {
-                            Bar.stockComidas.Remove(item);
-                            return true;
-                        }
+                        Bar.stockComidas.Remove((Comida)consumicion);
+                        return true;
                     }
                 }
             }
 
             return false;
-        }
-
-        public static void RestarStock(Consumicion consumicion, int cantidadIngresada)
-        {
-            if (consumicion is not null && cantidadIngresada > 0)
-            {
-                consumicion.cantidad -= cantidadIngresada;
-            }
-        }
-
-        public static void SumarStock(Consumicion consumicion, int cantidadIngresada)
-        {
-            if (consumicion is not null && cantidadIngresada > 0)
-            {
-                consumicion.cantidad += cantidadIngresada;
-            }
         }
 
         public static void ActualizarTodoStockPermanente(List<Comida> listaComida, List<Bebida> listaBebida)
@@ -175,9 +140,10 @@ namespace Entidades
         {
             if (!string.IsNullOrEmpty(descripcion))
             {
+                descripcion = descripcion.ToLower();
                 foreach (Bebida item in Bar.stockBebidas)
                 {
-                    if (item.descripcion == descripcion)
+                    if (item.descripcion.ToLower() == descripcion)
                     {
                         return true;
                     }
@@ -200,8 +166,6 @@ namespace Entidades
             return this.cantidad >= cantidadPedida;
         }
 
-        #region Sobrecarga operadores
-
         public static bool operator ==(Consumicion c1, Consumicion c2)
         {
             return (c1 is not null) && (c2 is not null) && (c1.id == c2.id);
@@ -212,6 +176,24 @@ namespace Entidades
             return !(c1 == c2);
         }
 
-        #endregion
+        public static bool operator ==(Bebida bebida, Consumicion consumicion)
+        {
+            return (bebida is not null) && (consumicion is not null) && (bebida.id == consumicion.id);
+        }
+
+        public static bool operator !=(Bebida bebida, Consumicion consumicion)
+        {
+            return !(bebida == consumicion);
+        }
+
+        public static bool operator ==(Comida comida, Consumicion consumicion)
+        {
+            return (comida is not null) && (consumicion is not null) && (comida.id == consumicion.id);
+        }
+
+        public static bool operator !=(Comida comida, Consumicion consumicion)
+        {
+            return !(comida == consumicion);
+        }
     }
 }

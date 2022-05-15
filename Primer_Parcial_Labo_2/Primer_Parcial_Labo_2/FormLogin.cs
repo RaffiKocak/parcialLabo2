@@ -21,6 +21,9 @@ namespace Primer_Parcial_Labo_2
         private void FormularioLogin_Load(object sender, EventArgs e)
         {
             HardcodeoDatos.CargarUsuarios();
+            HardcodeoDatos.CargarEspaciosDeConsumo();
+            HardcodeoDatos.CargarConsumiciones();
+            HardcodeoDatos.CargarVentas();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -49,7 +52,6 @@ namespace Primer_Parcial_Labo_2
                     txt_usuario.Text = String.Empty;
                     txt_passwd.Text = String.Empty;
                     this.Show();
-
                 }
                 else
                 {

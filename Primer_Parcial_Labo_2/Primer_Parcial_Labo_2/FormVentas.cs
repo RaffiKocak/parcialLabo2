@@ -21,7 +21,7 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_modificarPrecioEstacionamiento_Click(object sender, EventArgs e)
         {
-            FormIngresarCantidad form = new FormIngresarCantidad(true);
+            FormIngresarCantidad form = new FormIngresarCantidad(true, false);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
