@@ -167,6 +167,19 @@ namespace Entidades
             }
         }
 
+        public static bool VerificarTodosEspaciosDesocupados()
+        {
+            foreach(EspacioConsumo item in Bar.listaEspaciosConsumo)
+            {
+                if (item.Ocupado)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         public static bool operator ==(EspacioConsumo e1, EspacioConsumo e2)
         {
             return (e1 is not null) && (e2 is not null) && (e1.id == e2.id);

@@ -35,7 +35,7 @@
             this.lbl_saldoEspacio = new System.Windows.Forms.Label();
             this.lbl_estadoEspacio = new System.Windows.Forms.Label();
             this.lbl_infoSaldo = new System.Windows.Forms.Label();
-            this.lbl_consumiciones = new System.Windows.Forms.Label();
+            this.lbl_consumicionesDisponibles = new System.Windows.Forms.Label();
             this.lst_consumEspacio = new System.Windows.Forms.ListBox();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
@@ -43,11 +43,13 @@
             this.btn_cerrarMesa = new System.Windows.Forms.Button();
             this.cmb_opciones = new System.Windows.Forms.ComboBox();
             this.lbl_ocupado = new System.Windows.Forms.Label();
+            this.lbl_consumicionesPedidas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_consumiciones)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_idEspacio
             // 
+            this.lbl_idEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_idEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_idEspacio.Location = new System.Drawing.Point(15, 27);
             this.lbl_idEspacio.Name = "lbl_idEspacio";
@@ -67,6 +69,7 @@
             // 
             // lbl_tipoEspacio
             // 
+            this.lbl_tipoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_tipoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_tipoEspacio.Location = new System.Drawing.Point(15, 59);
             this.lbl_tipoEspacio.Name = "lbl_tipoEspacio";
@@ -86,6 +89,7 @@
             // 
             // lbl_saldoEspacio
             // 
+            this.lbl_saldoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_saldoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_saldoEspacio.Location = new System.Drawing.Point(15, 95);
             this.lbl_saldoEspacio.Name = "lbl_saldoEspacio";
@@ -95,6 +99,7 @@
             // 
             // lbl_estadoEspacio
             // 
+            this.lbl_estadoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_estadoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.lbl_estadoEspacio.Location = new System.Drawing.Point(15, 131);
             this.lbl_estadoEspacio.Name = "lbl_estadoEspacio";
@@ -112,20 +117,21 @@
             this.lbl_infoSaldo.TabIndex = 23;
             this.lbl_infoSaldo.Text = "saldoAMostrar";
             // 
-            // lbl_consumiciones
+            // lbl_consumicionesDisponibles
             // 
-            this.lbl_consumiciones.AutoSize = true;
-            this.lbl_consumiciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_consumiciones.Location = new System.Drawing.Point(15, 214);
-            this.lbl_consumiciones.Name = "lbl_consumiciones";
-            this.lbl_consumiciones.Size = new System.Drawing.Size(92, 15);
-            this.lbl_consumiciones.TabIndex = 28;
-            this.lbl_consumiciones.Text = "Consumiciones:";
+            this.lbl_consumicionesDisponibles.AutoSize = true;
+            this.lbl_consumicionesDisponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_consumicionesDisponibles.Location = new System.Drawing.Point(15, 214);
+            this.lbl_consumicionesDisponibles.Name = "lbl_consumicionesDisponibles";
+            this.lbl_consumicionesDisponibles.Size = new System.Drawing.Size(155, 15);
+            this.lbl_consumicionesDisponibles.TabIndex = 28;
+            this.lbl_consumicionesDisponibles.Text = "Consumiciones disponibles:";
             // 
             // lst_consumEspacio
             // 
             this.lst_consumEspacio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lst_consumEspacio.FormattingEnabled = true;
+            this.lst_consumEspacio.HorizontalScrollbar = true;
             this.lst_consumEspacio.ItemHeight = 15;
             this.lst_consumEspacio.Location = new System.Drawing.Point(223, 27);
             this.lst_consumEspacio.Name = "lst_consumEspacio";
@@ -139,7 +145,7 @@
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(223, 373);
+            this.btn_cerrar.Location = new System.Drawing.Point(223, 385);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(194, 53);
             this.btn_cerrar.TabIndex = 30;
@@ -153,7 +159,7 @@
             this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Location = new System.Drawing.Point(15, 373);
+            this.btn_guardar.Location = new System.Drawing.Point(15, 385);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(194, 53);
             this.btn_guardar.TabIndex = 31;
@@ -211,12 +217,23 @@
             this.lbl_ocupado.TabIndex = 36;
             this.lbl_ocupado.Text = "ocupadoAMostrar";
             // 
+            // lbl_consumicionesPedidas
+            // 
+            this.lbl_consumicionesPedidas.AutoSize = true;
+            this.lbl_consumicionesPedidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.lbl_consumicionesPedidas.Location = new System.Drawing.Point(223, 9);
+            this.lbl_consumicionesPedidas.Name = "lbl_consumicionesPedidas";
+            this.lbl_consumicionesPedidas.Size = new System.Drawing.Size(136, 15);
+            this.lbl_consumicionesPedidas.TabIndex = 37;
+            this.lbl_consumicionesPedidas.Text = "Consumiciones pedidas:";
+            // 
             // FormDetalleEspacioConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(429, 453);
+            this.Controls.Add(this.lbl_consumicionesPedidas);
             this.Controls.Add(this.lbl_ocupado);
             this.Controls.Add(this.cmb_opciones);
             this.Controls.Add(this.btn_cerrarMesa);
@@ -224,7 +241,7 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.lst_consumEspacio);
-            this.Controls.Add(this.lbl_consumiciones);
+            this.Controls.Add(this.lbl_consumicionesDisponibles);
             this.Controls.Add(this.lbl_infoSaldo);
             this.Controls.Add(this.lbl_estadoEspacio);
             this.Controls.Add(this.lbl_saldoEspacio);
@@ -252,7 +269,7 @@
         private System.Windows.Forms.Label lbl_saldoEspacio;
         private System.Windows.Forms.Label lbl_estadoEspacio;
         private System.Windows.Forms.Label lbl_infoSaldo;
-        private System.Windows.Forms.Label lbl_consumiciones;
+        private System.Windows.Forms.Label lbl_consumicionesDisponibles;
         private System.Windows.Forms.ListBox lst_consumEspacio;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_guardar;
@@ -260,5 +277,6 @@
         private System.Windows.Forms.Button btn_cerrarMesa;
         private System.Windows.Forms.ComboBox cmb_opciones;
         private System.Windows.Forms.Label lbl_ocupado;
+        private System.Windows.Forms.Label lbl_consumicionesPedidas;
     }
 }

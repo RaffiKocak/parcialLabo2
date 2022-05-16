@@ -61,6 +61,15 @@ namespace Primer_Parcial_Labo_2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream AperturaCerveza {
+            get {
+                return ResourceManager.GetStream("AperturaCerveza", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Fondo {
@@ -73,9 +82,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_05 {
+        internal static System.Drawing.Bitmap iconos_05 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-05", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-05", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +92,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_07 {
+        internal static System.Drawing.Bitmap iconos_07 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-07", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-07", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +102,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_08 {
+        internal static System.Drawing.Bitmap iconos_08 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-08", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-08", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +112,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_09 {
+        internal static System.Drawing.Bitmap iconos_09 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-09", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-09", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +122,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_10 {
+        internal static System.Drawing.Bitmap iconos_10 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-10", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +132,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_11 {
+        internal static System.Drawing.Bitmap iconos_11 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-11", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +142,9 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_12 {
+        internal static System.Drawing.Bitmap iconos_12 {
             get {
-                object obj = ResourceManager.GetObject("Íconos-12", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos-12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,10 +152,28 @@ namespace Primer_Parcial_Labo_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Íconos_Mesa_de_trabajo_1_copia {
+        internal static System.Drawing.Bitmap iconos_Mesa_de_trabajo_1_copia {
             get {
-                object obj = ResourceManager.GetObject("Íconos_Mesa de trabajo 1 copia", resourceCulture);
+                object obj = ResourceManager.GetObject("iconos_Mesa de trabajo 1 copia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream NotificacionTinderDos {
+            get {
+                return ResourceManager.GetStream("NotificacionTinderDos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream NotificacionTinderUno {
+            get {
+                return ResourceManager.GetStream("NotificacionTinderUno", resourceCulture);
             }
         }
         

@@ -58,7 +58,7 @@
             this.btn_mesas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_mesas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_mesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mesas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_12;
+            this.btn_mesas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_12;
             this.btn_mesas.Location = new System.Drawing.Point(27, 32);
             this.btn_mesas.Name = "btn_mesas";
             this.btn_mesas.Size = new System.Drawing.Size(50, 50);
@@ -73,7 +73,7 @@
             this.btn_stock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_stock.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_07;
+            this.btn_stock.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_07;
             this.btn_stock.Location = new System.Drawing.Point(27, 187);
             this.btn_stock.Name = "btn_stock";
             this.btn_stock.Size = new System.Drawing.Size(50, 50);
@@ -131,7 +131,7 @@
             this.btn_cerrar.BackColor = System.Drawing.Color.Transparent;
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
             this.btn_cerrar.Location = new System.Drawing.Point(1120, 3);
@@ -156,7 +156,7 @@
             this.btn_cerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_cerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_cerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrarSesion.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_10;
+            this.btn_cerrarSesion.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_10;
             this.btn_cerrarSesion.Location = new System.Drawing.Point(27, 473);
             this.btn_cerrarSesion.Name = "btn_cerrarSesion";
             this.btn_cerrarSesion.Size = new System.Drawing.Size(50, 50);
@@ -184,7 +184,7 @@
             this.btn_ventas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_ventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ventas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_08;
+            this.btn_ventas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_08;
             this.btn_ventas.Location = new System.Drawing.Point(27, 269);
             this.btn_ventas.Name = "btn_ventas";
             this.btn_ventas.Size = new System.Drawing.Size(50, 50);
@@ -199,7 +199,7 @@
             this.btn_usuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_usuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_usuarios.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_09;
+            this.btn_usuarios.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_09;
             this.btn_usuarios.Location = new System.Drawing.Point(27, 108);
             this.btn_usuarios.Name = "btn_usuarios";
             this.btn_usuarios.Size = new System.Drawing.Size(50, 50);
@@ -256,6 +256,7 @@
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAdministrador";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FormAdministrador_Load);
             this.pnl_cabecera.ResumeLayout(false);
             this.pnl_cabecera.PerformLayout();

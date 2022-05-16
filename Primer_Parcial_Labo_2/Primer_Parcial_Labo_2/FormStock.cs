@@ -45,25 +45,33 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_eliminarConsumicion_Click(object sender, EventArgs e)
         {
-            Consumicion consumicionAEliminar;
-            int index = dgv_stock.CurrentCell.RowIndex;
-
-            if (this.cmb_opciones.SelectedIndex == 0)
+            if (EspacioConsumo.VerificarTodosEspaciosDesocupados())
             {
-                consumicionAEliminar = Bar.stockBebidas[index];
-            }
-            else
-            {
-                consumicionAEliminar = Bar.stockComidas[index];
-            }
+                Consumicion consumicionAEliminar;
+                int index = dgv_stock.CurrentCell.RowIndex;
 
-            string mensaje = $"¿Está seguro que desea eliminar esta consumición?\n{consumicionAEliminar.MostrarInfo()}";
-            if (MessageBox.Show(mensaje, "Eliminar consumisión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Consumicion.EliminarStock(consumicionAEliminar);
+                if (this.cmb_opciones.SelectedIndex == 0)
+                {
+                    consumicionAEliminar = Bar.stockBebidas[index];
+                }
+                else
+                {
+                    consumicionAEliminar = Bar.stockComidas[index];
+                }
 
-                Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                string mensaje = $"¿Está seguro que desea eliminar esta consumición?\n{consumicionAEliminar.MostrarInfo()}";
+                if (MessageBox.Show(mensaje, "Eliminar consumisión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    Consumicion.EliminarStock(consumicionAEliminar);
+
+                    Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                }
+            } else
+            {
+                MessageBox.Show("Deben estar todos los espacios libres para eliminar una consumisión de forma definitiva.",
+                    "Eliminar consumisión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void btn_cambiarPrecio_Click(object sender, EventArgs e)

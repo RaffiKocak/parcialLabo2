@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Íconos-08" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-08" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos-05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pattern - 400x100" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -130,25 +130,34 @@
   <data name="Pattern - 100x550" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pattern - 100x550.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos-10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos_Mesa de trabajo 1 copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Íconos_Mesa de trabajo 1 copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Íconos-09" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-09" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos-12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Íconos-07" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="iconos-07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Íconos-07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AperturaCerveza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AperturaCerveza.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="iconos_Mesa de trabajo 1 copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Íconos_Mesa de trabajo 1 copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotificacionTinderDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotificacionTinderDos.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NotificacionTinderUno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotificacionTinderUno.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

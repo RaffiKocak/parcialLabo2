@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
@@ -46,6 +47,7 @@ namespace Primer_Parcial_Labo_2
         private void dgv_consumisiones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             MostrarInfoEspacio();
+            SoundPlayer sonidoAgregar = new SoundPlayer(Properties.Resources.NotificacionTinderDos);
             int retornoOperacion;
             int index = dgv_consumiciones.CurrentCell.RowIndex;
             Consumicion nuevaConsumicion;
@@ -68,6 +70,7 @@ namespace Primer_Parcial_Labo_2
 
                 case 0:
                     this.espacioConsumo.Ocupado = true;
+                    sonidoAgregar.Play();
                     ActualizarVistaConsumisionesAgregadasAMesa();
                     Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
                     this.copiaLocalComidas);
@@ -95,6 +98,7 @@ namespace Primer_Parcial_Labo_2
         private void btn_cerrarMesa_Click(object sender, EventArgs e)
         {
             int retornoOperacion = this.CerrarMesa(out Venta nuevaVenta);
+            SoundPlayer sonidoVenta = new SoundPlayer(Properties.Resources.NotificacionTinderUno);
 
             switch(retornoOperacion)
             {
@@ -111,6 +115,7 @@ namespace Primer_Parcial_Labo_2
                     MessageBox.Show($"Venta exitosa\n{nuevaVenta}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     EspacioConsumo.GuardarEspacioConCambios(this.espacioConsumo);
                     Logica.ActualizarDGV(dgv_padre, Bar.listaEspaciosConsumo);
+                    sonidoVenta.Play();
                     this.huboCambios = false;
                     this.Dispose();
                     break;

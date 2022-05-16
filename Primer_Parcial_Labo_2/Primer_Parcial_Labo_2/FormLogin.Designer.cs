@@ -32,10 +32,12 @@
             this.lbl_passwd = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.txt_passwd = new System.Windows.Forms.TextBox();
-            this.btn_login = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_fillAdmin = new System.Windows.Forms.Button();
+            this.btn_fillEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +73,8 @@
             this.txt_usuario.ForeColor = System.Drawing.Color.Black;
             this.txt_usuario.Location = new System.Drawing.Point(111, 161);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(181, 16);
+            this.txt_usuario.Size = new System.Drawing.Size(180, 16);
             this.txt_usuario.TabIndex = 2;
-            this.txt_usuario.Text = "RKocak";
             // 
             // txt_passwd
             // 
@@ -84,34 +85,17 @@
             this.txt_passwd.Location = new System.Drawing.Point(111, 221);
             this.txt_passwd.Name = "txt_passwd";
             this.txt_passwd.PasswordChar = '*';
-            this.txt_passwd.Size = new System.Drawing.Size(181, 16);
+            this.txt_passwd.Size = new System.Drawing.Size(180, 16);
             this.txt_passwd.TabIndex = 3;
-            this.txt_passwd.Text = "asd123";
-            // 
-            // btn_login
-            // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_login.ForeColor = System.Drawing.Color.Black;
-            this.btn_login.Location = new System.Drawing.Point(111, 306);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(181, 40);
-            this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "Login";
-            this.btn_login.UseVisualStyleBackColor = false;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // btn_salir
             // 
             this.btn_salir.AutoSize = true;
             this.btn_salir.BackColor = System.Drawing.Color.Transparent;
             this.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_salir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_salir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salir.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
@@ -140,6 +124,51 @@
             this.panel1.Size = new System.Drawing.Size(400, 5);
             this.panel1.TabIndex = 8;
             // 
+            // btn_login
+            // 
+            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_login.FlatAppearance.BorderSize = 0;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_login.Location = new System.Drawing.Point(111, 268);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(180, 40);
+            this.btn_login.TabIndex = 9;
+            this.btn_login.Text = "Login";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click_1);
+            // 
+            // btn_fillAdmin
+            // 
+            this.btn_fillAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_fillAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_fillAdmin.FlatAppearance.BorderSize = 0;
+            this.btn_fillAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fillAdmin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_fillAdmin.Location = new System.Drawing.Point(111, 314);
+            this.btn_fillAdmin.Name = "btn_fillAdmin";
+            this.btn_fillAdmin.Size = new System.Drawing.Size(85, 26);
+            this.btn_fillAdmin.TabIndex = 10;
+            this.btn_fillAdmin.Text = "Admin";
+            this.btn_fillAdmin.UseVisualStyleBackColor = false;
+            this.btn_fillAdmin.Click += new System.EventHandler(this.btn_fillAdmin_Click);
+            // 
+            // btn_fillEmpleado
+            // 
+            this.btn_fillEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_fillEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_fillEmpleado.FlatAppearance.BorderSize = 0;
+            this.btn_fillEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fillEmpleado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_fillEmpleado.Location = new System.Drawing.Point(206, 314);
+            this.btn_fillEmpleado.Name = "btn_fillEmpleado";
+            this.btn_fillEmpleado.Size = new System.Drawing.Size(85, 26);
+            this.btn_fillEmpleado.TabIndex = 11;
+            this.btn_fillEmpleado.Text = "Empleado";
+            this.btn_fillEmpleado.UseVisualStyleBackColor = false;
+            this.btn_fillEmpleado.Click += new System.EventHandler(this.btn_fillEmpleado_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -147,10 +176,12 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(400, 480);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_fillEmpleado);
+            this.Controls.Add(this.btn_fillAdmin);
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_salir);
-            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_passwd);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_passwd);
@@ -174,9 +205,11 @@
         private System.Windows.Forms.Label lbl_passwd;
         private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.TextBox txt_passwd;
-        private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.Button btn_fillAdmin;
+        private System.Windows.Forms.Button btn_fillEmpleado;
     }
 }

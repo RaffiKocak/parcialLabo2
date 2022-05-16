@@ -73,5 +73,75 @@ namespace Primer_Parcial_Labo_2
         {
 
         }
+
+        private void btn_login_Click_1(object sender, EventArgs e)
+        {
+            string usuarioIngresado = txt_usuario.Text.ToLower();
+            string passwdIngresada = txt_passwd.Text;
+            bool banderaLogin = false;
+            string KeyALoguear = String.Empty;
+
+            foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (item.Key.ToLower() == usuarioIngresado && item.Value.VerificarPasswd(passwdIngresada))
+                {
+                    banderaLogin = true;
+                    KeyALoguear = item.Key;
+                    break;
+                }
+            }
+
+            if (banderaLogin)
+            {
+                FormPrincipal formAdministrador = new FormPrincipal(Bar.listaUsuarios[KeyALoguear]);
+                this.Hide();
+                if (formAdministrador.ShowDialog() == DialogResult.OK)
+                {
+                    txt_usuario.Text = String.Empty;
+                    txt_passwd.Text = String.Empty;
+                    this.Show();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
+        }
+
+        private void btn_fillAdmin_Click(object sender, EventArgs e)
+        {
+            foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (item.Value.EsAdmin)
+                {
+                    this.txt_usuario.Text = item.Key;
+                    this.txt_passwd.Text = item.Value.DevolverPasswd();
+                }
+            }
+        }
+
+        private void btn_fillEmpleado_Click(object sender, EventArgs e)
+        {
+            bool existeUsuario = false;
+            foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
+            {
+                if (!item.Value.EsAdmin)
+                {
+                    this.txt_usuario.Text = item.Key;
+                    this.txt_passwd.Text = item.Value.DevolverPasswd();
+                    existeUsuario = true;
+                }
+            }
+
+            if (!existeUsuario)
+            {
+                MessageBox.Show("No existen usuarios sin privilegio de administrador. Por favor crear uno", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

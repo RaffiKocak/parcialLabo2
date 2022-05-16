@@ -97,5 +97,17 @@ namespace Entidades
 
             return false;
         }
+
+
+        /// <summary>
+        /// IMPORTANTE!!!!! Este método SÓLO está creado con el fin de cumplir con la consigna del parcial,
+        /// la cual solicita que al momento de tener el formulario de login, se autocompleten los datos de un usuario.
+        /// En ningún otro segmento del programa existe una exposición de la contraseña del usuario.
+        /// </summary>
+        /// <returns></returns>
+        public string DevolverPasswd()
+        {
+            return this.password;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Primer_Parcial_Labo_2
@@ -26,6 +27,8 @@ namespace Primer_Parcial_Labo_2
         private void FormAdministrador_Load(object sender, EventArgs e)
         {
             CambiarColoresParaUsuario();
+            SoundPlayer sonidoLogin = new SoundPlayer(Properties.Resources.AperturaCerveza);
+            sonidoLogin.Play();
         }
 
         private void btn_mesas_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Close();
         }
 
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
@@ -84,13 +87,29 @@ namespace Primer_Parcial_Labo_2
                 this.btn_cerrar.ForeColor = Color.Black;
                 this.btn_cerrar.ForeColor = Color.Black;
 
-                this.btn_mesas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_11;
-                this.btn_cerrarSesion.Image = global::Primer_Parcial_Labo_2.Properties.Resources.Íconos_05;
+                this.btn_mesas.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_11;
+                this.btn_cerrarSesion.Image = global::Primer_Parcial_Labo_2.Properties.Resources.iconos_05;
                 this.btn_stock.Visible = false;
                 this.btn_usuarios.Visible = false;
                 this.btn_ventas.Visible = false;
             }
 
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!EspacioConsumo.VerificarTodosEspaciosDesocupados())
+            {
+                if (MessageBox.Show($"Aún hay mesas sin cerrar\n¿Está seguro que desea salir?", "Salir", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    this.Dispose();
+                }
+            }
         }
     }
 }
