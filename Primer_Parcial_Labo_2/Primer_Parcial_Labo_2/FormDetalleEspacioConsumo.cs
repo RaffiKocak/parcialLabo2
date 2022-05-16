@@ -69,7 +69,6 @@ namespace Primer_Parcial_Labo_2
                     break;
 
                 case 0:
-                    this.espacioConsumo.Ocupado = true;
                     sonidoAgregar.Play();
                     ActualizarVistaConsumisionesAgregadasAMesa();
                     Logica.ActualizarDGVCompartido(this.dgv_consumiciones, this.cmb_opciones.SelectedIndex, this.copiaLocalBebidas,
@@ -224,7 +223,7 @@ namespace Primer_Parcial_Labo_2
             Consumicion consumicionABorrar = (Consumicion)lst_consumEspacio.SelectedItem;
             FormIngresarCantidad frmCantidad = new FormIngresarCantidad(false, true);
 
-            if (frmCantidad.ShowDialog() == DialogResult.OK)
+            if (consumicionABorrar is not null && frmCantidad.ShowDialog() == DialogResult.OK)
             {
                 this.huboCambios = true;
                 int cantidadABorrar = frmCantidad.DevolverCantidad();
@@ -239,10 +238,7 @@ namespace Primer_Parcial_Labo_2
                 }
 
                 frmCantidad.Dispose();
-                if (this.espacioConsumo.Consumiciones.Count == 0)
-                {
-                    this.espacioConsumo.Ocupado = false;
-                }
+                
                 MostrarInfoEspacio();
                 ActualizarVistaConsumisionesAgregadasAMesa();
             }

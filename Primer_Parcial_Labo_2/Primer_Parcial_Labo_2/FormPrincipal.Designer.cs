@@ -251,6 +251,7 @@
             this.Controls.Add(this.pnl_der);
             this.Controls.Add(this.pnl_cabecera);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = Properties.Resources.beericon;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPrincipal";

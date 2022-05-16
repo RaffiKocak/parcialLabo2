@@ -65,13 +65,13 @@
             this.dgv_espaciosConsumo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_espaciosConsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_espaciosConsumo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_espaciosConsumo.Location = new System.Drawing.Point(457, 46);
+            this.dgv_espaciosConsumo.Location = new System.Drawing.Point(551, 46);
             this.dgv_espaciosConsumo.MultiSelect = false;
             this.dgv_espaciosConsumo.Name = "dgv_espaciosConsumo";
             this.dgv_espaciosConsumo.ReadOnly = true;
             this.dgv_espaciosConsumo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_espaciosConsumo.RowTemplate.Height = 25;
-            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(481, 492);
+            this.dgv_espaciosConsumo.Size = new System.Drawing.Size(387, 492);
             this.dgv_espaciosConsumo.TabIndex = 4;
             this.dgv_espaciosConsumo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_espaciosConsumo_CellDoubleClick);
             this.dgv_espaciosConsumo.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_espaciosConsumo_CellFormatting);
@@ -83,7 +83,7 @@
             this.pnl_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnl_contenedor.Location = new System.Drawing.Point(12, 46);
             this.pnl_contenedor.Name = "pnl_contenedor";
-            this.pnl_contenedor.Size = new System.Drawing.Size(433, 492);
+            this.pnl_contenedor.Size = new System.Drawing.Size(530, 492);
             this.pnl_contenedor.TabIndex = 6;
             // 
             // FormEspacios

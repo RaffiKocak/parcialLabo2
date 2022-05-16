@@ -131,6 +131,7 @@ namespace Entidades
                     this.consumiciones.Add(consumicionNueva);
                 }
                 this.saldo += consumicion.PrecioUnitario * cantidadPedida;
+                this.estaOcupado = true;
 
                 return true;
             }
@@ -149,6 +150,11 @@ namespace Entidades
                 if (consumicion.Cantidad == 0)
                 {
                     this.consumiciones.Remove(consumicion);
+                }
+
+                if (this.consumiciones.Count == 0)
+                {
+                    this.estaOcupado = false;
                 }
             }
         }

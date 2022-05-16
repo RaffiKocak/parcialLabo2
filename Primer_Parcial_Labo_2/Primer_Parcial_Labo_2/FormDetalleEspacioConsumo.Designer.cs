@@ -51,7 +51,7 @@
             // 
             this.lbl_idEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_idEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_idEspacio.Location = new System.Drawing.Point(15, 27);
+            this.lbl_idEspacio.Location = new System.Drawing.Point(52, 27);
             this.lbl_idEspacio.Name = "lbl_idEspacio";
             this.lbl_idEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_idEspacio.TabIndex = 7;
@@ -61,7 +61,7 @@
             // 
             this.lbl_infoId.AutoSize = true;
             this.lbl_infoId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_infoId.Location = new System.Drawing.Point(102, 27);
+            this.lbl_infoId.Location = new System.Drawing.Point(139, 27);
             this.lbl_infoId.Name = "lbl_infoId";
             this.lbl_infoId.Size = new System.Drawing.Size(66, 15);
             this.lbl_infoId.TabIndex = 17;
@@ -71,7 +71,7 @@
             // 
             this.lbl_tipoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_tipoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_tipoEspacio.Location = new System.Drawing.Point(15, 59);
+            this.lbl_tipoEspacio.Location = new System.Drawing.Point(52, 59);
             this.lbl_tipoEspacio.Name = "lbl_tipoEspacio";
             this.lbl_tipoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_tipoEspacio.TabIndex = 18;
@@ -81,7 +81,7 @@
             // 
             this.lbl_infoTipo.AutoSize = true;
             this.lbl_infoTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_infoTipo.Location = new System.Drawing.Point(102, 59);
+            this.lbl_infoTipo.Location = new System.Drawing.Point(139, 59);
             this.lbl_infoTipo.Name = "lbl_infoTipo";
             this.lbl_infoTipo.Size = new System.Drawing.Size(77, 15);
             this.lbl_infoTipo.TabIndex = 19;
@@ -91,7 +91,7 @@
             // 
             this.lbl_saldoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_saldoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_saldoEspacio.Location = new System.Drawing.Point(15, 95);
+            this.lbl_saldoEspacio.Location = new System.Drawing.Point(52, 95);
             this.lbl_saldoEspacio.Name = "lbl_saldoEspacio";
             this.lbl_saldoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_saldoEspacio.TabIndex = 20;
@@ -101,7 +101,7 @@
             // 
             this.lbl_estadoEspacio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_estadoEspacio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_estadoEspacio.Location = new System.Drawing.Point(15, 131);
+            this.lbl_estadoEspacio.Location = new System.Drawing.Point(52, 131);
             this.lbl_estadoEspacio.Name = "lbl_estadoEspacio";
             this.lbl_estadoEspacio.Size = new System.Drawing.Size(76, 15);
             this.lbl_estadoEspacio.TabIndex = 22;
@@ -111,7 +111,7 @@
             // 
             this.lbl_infoSaldo.AutoSize = true;
             this.lbl_infoSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_infoSaldo.Location = new System.Drawing.Point(102, 95);
+            this.lbl_infoSaldo.Location = new System.Drawing.Point(139, 95);
             this.lbl_infoSaldo.Name = "lbl_infoSaldo";
             this.lbl_infoSaldo.Size = new System.Drawing.Size(84, 15);
             this.lbl_infoSaldo.TabIndex = 23;
@@ -121,7 +121,7 @@
             // 
             this.lbl_consumicionesDisponibles.AutoSize = true;
             this.lbl_consumicionesDisponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_consumicionesDisponibles.Location = new System.Drawing.Point(15, 214);
+            this.lbl_consumicionesDisponibles.Location = new System.Drawing.Point(15, 211);
             this.lbl_consumicionesDisponibles.Name = "lbl_consumicionesDisponibles";
             this.lbl_consumicionesDisponibles.Size = new System.Drawing.Size(155, 15);
             this.lbl_consumicionesDisponibles.TabIndex = 28;
@@ -133,7 +133,7 @@
             this.lst_consumEspacio.FormattingEnabled = true;
             this.lst_consumEspacio.HorizontalScrollbar = true;
             this.lst_consumEspacio.ItemHeight = 15;
-            this.lst_consumEspacio.Location = new System.Drawing.Point(223, 27);
+            this.lst_consumEspacio.Location = new System.Drawing.Point(324, 27);
             this.lst_consumEspacio.Name = "lst_consumEspacio";
             this.lst_consumEspacio.Size = new System.Drawing.Size(194, 154);
             this.lst_consumEspacio.TabIndex = 29;
@@ -145,9 +145,9 @@
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Location = new System.Drawing.Point(223, 385);
+            this.btn_cerrar.Location = new System.Drawing.Point(278, 417);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(194, 53);
+            this.btn_cerrar.Size = new System.Drawing.Size(240, 53);
             this.btn_cerrar.TabIndex = 30;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = false;
@@ -159,9 +159,9 @@
             this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Location = new System.Drawing.Point(15, 385);
+            this.btn_guardar.Location = new System.Drawing.Point(15, 417);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(194, 53);
+            this.btn_guardar.Size = new System.Drawing.Size(240, 53);
             this.btn_guardar.TabIndex = 31;
             this.btn_guardar.Text = "Guardar cambios";
             this.btn_guardar.UseVisualStyleBackColor = false;
@@ -173,12 +173,12 @@
             this.dgv_consumiciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_consumiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_consumiciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgv_consumiciones.Location = new System.Drawing.Point(15, 236);
+            this.dgv_consumiciones.Location = new System.Drawing.Point(15, 232);
             this.dgv_consumiciones.MultiSelect = false;
             this.dgv_consumiciones.Name = "dgv_consumiciones";
             this.dgv_consumiciones.ReadOnly = true;
             this.dgv_consumiciones.RowTemplate.Height = 25;
-            this.dgv_consumiciones.Size = new System.Drawing.Size(402, 131);
+            this.dgv_consumiciones.Size = new System.Drawing.Size(503, 175);
             this.dgv_consumiciones.TabIndex = 32;
             this.dgv_consumiciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_consumisiones_CellDoubleClick);
             this.dgv_consumiciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_consumisiones_CellFormatting);
@@ -191,7 +191,7 @@
             this.btn_cerrarMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrarMesa.Location = new System.Drawing.Point(15, 170);
             this.btn_cerrarMesa.Name = "btn_cerrarMesa";
-            this.btn_cerrarMesa.Size = new System.Drawing.Size(194, 26);
+            this.btn_cerrarMesa.Size = new System.Drawing.Size(240, 26);
             this.btn_cerrarMesa.TabIndex = 33;
             this.btn_cerrarMesa.Text = "Cerrar mesa";
             this.btn_cerrarMesa.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@
             // 
             this.cmb_opciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_opciones.FormattingEnabled = true;
-            this.cmb_opciones.Location = new System.Drawing.Point(223, 206);
+            this.cmb_opciones.Location = new System.Drawing.Point(324, 203);
             this.cmb_opciones.Name = "cmb_opciones";
             this.cmb_opciones.Size = new System.Drawing.Size(194, 23);
             this.cmb_opciones.TabIndex = 35;
@@ -211,7 +211,7 @@
             // 
             this.lbl_ocupado.AutoSize = true;
             this.lbl_ocupado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_ocupado.Location = new System.Drawing.Point(102, 131);
+            this.lbl_ocupado.Location = new System.Drawing.Point(139, 131);
             this.lbl_ocupado.Name = "lbl_ocupado";
             this.lbl_ocupado.Size = new System.Drawing.Size(103, 15);
             this.lbl_ocupado.TabIndex = 36;
@@ -221,7 +221,7 @@
             // 
             this.lbl_consumicionesPedidas.AutoSize = true;
             this.lbl_consumicionesPedidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.lbl_consumicionesPedidas.Location = new System.Drawing.Point(223, 9);
+            this.lbl_consumicionesPedidas.Location = new System.Drawing.Point(324, 9);
             this.lbl_consumicionesPedidas.Name = "lbl_consumicionesPedidas";
             this.lbl_consumicionesPedidas.Size = new System.Drawing.Size(136, 15);
             this.lbl_consumicionesPedidas.TabIndex = 37;
@@ -232,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(429, 453);
+            this.ClientSize = new System.Drawing.Size(530, 492);
             this.Controls.Add(this.lbl_consumicionesPedidas);
             this.Controls.Add(this.lbl_ocupado);
             this.Controls.Add(this.cmb_opciones);

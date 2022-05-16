@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.lbl_passwd = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
@@ -187,6 +188,7 @@
             this.Controls.Add(this.lbl_passwd);
             this.Controls.Add(this.lbl_usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = Properties.Resources.beericon;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
