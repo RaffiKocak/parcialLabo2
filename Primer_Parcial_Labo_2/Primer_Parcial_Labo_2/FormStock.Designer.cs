@@ -30,7 +30,7 @@
         {
             this.dgv_stock = new System.Windows.Forms.DataGridView();
             this.btn_agregarStock = new System.Windows.Forms.Button();
-            this.btn_eliminarConsumision = new System.Windows.Forms.Button();
+            this.btn_eliminarConsumicion = new System.Windows.Forms.Button();
             this.btn_cambiarPrecio = new System.Windows.Forms.Button();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.btn_restarStock = new System.Windows.Forms.Button();
@@ -72,19 +72,19 @@
             this.btn_agregarStock.UseVisualStyleBackColor = false;
             this.btn_agregarStock.Click += new System.EventHandler(this.btn_agregarStock_Click);
             // 
-            // btn_eliminarConsumision
+            // btn_eliminarConsumicion
             // 
-            this.btn_eliminarConsumision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
-            this.btn_eliminarConsumision.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminarConsumision.FlatAppearance.BorderSize = 0;
-            this.btn_eliminarConsumision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminarConsumision.Location = new System.Drawing.Point(781, 423);
-            this.btn_eliminarConsumision.Name = "btn_eliminarConsumision";
-            this.btn_eliminarConsumision.Size = new System.Drawing.Size(156, 41);
-            this.btn_eliminarConsumision.TabIndex = 2;
-            this.btn_eliminarConsumision.Text = "Eliminar consumisión";
-            this.btn_eliminarConsumision.UseVisualStyleBackColor = false;
-            this.btn_eliminarConsumision.Click += new System.EventHandler(this.btn_eliminarConsumicion_Click);
+            this.btn_eliminarConsumicion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(200)))), ((int)(((byte)(60)))));
+            this.btn_eliminarConsumicion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminarConsumicion.FlatAppearance.BorderSize = 0;
+            this.btn_eliminarConsumicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminarConsumicion.Location = new System.Drawing.Point(781, 423);
+            this.btn_eliminarConsumicion.Name = "btn_eliminarConsumicion";
+            this.btn_eliminarConsumicion.Size = new System.Drawing.Size(156, 41);
+            this.btn_eliminarConsumicion.TabIndex = 2;
+            this.btn_eliminarConsumicion.Text = "Eliminar consumición";
+            this.btn_eliminarConsumicion.UseVisualStyleBackColor = false;
+            this.btn_eliminarConsumicion.Click += new System.EventHandler(this.btn_eliminarConsumicion_Click);
             // 
             // btn_cambiarPrecio
             // 
@@ -211,7 +211,7 @@
             this.Controls.Add(this.btn_restarStock);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.btn_cambiarPrecio);
-            this.Controls.Add(this.btn_eliminarConsumision);
+            this.Controls.Add(this.btn_eliminarConsumicion);
             this.Controls.Add(this.btn_agregarStock);
             this.Controls.Add(this.dgv_stock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -228,7 +228,7 @@
 
         private System.Windows.Forms.DataGridView dgv_stock;
         private System.Windows.Forms.Button btn_agregarStock;
-        private System.Windows.Forms.Button btn_eliminarConsumision;
+        private System.Windows.Forms.Button btn_eliminarConsumicion;
         private System.Windows.Forms.Button btn_cambiarPrecio;
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Button btn_restarStock;
