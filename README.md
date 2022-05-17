@@ -14,9 +14,7 @@ Una vez que el espacio cuente con todas las consumiciones pedidas reflejadas en 
 
 - Botón 2/Usuario:
 Esta sección y las que siguen son exclusivas de un usuario Administrador. Aquí está disponible la información (excluyendo el usuario de login y su contraseña) de los usuarios de esta aplicación/empleados del bar. También existen 2 botones para agregar y eliminar un usuario.
-
 Para eliminar un usuario, se selecciona en la tabla de información alguna celda del usuario a borrar y se hace click en el botón para eliminar. Luego de un chequeo preguntando si está seguro de la acción, se borra al usuario seleccionado. Es importante recalcar que el Administrador usando la aplicación en ese momento no puede borrarse a sí mismo ya que la aplicación no puede carecer de usuarios con rol de Administrador
-
 Al hacer click en agregar se abrirá un sub formulario donde se deberán ingresar los datos del usuario a crear con la posibilidad de darle privilegios de administrador o no, según corresponda. También es importante recalcar que esta instancia será la única donde un usuario puede definir su usuario y contraseña para luego ingresar a la aplicación. 
 
 - Botón 3/Cajas:
