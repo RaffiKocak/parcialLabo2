@@ -85,7 +85,7 @@ namespace Primer_Parcial_Labo_2
                 EspacioConsumo.GuardarEspacioConCambios(this.espacioConsumo);
                 Consumicion.ActualizarTodoStockPermanente(this.copiaLocalComidas, this.copiaLocalBebidas);
                 Logica.ActualizarDGV(dgv_padre, Bar.listaEspaciosConsumo);
-                huboCambios = false;
+                this.Dispose();
             }
         }
 
