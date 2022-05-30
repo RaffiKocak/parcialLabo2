@@ -69,6 +69,7 @@
             this.dgv_espaciosConsumo.MultiSelect = false;
             this.dgv_espaciosConsumo.Name = "dgv_espaciosConsumo";
             this.dgv_espaciosConsumo.ReadOnly = true;
+            this.dgv_espaciosConsumo.RowHeadersVisible = false;
             this.dgv_espaciosConsumo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_espaciosConsumo.RowTemplate.Height = 25;
             this.dgv_espaciosConsumo.Size = new System.Drawing.Size(387, 492);

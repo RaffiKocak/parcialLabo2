@@ -74,6 +74,10 @@ namespace Primer_Parcial_Labo_2
             lbl_reloj.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        /// <summary>
+        /// Modifica el aspecto y visibilidad de los componentes del formulario según el tipo del rol 
+        /// del usuario que haya ingresado
+        /// </summary>
         private void CambiarColoresParaUsuario()
         {
             if (!usuario.EsAdmin)

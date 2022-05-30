@@ -16,6 +16,8 @@ namespace Entidades
         private ETipoComida tipoComida;
         private bool esVegano;
 
+        #region Propiedades
+
         public ETipoComida Tipo
         {
             get { return tipoComida; }
@@ -25,6 +27,7 @@ namespace Entidades
         {
             get { return esVegano; }
         }
+        #endregion
 
         public Comida(string descripcion, decimal precioUnitario, int cantidad, ETipoComida tipoComida, bool esVegano) 
             : base(descripcion, precioUnitario, cantidad)
@@ -39,11 +42,19 @@ namespace Entidades
             this.esVegano= comida.esVegano;
         }
 
+        /// <summary>
+        /// Copia la instancia de la consumicion y la retorna
+        /// </summary>
+        /// <returns></returns>
         public override Comida ClonarConsumicion()
         {
             return new Comida(this);
         }
 
+        /// <summary>
+        /// Retorna un string con la información de instancia de una consumición
+        /// </summary>
+        /// <returns></returns>
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();

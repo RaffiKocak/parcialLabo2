@@ -45,79 +45,92 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_eliminarConsumicion_Click(object sender, EventArgs e)
         {
-            if (EspacioConsumo.VerificarTodosEspaciosDesocupados())
+            if (dgv_stock.CurrentCell is not null)
             {
-                Consumicion consumicionAEliminar;
-                int index = dgv_stock.CurrentCell.RowIndex;
-
-                if (this.cmb_opciones.SelectedIndex == 0)
+                if (EspacioConsumo.VerificarTodosEspaciosDesocupados())
                 {
-                    consumicionAEliminar = Bar.stockBebidas[index];
-                }
-                else
-                {
-                    consumicionAEliminar = Bar.stockComidas[index];
-                }
+                    Consumicion consumicionAEliminar;
 
-                string mensaje = $"¿Está seguro que desea eliminar esta consumición?\n{consumicionAEliminar.MostrarInfo()}";
-                if (MessageBox.Show(mensaje, "Eliminar consumisión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    Consumicion.EliminarStock(consumicionAEliminar);
+                    int index = dgv_stock.CurrentCell.RowIndex;
 
-                    Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    if (this.cmb_opciones.SelectedIndex == 0)
+                    {
+                        consumicionAEliminar = Bar.stockBebidas[index];
+                    }
+                    else
+                    {
+                        consumicionAEliminar = Bar.stockComidas[index];
+                    }
+
+                    string mensaje = $"¿Está seguro que desea eliminar esta consumición?\n{consumicionAEliminar.MostrarInfo()}";
+                    if (MessageBox.Show(mensaje, "Eliminar consumisión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        Consumicion.EliminarStock(consumicionAEliminar);
+
+                        Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    }
+                
+                } else
+                {
+                    MessageBox.Show("Deben estar todos los espacios libres para eliminar una consumisión de forma definitiva.",
+                        "Eliminar consumisión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } else
-            {
-                MessageBox.Show("Deben estar todos los espacios libres para eliminar una consumisión de forma definitiva.",
-                    "Eliminar consumisión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void btn_cambiarPrecio_Click(object sender, EventArgs e)
         {
-            Logica.CerrarFormsContenidos(this.pnl_contenedor);
-            int index = dgv_stock.CurrentCell.RowIndex;
+            if (dgv_stock.CurrentCell is not null)
+            {
+                Logica.CerrarFormsContenidos(this.pnl_contenedor);
+                int index = dgv_stock.CurrentCell.RowIndex;
 
-            if (cmb_opciones.SelectedIndex == 0)
-            {
-                subFormNuevaBebida = new FormNuevaBebida(this.dgv_stock, this.cmb_opciones, Bar.stockBebidas[index]);
-                Logica.MostrarFormContenido(this.subFormNuevaBebida, this.pnl_contenedor);
-            }
-            else
-            {
-                subFormNuevaComida = new FormNuevaComida(this.dgv_stock, this.cmb_opciones, Bar.stockComidas[index]);
-                Logica.MostrarFormContenido(this.subFormNuevaComida, this.pnl_contenedor);
+                if (cmb_opciones.SelectedIndex == 0)
+                {
+                    subFormNuevaBebida = new FormNuevaBebida(this.dgv_stock, this.cmb_opciones, Bar.stockBebidas[index]);
+                    Logica.MostrarFormContenido(this.subFormNuevaBebida, this.pnl_contenedor);
+                }
+                else
+                {
+                    subFormNuevaComida = new FormNuevaComida(this.dgv_stock, this.cmb_opciones, Bar.stockComidas[index]);
+                    Logica.MostrarFormContenido(this.subFormNuevaComida, this.pnl_contenedor);
+                }
             }
         }
 
         private void btn_agregarStock_Click(object sender, EventArgs e)
         {
-            int index = dgv_stock.CurrentCell.RowIndex;
-            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
-            if (subFormCantidad.ShowDialog() == DialogResult.OK)
+            if (dgv_stock.CurrentCell is not null)
             {
-                int cantidadIngresada = subFormCantidad.DevolverCantidad();
-                subFormCantidad.Dispose();
+                int index = dgv_stock.CurrentCell.RowIndex;
+                FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
+                if (subFormCantidad.ShowDialog() == DialogResult.OK)
+                {
+                    int cantidadIngresada = subFormCantidad.DevolverCantidad();
+                    subFormCantidad.Dispose();
 
-                Logica.AgregarStockEnFormulario(this.cmb_opciones.SelectedIndex, index, cantidadIngresada,
-                    Bar.stockBebidas, Bar.stockComidas);
-                Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    Logica.AgregarStockEnFormulario(this.cmb_opciones.SelectedIndex, index, cantidadIngresada,
+                        Bar.stockBebidas, Bar.stockComidas);
+                    Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                }
             }
         }
 
         private void btn_restarStock_Click(object sender, EventArgs e)
         {
-            int index = dgv_stock.CurrentCell.RowIndex;
-            FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
-            if (subFormCantidad.ShowDialog() == DialogResult.OK)
+            if (dgv_stock.CurrentCell is not null)
             {
-                int cantidadIngresada = subFormCantidad.DevolverCantidad();
-                subFormCantidad.Dispose();
+                int index = dgv_stock.CurrentCell.RowIndex;
+                FormIngresarCantidad subFormCantidad = new FormIngresarCantidad(false, false);
+                if (subFormCantidad.ShowDialog() == DialogResult.OK)
+                {
+                    int cantidadIngresada = subFormCantidad.DevolverCantidad();
+                    subFormCantidad.Dispose();
 
-                Logica.RestarStockEnFormulario(this.cmb_opciones.SelectedIndex, index, cantidadIngresada,
-                    Bar.stockBebidas, Bar.stockComidas);
-                Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                    Logica.RestarStockEnFormulario(this.cmb_opciones.SelectedIndex, index, cantidadIngresada,
+                        Bar.stockBebidas, Bar.stockComidas);
+                    Logica.ActualizarDGVCompartido(this.dgv_stock, this.cmb_opciones.SelectedIndex, Bar.stockBebidas, Bar.stockComidas);
+                }
             }
         }
 

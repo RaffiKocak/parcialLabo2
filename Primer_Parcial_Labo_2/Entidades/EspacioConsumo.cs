@@ -11,6 +11,7 @@ namespace Entidades
         private bool estaOcupado;
         private List<Consumicion> consumiciones;
 
+        #region Propiedades
         public int IdEspacio
         {
             get { return id; }
@@ -37,6 +38,8 @@ namespace Entidades
             get { return consumiciones; }
         }
 
+        #endregion
+
         static EspacioConsumo()
         {
             ultimoId = 1;
@@ -61,11 +64,19 @@ namespace Entidades
             this.consumiciones = Bar.ClonarListaStock(espacio.Consumiciones);
         }
 
+        /// <summary>
+        /// Copia la instancia del espacio de consumo y lo retorna
+        /// </summary>
+        /// <returns></returns>
         public EspacioConsumo ClonarEspacioConsumo()
         {
             return new EspacioConsumo(this);
         }
 
+        /// <summary>
+        /// Agrega un espacio de consumo a la lista general correspondiente
+        /// </summary>
+        /// <param name="eConsumo"></param>
         public static void AltaEspacioConsumo(EspacioConsumo eConsumo)
         {
             if (eConsumo is not null)
@@ -74,6 +85,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Quita un espacio de consumo de la lista general correspondiente
+        /// </summary>
+        /// <param name="idABorrar"></param>
         public static void BajaEspacioConsumo(int idABorrar)
         {
             foreach (EspacioConsumo item in Bar.listaEspaciosConsumo)
@@ -86,13 +101,21 @@ namespace Entidades
             }
         }
 
-        public void CerrarMesa()
+        /// <summary>
+        /// Vuelve a poner al espacio de consumo disponible para ser ocupado y vacío de pedidos.
+        /// </summary>
+        public void CerrarEspacio()
         {
             this.saldo = 0;
             this.estaOcupado = false;
             this.consumiciones = new List<Consumicion>();
         }
 
+        /// <summary>
+        /// Verifica si el espacio ya tiene cargada al menos un pedido de una consumición
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <returns></returns>
         public int VerificarProductoYaPedido(Consumicion consumicion)
         {
             if (consumicion is not null)
@@ -110,6 +133,12 @@ namespace Entidades
             return -1;
         }
 
+        /// <summary>
+        /// Agrega una cantidad determinada de una consumicion a los pedidos realizados por el espacio de consumo.
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <param name="cantidadPedida"></param>
+        /// <returns></returns>
         public bool AgregarConsumo(Consumicion consumicion, int cantidadPedida)
         {
             if (!this.esMesa && consumicion is Comida)
@@ -139,6 +168,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Elimina una cantidad determinada de una consumicion a los pedidos realizados por el espacio de consumo.
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <param name="cantidadARestar"></param>
         public void RestarConsumo(Consumicion consumicion, int cantidadARestar)
         {
             if (consumicion is not null && cantidadARestar > 0)
@@ -159,6 +193,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Guarda el espacio de consumo con su información actualizada de la lista de espacios general
+        /// </summary>
+        /// <param name="espacio"></param>
         public static void GuardarEspacioConCambios(EspacioConsumo espacio)
         {
             int longitud = Bar.listaEspaciosConsumo.Count;
@@ -173,6 +211,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Verifica que todos los espacios de consumo estén desocupados.
+        /// </summary>
+        /// <returns></returns>
         public static bool VerificarTodosEspaciosDesocupados()
         {
             foreach(EspacioConsumo item in Bar.listaEspaciosConsumo)

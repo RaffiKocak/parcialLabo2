@@ -62,16 +62,28 @@ namespace Primer_Parcial_Labo_2
             this.lbl_error.Visible = true;
         }
 
+        /// <summary>
+        /// Retorna la cantidad ingresada dentro del formulario
+        /// </summary>
+        /// <returns></returns>
         public int DevolverCantidad()
         {
             return numeroEntero;
         }
 
+        /// <summary>
+        /// Retorna el precio ingresado dentro del formulario
+        /// </summary>
+        /// <returns></returns>
         public decimal DevolverPrecio()
         {
             return numeroDecimal;
         }
 
+        /// <summary>
+        /// Verifica si la consumición a eliminar vuelve a formar parte del stock
+        /// </summary>
+        /// <returns></returns>
         public bool VerificarConservaConsumicion()
         {
             return chk_conservarConsumicion.Checked;

@@ -30,6 +30,8 @@ namespace Entidades
             }
         }
 
+        #region Propiedades
+
         public DateTime Fecha
         {
             get { return this.fechaVenta; }
@@ -60,6 +62,8 @@ namespace Entidades
             get { return this.usoEstacionamiento; }
         }
 
+        #endregion
+
         static Venta()
         {
             ultimoId = 1;
@@ -78,6 +82,10 @@ namespace Entidades
             Venta.ultimoId++;
         }
 
+        /// <summary>
+        /// Determina el porcentaje modificador de la venta según el método de pago.
+        /// </summary>
+        /// <returns></returns>
         private int DeterminarPorcentajeModificador()
         {
             int porcentajeAModificar = 0;
@@ -100,21 +108,32 @@ namespace Entidades
             return porcentajeAModificar;
         }
 
+        /// <summary>
+        /// Calcula el monto total a pagar según los modificadores correspondientes.
+        /// </summary>
+        /// <returns></returns>
         private decimal CalcularPrecioFinal()
         {
+            this.precioFinal = this.precioParcial + this.precioParcial * this.porcentajeModificador / 100;
             if (this.usoEstacionamiento)
             {
-                return this.precioFinal += Venta.precioEstacionamiento + 
-                    this.precioParcial + this.precioParcial * this.porcentajeModificador / 100;
+                return this.precioFinal += Venta.precioEstacionamiento;
             }
-            return this.precioFinal = this.precioParcial + this.precioParcial * this.porcentajeModificador / 100;
+            return this.precioFinal;
         }
 
+        /// <summary>
+        /// Registra la venta en la lista correspondiente de ventas
+        /// </summary>
         public void RegistrarVenta()
         {
             Bar.registroVentas.Add(this);
         }
 
+        /// <summary>
+        /// Cuenta la cantidad total de ventas existentes
+        /// </summary>
+        /// <returns></returns>
         public static int ContarTotalVentas()
         {
             int contadorVentas = 0;
@@ -127,6 +146,10 @@ namespace Entidades
             return contadorVentas;
         }
 
+        /// <summary>
+        /// Calcula el monto total de todas las ventas existentes
+        /// </summary>
+        /// <returns></returns>
         public static decimal CalcularRecaudoTotalVentas()
         {
             decimal acumuladorPrecioFinal = 0;
@@ -139,6 +162,10 @@ namespace Entidades
             return acumuladorPrecioFinal;
         }
 
+        /// <summary>
+        /// Sobreescritura de ToString mostrando toda la información de la venta
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

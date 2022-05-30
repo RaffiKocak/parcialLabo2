@@ -177,6 +177,7 @@
             this.dgv_consumiciones.MultiSelect = false;
             this.dgv_consumiciones.Name = "dgv_consumiciones";
             this.dgv_consumiciones.ReadOnly = true;
+            this.dgv_consumiciones.RowHeadersVisible = false;
             this.dgv_consumiciones.RowTemplate.Height = 25;
             this.dgv_consumiciones.Size = new System.Drawing.Size(503, 175);
             this.dgv_consumiciones.TabIndex = 32;

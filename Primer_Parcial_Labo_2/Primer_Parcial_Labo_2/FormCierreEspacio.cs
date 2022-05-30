@@ -33,6 +33,10 @@ namespace Primer_Parcial_Labo_2
             this.Dispose();
         }
 
+        /// <summary>
+        /// Verifica qué método de pago se utiliza para concretar la venta
+        /// </summary>
+        /// <returns></returns>
         public string DevolverMetodoPago()
         {
             foreach(RadioButton item in this.grp_formaPago.Controls)
@@ -46,6 +50,10 @@ namespace Primer_Parcial_Labo_2
             return String.Empty;
         }
 
+        /// <summary>
+        /// Verifica si el espacio de consumo hizo uso del estacionamiento
+        /// </summary>
+        /// <returns></returns>
         public bool DevolverUsoEstacionamiento()
         {
             if (rdo_estacionamientoSi.Checked)

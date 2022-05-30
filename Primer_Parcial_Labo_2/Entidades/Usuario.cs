@@ -14,6 +14,7 @@ namespace Entidades
         private string password;
         private bool esAdmin;
 
+        #region Propiedades
         public string Nombre
         {
             get { return nombre; }
@@ -33,6 +34,7 @@ namespace Entidades
         {
             get { return esAdmin; }
         }
+        #endregion
 
         public Usuario(string nombre, string apellido, int dni, string password, bool esAdmin)
         {
@@ -43,21 +45,41 @@ namespace Entidades
             this.esAdmin = esAdmin;
         }
 
+        /// <summary>
+        /// Agrega un usuario al diccionario general correspondiente
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <param name="usuario"></param>
         public static void AltaUsuario(string nombreUsuario, Usuario usuario)
         {
             Bar.listaUsuarios.Add(nombreUsuario, usuario);
         }
 
+        /// <summary>
+        /// Elimina un usuario al diccionario general correspondiente
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
         public static void BajaUsuario(string nombreUsuario)
         {
             Bar.listaUsuarios.Remove(nombreUsuario);
         }
 
+        /// <summary>
+        /// Verifica que la contraseña ingresada por parámetro coincida con la contraseña del usuario instanciado.
+        /// </summary>
+        /// <param name="passwdIngresada"></param>
+        /// <returns></returns>
         public bool VerificarPasswd(string passwdIngresada)
         {
             return this.password == passwdIngresada;
         }
 
+        /// <summary>
+        /// Busca la Key del diccionario en donde se almacenan los usuarios, correspondiente al
+        /// nombre de usuario para acceder al formulario principal.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         public static string BuscarCuentaLoginUsuario(Usuario usuario)
         {
             foreach (KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
@@ -71,6 +93,11 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Verifica si ya existe un usuario con el DNI ingresado por parámetro en el diccionario de usuarios
+        /// </summary>
+        /// <param name="dniAVerificar"></param>
+        /// <returns></returns>
         public static bool VerificarDniExistente(int dniAVerificar)
         {
             foreach(KeyValuePair<string, Usuario> item in Bar.listaUsuarios)
@@ -84,6 +111,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Verifica si ya existe un nombre de usuario en el diccionario de usuarios
+        /// </summary>
+        /// <param name="usuarioAVerificar"></param>
+        /// <returns></returns>
         public static bool VerificarUsuarioExistente(string usuarioAVerificar)
         {
             string usuarioAComparar = usuarioAVerificar.ToLower();

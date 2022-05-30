@@ -96,7 +96,7 @@ namespace Primer_Parcial_Labo_2
 
         private void btn_cerrarMesa_Click(object sender, EventArgs e)
         {
-            int retornoOperacion = this.CerrarMesa(out Venta nuevaVenta);
+            int retornoOperacion = this.CerrarEspacio(out Venta nuevaVenta);
             SoundPlayer sonidoVenta = new SoundPlayer(Properties.Resources.NotificacionTinderUno);
 
             switch(retornoOperacion)
@@ -147,7 +147,12 @@ namespace Primer_Parcial_Labo_2
             Logica.FormatearCeldasPocoStock(this.dgv_consumiciones, e);
         }
 
-        private int CerrarMesa(out Venta nuevaVenta)
+        /// <summary>
+        /// Muestra el formulario de cierre de espacio de consumo para concretar una venta.
+        /// </summary>
+        /// <param name="nuevaVenta"></param>
+        /// <returns></returns>
+        private int CerrarEspacio(out Venta nuevaVenta)
         {
             int retorno = -2;
             nuevaVenta = null;
@@ -163,7 +168,7 @@ namespace Primer_Parcial_Labo_2
                     usoEstacionamiento = formVenta.DevolverUsoEstacionamiento();
                     nuevaVenta = new Venta(this.espacioConsumo.Saldo, metodoPagoVenta, usoEstacionamiento);
                     nuevaVenta.RegistrarVenta();
-                    this.espacioConsumo.CerrarMesa();
+                    this.espacioConsumo.CerrarEspacio();
                     retorno = 0;
                 }
             }
@@ -171,6 +176,12 @@ namespace Primer_Parcial_Labo_2
             return retorno;
         }
 
+        /// <summary>
+        /// Agrega el consumo seleccionado al espacio de consumo seleccionado previamente.
+        /// </summary>
+        /// <param name="nuevaConsumicion"></param>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private int AgregarConsumo(Consumicion nuevaConsumicion, int index)
         {
             int retorno = -2;
@@ -194,6 +205,9 @@ namespace Primer_Parcial_Labo_2
             return retorno;
         }
 
+        /// <summary>
+        /// Muestra toda la información del espacio de consumo en los componentes correspondientes
+        /// </summary>
         private void MostrarInfoEspacio()
         {
             this.lbl_infoId.Text = this.espacioConsumo.IdEspacio.ToString();
@@ -212,6 +226,9 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
+        /// <summary>
+        /// Actualiza la lista de consumiciones pedidas por el espacio de consumo
+        /// </summary>
         public void ActualizarVistaConsumisionesAgregadasAMesa()
         {
             lst_consumEspacio.DataSource = null;
@@ -244,6 +261,11 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
+        /// <summary>
+        /// Repone la consumicion devuelta por el espacio de consumo de vuelta hacia el stock
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <param name="cantidadAReponer"></param>
         private void ReponerConsumicion(Consumicion consumicion, int cantidadAReponer)
         {
             if (consumicion is not null)

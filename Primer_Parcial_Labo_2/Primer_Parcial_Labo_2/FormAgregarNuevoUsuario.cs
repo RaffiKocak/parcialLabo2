@@ -52,6 +52,10 @@ namespace Primer_Parcial_Labo_2
             this.Dispose();
         }
 
+        /// <summary>
+        /// Crea un nuevo usuario con los datos ingresados en el formulario y lo agrega al diccionario de usuarios
+        /// </summary>
+        /// <returns></returns>
         private int AgregarUsuario()
         {
             int retorno = -2;

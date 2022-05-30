@@ -64,13 +64,25 @@ namespace Entidades
 
         #endregion
 
+        /// <summary>
+        /// Copia la instancia de la consumicion y la retorna
+        /// </summary>
+        /// <returns></returns>
         public abstract Consumicion ClonarConsumicion();
 
+        /// <summary>
+        /// Sobreescritura de ToString para mostrar en los pedidos del espacio
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{this.descripcion}: {this.cantidad} x ${this.precioUnitario} = ${this.cantidad * this.precioUnitario}";
         }
 
+        /// <summary>
+        /// Retorna un string con la información de instancia de una consumición
+        /// </summary>
+        /// <returns></returns>
         public virtual string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
@@ -83,6 +95,11 @@ namespace Entidades
 
         #region Agregar, eliminar y actualizar stock
 
+        /// <summary>
+        /// Agrega una consumición a la lista de stock siempre y cuando no se repita la descripción de la misma
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <returns></returns>
         public static bool AgregarNuevoStock(Consumicion consumicion)
         {
             if (consumicion is not null)
@@ -105,6 +122,11 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Elimina la consumición de la lista de stock siempre y cuando exista la descripción de la misma
+        /// </summary>
+        /// <param name="consumicion"></param>
+        /// <returns></returns>
         public static bool EliminarStock(Consumicion consumicion)
         {
             if (consumicion is not null)
@@ -128,6 +150,12 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Actualiza la información de todo el stock con la información dentro de las listas 
+        /// ingresadas por parámetro
+        /// </summary>
+        /// <param name="listaComida"></param>
+        /// <param name="listaBebida"></param>
         public static void ActualizarTodoStockPermanente(List<Comida> listaComida, List<Bebida> listaBebida)
         {
             Bar.stockComidas = listaComida;
@@ -136,6 +164,11 @@ namespace Entidades
 
         #endregion
 
+        /// <summary>
+        /// Verifica que una cadena de texto exista como descripción dentro de las listas de stock
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <returns></returns>
         public static bool VerificarDescripcionEnStock(string descripcion)
         {
             if (!string.IsNullOrEmpty(descripcion))
@@ -151,7 +184,7 @@ namespace Entidades
 
                 foreach (Comida item in Bar.stockComidas)
                 {
-                    if (item.descripcion == descripcion)
+                    if (item.descripcion.ToLower() == descripcion)
                     {
                         return true;
                     }
@@ -161,11 +194,17 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        /// Verifica si un pedido tiene suficiente stock para ser realizado
+        /// </summary>
+        /// <param name="cantidadPedida"></param>
+        /// <returns></returns>
         public bool VerificarAlcanzaStock(int cantidadPedida)
         {
             return this.cantidad >= cantidadPedida;
         }
 
+        #region Sobrecarga de operadores
         public static bool operator ==(Consumicion c1, Consumicion c2)
         {
             return (c1 is not null) && (c2 is not null) && (c1.id == c2.id);
@@ -195,5 +234,6 @@ namespace Entidades
         {
             return !(comida == consumicion);
         }
+        #endregion
     }
 }

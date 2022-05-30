@@ -51,6 +51,7 @@
             this.dgv_ventas.MultiSelect = false;
             this.dgv_ventas.Name = "dgv_ventas";
             this.dgv_ventas.ReadOnly = true;
+            this.dgv_ventas.RowHeadersVisible = false;
             this.dgv_ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_ventas.RowTemplate.Height = 25;
             this.dgv_ventas.Size = new System.Drawing.Size(593, 502);

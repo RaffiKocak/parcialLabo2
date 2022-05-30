@@ -24,6 +24,11 @@ namespace Entidades
             registroVentas = new List<Venta>();
         }
 
+        /// <summary>
+        /// Copia la lista ingresada por parámetro y la retorna
+        /// </summary>
+        /// <param name="listaACopiar"></param>
+        /// <returns></returns>
         public static List<Comida> ClonarListaStock(List<Comida> listaACopiar)
         {
             Comida comida;
@@ -43,6 +48,11 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Copia la lista ingresada por parámetro y la retorna
+        /// </summary>
+        /// <param name="listaACopiar"></param>
+        /// <returns></returns>
         public static List<Bebida> ClonarListaStock(List<Bebida> listaACopiar)
         {
             Bebida bebida;
@@ -62,6 +72,11 @@ namespace Entidades
             return null;
         }
 
+        /// <summary>
+        /// Copia la lista ingresada por parámetro y la retorna
+        /// </summary>
+        /// <param name="listaConsumisiones"></param>
+        /// <returns></returns>
         public static List<Consumicion> ClonarListaStock(List<Consumicion> listaConsumisiones)
         {
             Consumicion comida;

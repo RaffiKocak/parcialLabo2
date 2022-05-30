@@ -75,6 +75,9 @@ namespace Primer_Parcial_Labo_2
             this.Dispose();
         }
 
+        /// <summary>
+        /// Completa los datos de la comida a modificar en los componentes que correspondan
+        /// </summary>
         private void CargarDatosModificacion()
         {
             if (this.comidaAModificar is not null)
@@ -92,6 +95,10 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
+        /// <summary>
+        /// Agrega una nueva comida a la lista general con los datos introducidos en el formulario
+        /// </summary>
+        /// <returns></returns>
         private int AgregarNuevaComida()
         {
             int retorno = -3;
@@ -119,6 +126,10 @@ namespace Primer_Parcial_Labo_2
             return retorno;
         }
 
+        /// <summary>
+        /// Modifica el precio original de la comida por el introducido en el formulario
+        /// </summary>
+        /// <returns></returns>
         private int ModificarPrecioComida()
         {
             int retorno = -2;

@@ -69,11 +69,6 @@ namespace Primer_Parcial_Labo_2
             Application.Exit();
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void btn_login_Click_1(object sender, EventArgs e)
         {
             string usuarioIngresado = txt_usuario.Text.ToLower();

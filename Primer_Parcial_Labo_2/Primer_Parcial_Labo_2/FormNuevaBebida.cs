@@ -76,6 +76,9 @@ namespace Primer_Parcial_Labo_2
             this.Dispose();
         }
 
+        /// <summary>
+        /// Completa los datos de la bebida a modificar en los componentes que correspondan
+        /// </summary>
         private void CargarDatosModificacion()
         {
             if (this.bebidaAModificar is not null)
@@ -97,6 +100,10 @@ namespace Primer_Parcial_Labo_2
             }
         }
 
+        /// <summary>
+        /// Agrega una nueva bebida a la lista general con los datos introducidos en el formulario
+        /// </summary>
+        /// <returns></returns>
         private int AgregarNuevaBebida()
         {
             int retorno = -3;
@@ -126,6 +133,10 @@ namespace Primer_Parcial_Labo_2
             return retorno;
         }
 
+        /// <summary>
+        /// Modifica el precio original de la bebida por el introducido en el formulario
+        /// </summary>
+        /// <returns></returns>
         private int ModificarPrecioBebida()
         {
             int retorno = -2;

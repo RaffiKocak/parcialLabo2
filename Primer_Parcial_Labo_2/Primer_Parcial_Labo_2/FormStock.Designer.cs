@@ -52,6 +52,7 @@
             this.dgv_stock.MultiSelect = false;
             this.dgv_stock.Name = "dgv_stock";
             this.dgv_stock.ReadOnly = true;
+            this.dgv_stock.RowHeadersVisible = false;
             this.dgv_stock.RowTemplate.Height = 25;
             this.dgv_stock.Size = new System.Drawing.Size(524, 360);
             this.dgv_stock.TabIndex = 0;

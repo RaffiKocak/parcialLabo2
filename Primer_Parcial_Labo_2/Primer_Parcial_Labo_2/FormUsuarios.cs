@@ -70,6 +70,12 @@ namespace Primer_Parcial_Labo_2
             this.Dispose();
         }
 
+        /// <summary>
+        /// Elimina al usuario luego de pedir confirmación de usuario
+        /// </summary>
+        /// <param name="dniAEliminar"></param>
+        /// <param name="usuarioAEliminar"></param>
+        /// <returns></returns>
         private int EliminarUsuario(int dniAEliminar, string usuarioAEliminar)
         {
             int retorno = -2;

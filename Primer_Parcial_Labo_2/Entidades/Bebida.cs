@@ -65,11 +65,19 @@ namespace Entidades
             this.contieneTacc = bebida.contieneTacc;
         }
 
+        /// <summary>
+        /// Copia la instancia de la consumicion y la retorna
+        /// </summary>
+        /// <returns></returns>
         public override Bebida ClonarConsumicion()
         {
             return new Bebida(this);
         }
 
+        /// <summary>
+        /// Retorna un string con la información de instancia de una consumición
+        /// </summary>
+        /// <returns></returns>
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
